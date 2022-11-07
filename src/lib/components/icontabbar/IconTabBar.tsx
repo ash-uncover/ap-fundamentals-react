@@ -5,6 +5,8 @@ import {
   IconTabBarItemProperties
 } from '../../components/icontabbar/IconTabBarItem'
 
+import './IconTabBar.css'
+
 export interface IconTabBarProperties {
   selectedTab?: string
   tabs?: IconTabBarItemProperties[],

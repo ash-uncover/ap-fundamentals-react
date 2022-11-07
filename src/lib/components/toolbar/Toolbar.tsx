@@ -5,6 +5,7 @@ import { Title } from '../../components/title/Title'
 
 import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
 
+import './Toolbar.css'
 export interface ToolbarProperties {
   title?: string
   titleLevel?: TitleLevel
