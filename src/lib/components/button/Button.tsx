@@ -38,7 +38,9 @@ export const Button = ({
   // Events //
 
   const onClicked = () => {
-    onClick && onClick()
+    if (onClick) {
+      onClick()
+    }
   }
 
   // Rendering //

@@ -1,9 +1,5 @@
 import React from 'react'
 
-export interface ToolbarSeparatorProperties {
-
-}
-
 export const ToolbarSeparator = () => {
 
   // Rendering //

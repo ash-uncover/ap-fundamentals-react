@@ -28,7 +28,7 @@ export const CalendarYears = ({
   useEffect(() => {
     const now = new Date()
     let currentYear = Math.floor(date.getFullYear() / 10) * 10
-    const years = []
+    const yearsData = []
     for (let i = 0; i < 4; i++) {
       const yearsRow:YearData[] = []
       for (let j = 0; j < 5; j++) {
@@ -37,16 +37,15 @@ export const CalendarYears = ({
           year: currentYear++,
         })
       }
-      years.push(yearsRow)
+      yearsData.push(yearsRow)
     }
-    setYears(years)
+    setYears(yearsData)
   }, [date])
 
   // Events //
 
   const onPrevious = () => {
     const newDate = new Date(date.getFullYear() - 20, date.getMonth(), 1)
-    console.log(newDate)
     onDisplayDateChange(newDate)
   }
 

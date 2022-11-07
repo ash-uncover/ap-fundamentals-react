@@ -32,16 +32,16 @@ export const FormStepInput = ({
     updateValue(value)
   }, [value])
 
-  const updateValue = (value: number) => {
-    let newValue = value
-    if (!isNaN(min) && newValue < min) {
-      newValue = min
+  const updateValue = (newValue: number) => {
+    let tmpValue = newValue
+    if (!isNaN(min) && tmpValue < min) {
+      tmpValue = min
     }
-    if (max && !isNaN(max) && newValue > max) {
-      newValue = max
+    if (max && !isNaN(max) && tmpValue > max) {
+      tmpValue = max
     }
-    setCurrentValue(newValue)
-    onChange(newValue)
+    setCurrentValue(tmpValue)
+    onChange(tmpValue)
   }
 
   // Events //

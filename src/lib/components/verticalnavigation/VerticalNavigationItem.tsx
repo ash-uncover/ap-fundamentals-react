@@ -38,7 +38,9 @@ export const VerticalNavigationItem = ({
 
   const onClick = (event: MouseEvent) => {
     event.stopPropagation()
-    onItemSelect && onItemSelect(id)
+    if (onItemSelect) {
+      onItemSelect(id)
+    }
   }
 
   const onKeyUp = (event: KeyboardEvent) => {
@@ -46,7 +48,9 @@ export const VerticalNavigationItem = ({
       case 'Enter':
       case 'Space': {
         event.stopPropagation()
-        onItemSelect && onItemSelect(id)
+        if (onItemSelect) {
+          onItemSelect(id)
+        }
       }
       default: {
         break;

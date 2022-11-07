@@ -28,7 +28,9 @@ export const Tile = ({
   // Events //
 
   const onClicked = () => {
-    onClick && onClick()
+    if (onClick) {
+      onClick()
+    }
   }
 
   // Rendering //

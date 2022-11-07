@@ -31,7 +31,7 @@ export const CalendarMonths = ({
 
   useEffect(() => {
     const now = new Date()
-    const months = []
+    const monthsData = []
     for (let i = 0; i < 4; i++) {
       const monthsRow:MonthData[] = []
       for (let j = 0; j < 3; j++) {
@@ -43,9 +43,9 @@ export const CalendarMonths = ({
           current: isYear && isMonth
         })
       }
-      months.push(monthsRow)
+      monthsData.push(monthsRow)
     }
-    setMonths(months)
+    setMonths(monthsData)
   }, [date])
 
   // Events //

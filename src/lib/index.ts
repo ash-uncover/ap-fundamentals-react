@@ -1,11 +1,10 @@
 // constants
-export { AccentColors } from './constants/AccentColor'
-export { ButtonStyles } from './constants/ButtonStyle'
-export { ButtonTypes } from './constants/ButtonType'
-export { Semantics } from './constants/Semantic'
-export { Sizes } from './constants/Size'
-export { TitleLevels } from './constants/TitleLevel'
-
+export { AccentColor, AccentColors} from './constants/AccentColor'
+export { ButtonStyle, ButtonStyles } from './constants/ButtonStyle'
+export { ButtonType, ButtonTypes } from './constants/ButtonType'
+export { Semantic, Semantics } from './constants/Semantic'
+export { Size, Sizes } from './constants/Size'
+export { TitleLevel, TitleLevels } from './constants/TitleLevel'
 
 // avatar
 export { Avatar } from './components/avatar/Avatar'
@@ -51,6 +50,7 @@ export { PageFooter } from './components/page/PageFooter'
 export { Panel } from './components/panel/Panel'
 // select
 export { Select } from './components/select/Select'
+export { SelectItem } from './components/select/SelectItem'
 // table
 export { Table } from './components/table/Table'
 export { TableRow } from './components/table/TableRow'

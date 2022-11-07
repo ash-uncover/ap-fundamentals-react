@@ -38,23 +38,23 @@ export const Calendar = ({
 
   // Events //
 
-  const onDisplayDateChange = (displayDate: Date) => {
-    setDisplayDate(displayDate)
+  const onDisplayDateChange = (newDisplayDate: Date) => {
+    setDisplayDate(newDisplayDate)
   }
 
-  const onDisplayModeChangeDays = (displayMode: string) => {
-    setDisplayMode(displayMode)
+  const onDisplayModeChangeDays = (newDisplayMode: string) => {
+    setDisplayMode(newDisplayMode)
   }
 
-  const onDisplayModeChangeMonths = (displayMode: string) => {
-    setDisplayMode(displayMode)
+  const onDisplayModeChangeMonths = (newDisplayMode: string) => {
+    setDisplayMode(newDisplayMode)
   }
 
-  const onDisplayModeChangeYears = (displayMode: string) => {
+  const onDisplayModeChangeYears = (newDisplayMode: string) => {
     if (previousMode) {
       setDisplayMode(previousMode)
     } else {
-      setDisplayMode(displayMode)
+      setDisplayMode(newDisplayMode)
     }
   }
 

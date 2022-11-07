@@ -1,11 +1,6 @@
 import React, { useState } from 'react'
 
-export interface BarProperties {
-}
-
-export const Bar = ({
-
-}: BarProperties) => {
+export const Bar = () => {
 
   // Hooks //
 

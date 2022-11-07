@@ -47,23 +47,23 @@ export const CalendarDays = ({
   const [weekDays, setWeekDays] = useState<string[]>([])
 
   useEffect(() => {
-    const weekDays = []
-    let currentDate = new Date()
+    const weekDaysData = []
+    const currentDate = new Date()
     while (currentDate.getDay() !== firstDay % 7) {
       currentDate.setDate(currentDate.getDate() - 1)
     }
     for (let i = 0; i < 7; i++) {
       const dayName = currentDate.toLocaleString(locale, { weekday: 'short' })
-      weekDays.push(dayName.substring(0, 1).toUpperCase())
+      weekDaysData.push(dayName.substring(0, 1).toUpperCase())
       currentDate.setDate(currentDate.getDate() + 1)
     }
-    setWeekDays(weekDays)
+    setWeekDays(weekDaysData)
   }, [])
 
   useEffect(() => {
     const now = new Date()
-    const weeks = []
-    let currentDate = new Date(date.getFullYear(), date.getMonth(), 1);
+    const weeksData = []
+    const currentDate = new Date(date.getFullYear(), date.getMonth(), 1);
     while (currentDate.getDay() !== firstDay % 7) {
       currentDate.setDate(currentDate.getDate() - 1)
     }
@@ -88,9 +88,9 @@ export const CalendarDays = ({
         })
         currentDate.setDate(currentDate.getDate() + 1)
       }
-      weeks.push(weekData)
+      weeksData.push(weekData)
     }
-    setWeeks(weeks)
+    setWeeks(weeksData)
   }, [date, selectedDate])
 
 

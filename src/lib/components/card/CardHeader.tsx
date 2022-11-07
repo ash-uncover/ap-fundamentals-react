@@ -21,7 +21,9 @@ export const CardHeader = ({
   // Events //
 
   const onClicked = () => {
-    onClick && onClick()
+    if (onClick) {
+      onClick()
+    }
   }
 
   const onKeyUp = (event: KeyboardEvent) => {
@@ -29,7 +31,9 @@ export const CardHeader = ({
       case 'Enter':
       case 'Space': {
         event.stopPropagation()
-        onClick && onClick()
+        if (onClick) {
+          onClick()
+        }
       }
       default: {
         break;

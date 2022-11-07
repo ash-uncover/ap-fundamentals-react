@@ -23,7 +23,9 @@ export const IconTabBarItem = ({
   // Events //
 
   const onClick = () => {
-    onTabSelect && onTabSelect(id)
+    if (onTabSelect) {
+      onTabSelect(id)
+    }
   }
 
   const onKeyUp = (event: KeyboardEvent) => {
@@ -31,7 +33,9 @@ export const IconTabBarItem = ({
       case 'Enter':
       case 'Space': {
         event.stopPropagation()
-        onTabSelect && onTabSelect(id)
+        if (onTabSelect) {
+          onTabSelect(id)
+        }
       }
       default: {
         break;
