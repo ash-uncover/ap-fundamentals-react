@@ -20,7 +20,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\" \"src/**/*.jsx\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
-    "prepublishOnly": "npm run test-coverage && npm run lint",
+    "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "test": "jest --env=jsdom",
     "test-coverage": "jest --env=jsdom --collectCoverage",
