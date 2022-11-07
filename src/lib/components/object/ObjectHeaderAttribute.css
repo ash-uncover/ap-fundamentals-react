@@ -1,0 +1,13 @@
+.fd-object-header-attribute {
+  display: flex;
+  flex-direction: column;
+  & .fd-object-header-attribute__label {
+    color: var(--sapContent_LabelColor);
+  }
+  & .fd-object-header-attribute__text {
+    overflow-wrap: break-word;
+  }
+  & + .fd-object-header-attribute {
+    margin-top: 0.25rem;
+  }
+}

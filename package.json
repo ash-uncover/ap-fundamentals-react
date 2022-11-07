@@ -1,0 +1,84 @@
+{
+  "name": "@uncover/fundamentals-react",
+  "version": "0.0.1",
+  "author": "aSH <ash.uncover@gmail.com>",
+  "description": "React implementation of ui5 fundamentals",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ash-uncover/ap-react-fundamentals"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\" \"src/**/*.jsx\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run test-coverage && npm run lint",
+    "preversion": "npm run lint",
+    "test": "jest --env=jsdom",
+    "test-coverage": "jest --env=jsdom --collectCoverage",
+    "version": "npm run format"
+  },
+  "peerDependencies": {
+    "@sap-theming/theming-base-content": "^11.1.42",
+    "fundamental-styles": "^0.24.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "@uncover/js-utils": "^0.0.5",
+    "@uncover/js-utils-fetch": "^0.0.2",
+    "@uncover/js-utils-logger": "^0.1.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@reduxjs/toolkit": "^1.8.5",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "autoprefixer": "^10.4.8",
+    "babel-loader": "^8.2.5",
+    "concurrently": "^7.3.0",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.7.1",
+    "i18next": "^21.10.0",
+    "i18next-browser-languagedetector": "^6.1.8",
+    "i18next-chained-backend": "^3.1.0",
+    "i18next-http-backend": "^1.4.4",
+    "i18next-resources-to-backend": "^1.0.0",
+    "jest": "latest",
+    "jest-environment-jsdom": "latest",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss": "^8.4.16",
+    "postcss-loader": "^7.0.1",
+    "postcss-preset-env": "^7.8.2",
+    "prettier": "latest",
+    "react-i18next": "^11.18.6",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "style-loader": "^3.3.1",
+    "ts-jest": "latest",
+    "ts-loader": "^9.4.1",
+    "ts-node": "^10.9.1",
+    "tslint": "latest",
+    "tslint-config-prettier": "latest",
+    "typescript": "^4.8.2",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.10.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app",
+    "env": {
+      "node": true,
+      "jest": true
+    }
+  }
+}
