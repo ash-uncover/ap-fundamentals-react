@@ -35,6 +35,7 @@ export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'
 export { InfoLabel } from './components/infolabel/InfoLabel'
 // object
 export { ObjectAttribute } from './components/object/ObjectAttribute'
+export { ObjectHeaderAttribute } from './components/object/ObjectHeaderAttribute'
 export { ObjectIdentifier } from './components/object/ObjectIdentifier'
 export { ObjectList } from './components/object/ObjectList'
 export { ObjectListItem } from './components/object/ObjectListItem'

@@ -1,15 +1,15 @@
 import React from 'react'
 import './ObjectHeaderAttribute.css'
-export interface ObjectHeaderAttributesProperties {
+export interface ObjectHeaderAttributeProperties {
   className?: string,
   label: string,
   text: string,
 }
-export const ObjectHeaderAttributes = ({
+export const ObjectHeaderAttribute = ({
   className,
   label,
   text,
-}: ObjectHeaderAttributesProperties) => {
+}: ObjectHeaderAttributeProperties) => {
 
   // Rendering //
 
