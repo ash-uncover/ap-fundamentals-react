@@ -15,7 +15,10 @@ export const AppMainContent = ({
     <div
       style={{
         width: '100%',
-        height: '100%'
+        height: '100%',
+        overflow: 'auto',
+        boxSizing: 'border-box',
+        padding: '1rem 4rem'
       }}
     >
       {children}
