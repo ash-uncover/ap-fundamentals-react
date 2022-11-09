@@ -1,5 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
+import { UUID } from '@uncover/js-utils'
+
+import {
+  Button,
+  ButtonStyles
+} from '../../index'
 export interface SelectProperties {
   children: any
 }
@@ -10,7 +16,12 @@ export const Select = ({
 
   // Hooks //
 
+  const [id, setId] = useState<string | undefined>()
   const [opened, setOpened] = useState(false)
+
+  useEffect(() => {
+    setId(UUID.next())
+  }, [])
 
   // Events //
 
@@ -25,7 +36,7 @@ export const Select = ({
       <div className='fd-popover__control'>
         <div className='fd-select'>
           <button
-            id='cozySelectCombobox'
+            id={id}
             className='fd-select__control'
             aria-expanded={!!opened}
             aria-haspopup='listbox'
@@ -40,6 +51,10 @@ export const Select = ({
             >
               List Item 1
             </span>
+            <Button
+              style={ButtonStyles.TRANSPARENT}
+              icon='slim-arrow-down'
+            />
             <span className='fd-button fd-button--transparent fd-select__button'>
               <i className='sap-icon--slim-arrow-down'></i>
             </span>
@@ -52,7 +67,7 @@ export const Select = ({
       >
         <ul
           aria-activedescendant='cozySelectCombobox-currentlyFocusedItem'
-          aria-labelledby='cozySelectLabel'
+          aria-labelledby={id}
           className='fd-list fd-list--dropdown'
           role='listbox'
         >
@@ -62,47 +77,3 @@ export const Select = ({
     </div>
   )
 }
-
-interface SelectItemProperties {
-  selected?: boolean,
-  id: string,
-  title: string,
-  onSelect: () => void
-}
-
-export const SelectItem = ({
-  selected,
-  id,
-  title,
-  onSelect
-}: SelectItemProperties) => {
-
-  // Events //
-
-  const onItemSelected = () => {
-    onSelect()
-  }
-
-  // Rendering //
-
-  const classes = ['fd-list__item']
-  if (selected) {
-    classes.push('is-selected')
-  }
-
-  return (
-    <li
-      className={classes.join(' ')}
-      aria-selected={`${Boolean(selected)}`}
-      role='option'
-      tabIndex={0}
-      onClick={onItemSelected}
-    >
-      <span className='fd-list__title'>
-        {title}
-      </span>
-    </li>
-  )
-}
-
-export default Select

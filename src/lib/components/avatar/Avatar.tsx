@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { CSSProperties } from 'react'
 
 import { AccentColor } from '../../constants/AccentColor'
 import { Size, Sizes } from '../../constants/Size'
@@ -8,6 +8,7 @@ export interface AvatarProperties {
   icon?: string
   initials?: string
   size?: Size
+  style?: CSSProperties
   accentColor?: AccentColor
   shell?: boolean
   bordered?: boolean
@@ -20,6 +21,7 @@ export const Avatar = ({
   icon,
   initials,
   size = Sizes.MEDIUM,
+  style,
   accentColor,
   shell,
   bordered,
@@ -55,6 +57,7 @@ export const Avatar = ({
     <span
       className={classes.join(' ')}
       aria-label={label}
+      style={style}
     >
       {icon ?
         <i
