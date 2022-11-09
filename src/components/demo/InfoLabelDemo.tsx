@@ -86,19 +86,19 @@ const DEMO_DATA = {
     description: 'For Display Only Info Label use the fd-info-label--display modifier class',
     result: (
       <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
-            <InfoLabel text='system status' display />
-            <InfoLabel text='42' display numeric />
-            <InfoLabel icon='action' display />
-            <InfoLabel text='Info Label' icon='past' display />
-          </div>
+        <InfoLabel text='system status' display />
+        <InfoLabel text='42' display numeric />
+        <InfoLabel icon='action' display />
+        <InfoLabel text='Info Label' icon='past' display />
+      </div>
     ),
     code: (
       <div>
-            <div>{`<InfoLabel text='system status' display />`}</div>
-            <div>{`<InfoLabel text='42' display numeric />`}</div>
-            <div>{`<InfoLabel icon='action' display />`}</div>
-            <div>{`<InfoLabel text='Info Label' icon='past' display />`}</div>
-          </div>
+        <div>{`<InfoLabel text='system status' display />`}</div>
+        <div>{`<InfoLabel text='42' display numeric />`}</div>
+        <div>{`<InfoLabel icon='action' display />`}</div>
+        <div>{`<InfoLabel text='Info Label' icon='past' display />`}</div>
+      </div>
     )
   }]
 }

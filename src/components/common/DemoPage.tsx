@@ -37,7 +37,7 @@ export const DemoPage = ({
   // Rendering //
 
   return (
-    <>
+    <div className='demo-page'>
       <Title
         text={title}
       />
@@ -59,7 +59,7 @@ export const DemoPage = ({
 
       <Table
         columns={[
-          { key: 'id', name: 'Property' },
+          { key: 'id', name: 'Property', formatter: prop => <strong>{prop.id}</strong> },
           { key: 'type', name: 'Type' },
           { key: 'description', name: 'Description' },
         ]}
@@ -88,6 +88,6 @@ export const DemoPage = ({
           />
         </>
       ))}
-    </>
+    </div>
   )
 }

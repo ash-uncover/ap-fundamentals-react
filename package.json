@@ -15,8 +15,9 @@
   ],
   "scripts": {
     "build": "npm run build:tsc && npm run build:babel",
-    "build:tsc": "tsc",
     "build:babel": "babel src/lib --extensions .ts,.tsx --out-dir dist --copy-files",
+    "build:docs": "webpack --config webpack.config.docs.js",
+    "build:tsc": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\" \"src/**/*.jsx\"",
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",

@@ -2,10 +2,11 @@
 
 const path = require('path')
 
-const DIR_DIST = path.resolve(__dirname, 'dist')
+const DIR_DOCS = path.resolve(__dirname, 'docs')
 const DIR_SRC = path.resolve(__dirname, 'src')
 const DIR_NODE_MODULES = path.resolve(__dirname, 'node_modules')
 
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -13,8 +14,8 @@ module.exports = {
 
   output: {
     clean: true,
-    path: DIR_DIST,
-    filename: '[name].bundle.js',
+    path: DIR_DOCS,
+    filename: 'docs.bundle.js',
     publicPath: '/',
   },
 
@@ -24,20 +25,18 @@ module.exports = {
   },
 
   plugins: [
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, '_redirects'), to: '.' },
+        { from: path.resolve(__dirname, 'public'), to: '.' },
+      ],
+    }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
       title: 'Wait App',
     }),
   ],
-  devtool: 'source-map',
-  devServer: {
-    static: {
-      directory: path.join(__dirname, 'public'),
-    },
-    compress: true,
-    port: 3000,
-    historyApiFallback: true,
-  },
+  devtool: 'inline-source-map',
 
   module: {
     rules: [
@@ -76,10 +75,6 @@ module.exports = {
         generator: {
           filename: 'images/[name][ext][query]',
         },
-      },
-      {
-        test: /\.(_redirects)$/i,
-        type: 'asset/resource',
       },
     ],
   },
