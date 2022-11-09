@@ -2,12 +2,11 @@ import React from 'react'
 
 import {
   BrowserRouter as Router,
-  Navigate,
   Route,
   Routes,
 } from 'react-router-dom'
 
-import RouteRoot from './'
+import RouteRoot from './index'
 
 const Root = () => {
   return (

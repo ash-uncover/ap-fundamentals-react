@@ -54,6 +54,8 @@ export { Panel } from './components/panel/Panel'
 // select
 export { Select } from './components/select/Select'
 export { SelectItem } from './components/select/SelectItem'
+// shellbar
+export { ShellBar } from './components/shellbar/ShellBar'
 // table
 export { Table } from './components/table/Table'
 export { TableRow } from './components/table/TableRow'

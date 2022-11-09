@@ -1,10 +1,10 @@
 import React from 'react'
 
+import { ShellBar } from '../lib/components/shellbar/ShellBar'
+
 export const AppHeader = () => {
 
   return (
-    <div className='app-header'>
-      HEADER
-    </div>
+    <ShellBar />
   )
 }
