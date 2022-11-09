@@ -34,9 +34,18 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index-docs.html',
       title: 'Fundamentals React',
+      publicPath: '/ap-fundamentals-react'
     }),
   ],
   devtool: 'inline-source-map',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'docs'),
+    },
+    compress: true,
+    port: 3000,
+    historyApiFallback: true,
+  },
 
   module: {
     rules: [

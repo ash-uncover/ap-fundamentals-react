@@ -25,6 +25,7 @@
     "prepublishOnly": "npm run lint",
     "preversion": "npm run lint",
     "start": "webpack serve --progress --mode development",
+    "start:docs": "webpack serve --config webpack.config.docs.js --progress --mode development",
     "test": "jest --env=jsdom",
     "test-coverage": "jest --env=jsdom --collectCoverage",
     "version": "npm run format"
