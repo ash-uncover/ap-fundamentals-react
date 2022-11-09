@@ -1,7 +1,6 @@
 import React from 'react'
 
 import {
-  BrowserRouter as Router,
   Route,
   Routes,
 } from 'react-router-dom'
@@ -13,15 +12,13 @@ import RouteDemo from './demo/#id'
 
 const Root = () => {
   return (
-    <Router>
-      <Routes>
-        <Route path='*' element={<RouteRoot />}>
-          <Route path='demo' element={<RouteDemos />}>
-            <Route path=':demoId' element={<RouteDemo />} />
-          </Route>
+    <Routes>
+      <Route path='*' element={<RouteRoot />}>
+        <Route path='demo' element={<RouteDemos />}>
+          <Route path=':demoId' element={<RouteDemo />} />
         </Route>
-      </Routes>
-    </Router>
+      </Route>
+    </Routes>
   )
 }
 

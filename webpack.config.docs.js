@@ -10,7 +10,7 @@ const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: path.resolve(DIR_SRC, 'index.tsx'),
+  entry: path.resolve(DIR_SRC, 'index-docs.tsx'),
 
   output: {
     clean: true,
@@ -32,8 +32,8 @@ module.exports = {
       ],
     }),
     new HtmlWebpackPlugin({
-      template: './src/index.html',
-      title: 'Wait App',
+      template: './src/index-docs.html',
+      title: 'Fundamentals React',
     }),
   ],
   devtool: 'inline-source-map',
