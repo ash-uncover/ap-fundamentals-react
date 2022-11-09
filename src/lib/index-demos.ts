@@ -1,0 +1,132 @@
+import React from 'react'
+
+import { AvatarDemo } from '../components/demo/AvatarDemo'
+import { BadgeDemo } from '../components/demo/BadgeDemo'
+import { BarDemo } from '../components/demo/BarDemo'
+import { ButtonDemo } from '../components/demo/ButtonDemo'
+import { CalendarDemo } from '../components/demo/CalendarDemo'
+import { CardDemo } from '../components/demo/CardDemo'
+import { DialogDemo } from '../components/demo/DialogDemo'
+import { FormDemo } from '../components/demo/FormDemo'
+import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
+import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
+import { LinkDemo } from '../components/demo/LinkDemo'
+import { ObjectDemo } from '../components/demo/ObjectDemo'
+import { PageDemo } from '../components/demo/PageDemo'
+import { PanelDemo } from '../components/demo/PanelDemo'
+import { SelectDemo } from '../components/demo/SelectDemo'
+import { ShellBarDemo } from '../components/demo/ShellBarDemo'
+import { TableDemo } from '../components/demo/TableDemo'
+import { TileDemo } from '../components/demo/TileDemo'
+import { TitleDemo } from '../components/demo/TitleDemo'
+import { ToolbarDemo } from '../components/demo/ToolbarDemo'
+import { VerticalNavigationDemo } from '../components/demo/VerticalNavigationDemo'
+
+export const COMPONENT = {
+  AVATAR: {
+    id: 'avatar',
+    text: 'Avatar',
+    demo: AvatarDemo
+  },
+  BADGE: {
+    id: 'badge',
+    text: 'Badge',
+    demo: BadgeDemo
+  },
+  BAR: {
+    id: 'bar',
+    text: 'Bar',
+    demo: BarDemo
+  },
+  BUTTON: {
+    id: 'button',
+    text: 'Button',
+    demo: ButtonDemo
+  },
+  CALENDAR: {
+    id: 'calendar',
+    text: 'Calendar',
+    demo: CalendarDemo
+  },
+  CARD: {
+    id: 'card',
+    text: 'Card',
+    demo: CardDemo
+  },
+  DIALOG: {
+    id: 'dialog',
+    text: 'Dialog',
+    demo: DialogDemo
+  },
+  FORM: {
+    id: 'form',
+    text: 'Form',
+    demo: FormDemo
+  },
+  ICON_TAB_BAR: {
+    id: 'icontabbar',
+    text: 'IconTabBar',
+    demo: IconTabBarDemo
+  },
+  INFO_LABEL: {
+    id: 'infolabel',
+    text: 'InfoLabel',
+    demo: InfoLabelDemo
+  },
+  LINK: {
+    id: 'link',
+    text: 'Link',
+    demo: LinkDemo
+  },
+  OBJECT: {
+    id: 'object',
+    text: 'Object',
+    demo: ObjectDemo
+  },
+  PAGE: {
+    id: 'page',
+    text: 'Page',
+    demo: PageDemo
+  },
+  PANEL: {
+    id: 'panel',
+    text: 'Panel',
+    demo: PanelDemo
+  },
+  SELECT: {
+    id: 'select',
+    text: 'Select',
+    demo: SelectDemo
+  },
+  SHELL_BAR: {
+    id: 'shellbar',
+    text: 'ShellBar',
+    demo: ShellBarDemo
+  },
+  TABLE: {
+    id: 'table',
+    text: 'Table',
+    demo: TableDemo
+  },
+  TILE: {
+    id: 'tile',
+    text: 'Tile',
+    demo: TileDemo
+  },
+  TITLE: {
+    id: 'title',
+    text: 'Title',
+    demo: TitleDemo
+  },
+  TOOLBAR: {
+    id: 'toolbar',
+    text: 'Toolbar',
+    demo: ToolbarDemo
+  },
+  VERTICAL_NAVIGATION: {
+    id: 'verticalnavigation',
+    text: 'VerticalNavigation',
+    demo: VerticalNavigationDemo
+  },
+}
+export const COMPONENTS = Object.values(COMPONENT)

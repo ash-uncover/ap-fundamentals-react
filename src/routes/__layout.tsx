@@ -7,7 +7,8 @@ import {
 } from 'react-router-dom'
 
 import RouteRoot from './index'
-import RouteDemo from './demo'
+import RouteDemos from './demo'
+import RouteDemo from './demo/#id'
 
 
 const Root = () => {
@@ -15,7 +16,9 @@ const Root = () => {
     <Router>
       <Routes>
         <Route path='*' element={<RouteRoot />}>
-          <Route path='demo/:demoId' element={<RouteDemo />} />
+          <Route path='demo' element={<RouteDemos />}>
+            <Route path=':demoId' element={<RouteDemo />} />
+          </Route>
         </Route>
       </Routes>
     </Router>

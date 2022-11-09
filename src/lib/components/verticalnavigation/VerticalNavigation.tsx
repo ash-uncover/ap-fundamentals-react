@@ -45,7 +45,7 @@ export const VerticalNavigation = ({
                 glyph={item.glyph}
                 text={item.text}
                 selected={item.selected}
-                onItemSelect={onItemSelect}
+                onItemSelect={item.onItemSelect || onItemSelect}
               />
             )
           })}

@@ -51,7 +51,6 @@ const RouteRoot = () => {
           <AppMainContent>
             <Outlet />
           </AppMainContent>
-
         </div>
       </div>
     </div>

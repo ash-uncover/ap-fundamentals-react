@@ -1,14 +1,13 @@
 import React from 'react'
+import { Outlet } from 'react-router-dom'
 
-export const RouteDemo = () => {
-
-  // Hooks //
+export const RouteDemos = () => {
 
   // Rendering //
 
   return (
-    <div>DEMO</div>
+    <Outlet />
   )
 }
 
-export default RouteDemo
+export default RouteDemos
