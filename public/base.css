@@ -8,4 +8,5 @@ html, body, #reactroot {
 #reactroot {
     display: flex;
     flex-direction: column;
+    font-family: '72';
 }

@@ -6,7 +6,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Icon Tab Bar',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 }
+    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
+    { text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Info Label is a small non-interactive numeric or text-based label. Its primary use is to add user-defined characteristic to an object.',
   props: [
