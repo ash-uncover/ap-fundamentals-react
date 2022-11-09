@@ -9,9 +9,21 @@
 .fd-page .fd-page__header {
   flex-shrink: 0;
   flex-basis: 100px;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 1rem 0.5rem 1rem 0.5rem;
 
   background: var(--sapList_Background);
+}
+
+@media screen and (min-width: 600px) {
+  .fd-page .fd-page__header {
+    padding: 1rem 2rem 1rem 2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .fd-page .fd-page__header {
+    padding: 1rem 3rem 1rem 3rem;
+  }
 }
 
 .fd-page .fd-page__header .fd-toolbar {

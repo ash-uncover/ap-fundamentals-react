@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { ReactElement } from 'react'
 
 import {
   VerticalNavigationItem,
@@ -11,7 +11,7 @@ export interface VerticalNavigationProperties {
   itemsLabel: string
   items?: VerticalNavigationItemProperties[],
   onItemSelect?: (id: string) => void
-  children?: any | any[]
+  children?: ReactElement | ReactElement[]
 }
 
 export const VerticalNavigation = ({
@@ -45,7 +45,7 @@ export const VerticalNavigation = ({
                 glyph={item.glyph}
                 text={item.text}
                 selected={item.selected}
-                onItemSelect={onItemSelect}
+                onItemSelect={item.onItemSelect || onItemSelect}
               />
             )
           })}

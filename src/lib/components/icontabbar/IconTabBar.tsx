@@ -9,7 +9,7 @@ import './IconTabBar.css'
 
 export interface IconTabBarProperties {
   selectedTab?: string
-  tabs?: IconTabBarItemProperties[],
+  tabs?: IconTabBarItemProperties[]
   children?: ReactElement | ReactElement[]
   onTabSelect?: (id: string) => void
 }
@@ -17,7 +17,7 @@ export const IconTabBar = ({
   selectedTab,
   tabs,
   onTabSelect,
-  children,
+  children
 }: IconTabBarProperties) => {
 
   // Rendering //

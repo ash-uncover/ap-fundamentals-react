@@ -9,11 +9,11 @@ import { TableRow } from './TableRow'
       { key: 'email', name: 'Email' },
       { key: 'date', name: 'Join Date' },
     ]}
-    rows=[
+    rows={[
       { data: { id: 'user1', firstName: 'Titi', lastName: 'Fifi' } },
       { data: { firstName: 'Toto', lastName: 'Fofo' } },
       { data: { firstName: 'Tata' } },
-    ]
+    ]}
   />
  */
 export interface TableProperties {

@@ -1,0 +1,44 @@
+.code-panel {
+  border-radius: 0.5rem;
+  border: 2px solid #e5e5e5;
+  margin: 2rem 0;
+}
+.code-panel .header {
+  padding: 0.5rem;
+}
+.code-panel .rendering {
+  position: relative;
+  padding: 2rem 1rem 3rem 1rem;
+  background-color: #f7f7f7;
+}
+.code-panel .button-show {
+  position: absolute;
+  right: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  background: white;
+  border: 1px solid darkgray;
+  border-radius: 0.25rem;
+  bottom: 0;
+}
+.code-panel .code {
+  white-space: pre-line;
+  position: relative;
+  padding: 1rem;
+  background-color: #262626;
+  color: white;
+  font-size: 12px;
+  font-family: ui-monospace, Menlo, Monaco, 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+    'Droid Sans Mono', 'Courier New', monospace;
+}
+.code-panel .button-copy {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.25rem;
+  background-color: black;
+  color: white;
+}

@@ -2,6 +2,7 @@
 export { AccentColor, AccentColors} from './constants/AccentColor'
 export { ButtonStyle, ButtonStyles } from './constants/ButtonStyle'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
+export { LinkType, LinkTypes } from './constants/LinkType'
 export { Semantic, Semantics } from './constants/Semantic'
 export { Size, Sizes } from './constants/Size'
 export { TitleLevel, TitleLevels } from './constants/TitleLevel'
@@ -32,6 +33,8 @@ export { IconTabBar } from './components/icontabbar/IconTabBar'
 export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'
 // infolabel
 export { InfoLabel } from './components/infolabel/InfoLabel'
+// link
+export { Link } from './components/link/Link'
 // object
 export { ObjectAttribute } from './components/object/ObjectAttribute'
 export { ObjectHeaderAttribute } from './components/object/ObjectHeaderAttribute'
@@ -51,6 +54,8 @@ export { Panel } from './components/panel/Panel'
 // select
 export { Select } from './components/select/Select'
 export { SelectItem } from './components/select/SelectItem'
+// shellbar
+export { ShellBar } from './components/shellbar/ShellBar'
 // table
 export { Table } from './components/table/Table'
 export { TableRow } from './components/table/TableRow'

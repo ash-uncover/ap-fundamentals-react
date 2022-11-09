@@ -16,6 +16,12 @@
     "noImplicitAny": true,
     "outDir": "dist",
     "paths": {
+      "demo": [
+        "src/components/demo"
+      ],
+      "demo/*": [
+        "src/components/demo/*"
+      ],
       "components": [
         "src/lib/components"
       ],

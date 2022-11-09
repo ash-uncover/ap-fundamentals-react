@@ -5,6 +5,7 @@ import { AccentColor } from '../../constants/AccentColor'
 export interface InfoLabelProperties {
   icon?: string,
   text?: string,
+  display?: boolean
   numeric?: boolean
   accentColor?: AccentColor,
 }
@@ -12,6 +13,7 @@ export interface InfoLabelProperties {
 export const InfoLabel = ({
   icon,
   text,
+  display,
   numeric,
   accentColor,
 }: InfoLabelProperties) => {
@@ -24,6 +26,9 @@ export const InfoLabel = ({
   }
   if (numeric) {
     classes.push('fd-info-label--numeric')
+  }
+  if (display) {
+    classes.push('fd-info-label--display')
   }
 
   return (

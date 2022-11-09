@@ -1,0 +1,50 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "declaration": true,
+    "esModuleInterop": true,
+    "jsx": "react",
+    "lib": [
+      "DOM",
+      "ES2020",
+      "ESNext",
+      "ESNext.Intl"
+    ],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "outDir": "dist",
+    "paths": {
+      "components": [
+        "src/lib/components"
+      ],
+      "components/*": [
+        "src/lib/components/*"
+      ],
+      "constants": [
+        "src/lib/contants"
+      ],
+      "constants/*": [
+        "src/lib/constants/*"
+      ],
+      "*": [
+        "src/*"
+      ],
+    },
+    "sourceMap": true,
+    "strict": true,
+    "target": "es6",
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/lib"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "test",
+    ".vscode"
+  ]
+}
