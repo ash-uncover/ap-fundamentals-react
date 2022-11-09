@@ -4,6 +4,7 @@
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "React implementation of ui5 fundamentals",
   "license": "MIT",
+  "homepage": "https://ash-uncover.github.io/ap-fundamentals-react",
   "repository": {
     "type": "git",
     "url": "https://github.com/ash-uncover/ap-react-fundamentals"
