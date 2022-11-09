@@ -12,6 +12,7 @@ export interface ButtonProperties {
   text?: string | number
   badge?: string
   selected?: boolean
+  menu?: boolean
   disabled?: boolean
   compact?: boolean
   tabIndex?: number
@@ -28,6 +29,7 @@ export const Button = ({
   text,
   badge,
   selected,
+  menu,
   disabled,
   compact,
   tabIndex,
@@ -58,6 +60,9 @@ export const Button = ({
   if (compact) {
     classes.push('fd-button--compact')
   }
+  if (menu) {
+    classes.push('fd-button--menu')
+  }
 
   return (
     <button
@@ -81,6 +86,10 @@ export const Button = ({
 
       {icon && iconAfter ?
         <i className={`sap-icon--${icon}`} role='presentation'></i>
+        : null}
+
+      {menu ?
+        <i className={`sap-icon--slim-arrow-down`}></i>
         : null}
 
       {badge ?

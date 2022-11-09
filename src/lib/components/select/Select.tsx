@@ -51,10 +51,6 @@ export const Select = ({
             >
               List Item 1
             </span>
-            <Button
-              style={ButtonStyles.TRANSPARENT}
-              icon='slim-arrow-down'
-            />
             <span className='fd-button fd-button--transparent fd-select__button'>
               <i className='sap-icon--slim-arrow-down'></i>
             </span>
