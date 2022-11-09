@@ -14,6 +14,7 @@ export const AppMainContent = ({
   return (
     <div>
       KIKO
+      {children}
     </div>
   )
 }
