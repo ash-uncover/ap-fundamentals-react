@@ -1,4 +1,6 @@
 import React, { ReactElement } from 'react'
+import { TableCell, TableCellIndicator, TableCellType } from './TableCell'
+import { TableHeaderCell } from './TableHeaderCell'
 import { TableRow } from './TableRow'
 
 /*
@@ -21,11 +23,11 @@ export interface TableProperties {
   borderedVertical?: boolean
   compact?: boolean
   indicator?: boolean
-  columns: TableColumnProperties[]
-  rows?: TableRowProperties[]
+  columns: TableColumn[]
+  rows?: TableRow[]
   children?: ReactElement | ReactElement[]
 }
-export type TableColumnProperties = {
+export type TableColumn = {
   key: string
   name?: string
   type?: TableCellType
@@ -33,18 +35,17 @@ export type TableColumnProperties = {
   render?: (value: any) => ReactElement
   formatter?: (value: any) => string | ReactElement
 }
-export type TableRowProperties = {
+export type TableRow = {
   className?: string
   indicator?: TableCellIndicator
-  data: TableRowDataProperties
+  activable?: boolean
+  hoverable?: boolean
+  data: TableRowData
 }
-export type TableRowDataProperties = {
+export type TableRowData = {
   id: string
   [key: string]: any
 }
-
-export type TableCellType = 'status-indicator' | 'checkbox'
-export type TableCellIndicator = 'valid' | 'warning' | 'error' | 'information'
 
 export const TableCellIndicators: { [key: string]: TableCellIndicator } = {
   VALID: 'valid',
@@ -101,6 +102,8 @@ export const Table = ({
         {rows?.map((row, index) => (
           <TableRow
             key={row.data.id}
+            activable={row.activable}
+            hoverable={row.hoverable}
           >
             <>
               {indicator
@@ -127,56 +130,5 @@ export const Table = ({
         {children}
       </tbody>
     </table>
-  )
-}
-
-
-
-export const TableHeaderCell = ({
-  children,
-  type
-}: { children: ReactElement | ReactElement[], type?: TableCellType }) => {
-
-  // Rendering //
-
-  const classes = ['fd-table__cell']
-  if (type) {
-    classes.push(`fd-table__cell--${type}`)
-  }
-
-  return (
-    <th
-      className={classes.join(' ')}
-      scope='col'
-    >
-      {children}
-    </th>
-  )
-}
-
-export const TableCell = ({
-  children,
-  type,
-  indicator
-}: {
-  children?: ReactElement | ReactElement[],
-  type?: TableCellType
-  indicator?: TableCellIndicator
-}) => {
-
-  // Rendering //
-
-  const classes = ['fd-table__cell']
-  if (type) {
-    classes.push(`fd-table__cell--${type}`)
-  }
-  if (type === 'status-indicator' && indicator) {
-    classes.push(`fd-table__cell--status-indicator--${indicator}`)
-  }
-
-  return (
-    <td className={classes.join(' ')}>
-      {children}
-    </td>
   )
 }

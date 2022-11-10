@@ -58,6 +58,8 @@ export { SelectItem } from './components/select/SelectItem'
 export { ShellBar } from './components/shellbar/ShellBar'
 // table
 export { Table } from './components/table/Table'
+export { TableCell } from './components/table/TableCell'
+export { TableHeaderCell } from './components/table/TableHeaderCell'
 export { TableRow } from './components/table/TableRow'
 // tile
 export { Tile } from './components/tile/Tile'

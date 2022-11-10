@@ -9,3 +9,4 @@ node_modules
 
 # Distribution
 dist
+dist-dev
