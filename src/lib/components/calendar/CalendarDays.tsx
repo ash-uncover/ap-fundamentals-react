@@ -4,7 +4,7 @@ import { StringUtils } from '@uncover/js-utils'
 
 import { Button } from '../../components/button/Button'
 import { DISPLAY_MODE } from '../../components/calendar/Calendar'
-import { ButtonStyles } from '../../constants/ButtonStyle'
+import { ButtonDesigns } from '../../constants/ButtonDesign'
 
 export interface CalendarDaysProperties {
   date: Date
@@ -129,28 +129,28 @@ export const CalendarDays = ({
         <div className='fd-calendar__navigation'>
           <div className='fd-calendar__action fd-calendar__action--arrow-left'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               icon='slim-arrow-left'
               onClick={onPrevious}
             />
           </div>
           <div className='fd-calendar__action'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               text={StringUtils.capitalize(date.toLocaleString(locale, { month: 'long' }))}
               onClick={onMonthPressed}
             />
           </div>
           <div className='fd-calendar__action'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               text={date.getFullYear()}
               onClick={onYearPressed}
             />
           </div>
           <div className='fd-calendar__action fd-calendar__action--arrow-right'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               icon='slim-arrow-right'
               onClick={onNext}
             />

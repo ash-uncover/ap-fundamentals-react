@@ -1,6 +1,6 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
-export { ButtonStyle, ButtonStyles } from './constants/ButtonStyle'
+export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
 export { LinkType, LinkTypes } from './constants/LinkType'
 export { Semantic, Semantics } from './constants/Semantic'

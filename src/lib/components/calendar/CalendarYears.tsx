@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Button } from '../../components/button/Button'
 import { DISPLAY_MODE } from '../../components/calendar/Calendar'
 
-import { ButtonStyles } from '../../constants/ButtonStyle'
+import { ButtonDesigns } from '../../constants/ButtonDesign'
 
 interface YearData {
   current: boolean
@@ -73,20 +73,20 @@ export const CalendarYears = ({
         <div className='fd-calendar__navigation'>
           <div className='fd-calendar__action fd-calendar__action--arrow-left'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               icon='slim-arrow-left'
               onClick={onPrevious}
             />
           </div>
           <div className='fd-calendar__action'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               text={years && years.length ? `${years[0][0].year} - ${years[3][4].year}` : undefined}
             />
           </div>
           <div className='fd-calendar__action fd-calendar__action--arrow-right'>
             <Button
-              style={ButtonStyles.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               icon='slim-arrow-right'
               onClick={onNext}
             />

@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 
-import { ButtonStyle } from '../../constants/ButtonStyle'
+import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 
 export interface ButtonProperties {
@@ -12,7 +12,7 @@ export interface ButtonProperties {
   ariaExpanded?: boolean
   ariaHaspopup?: boolean
 
-  design?: ButtonStyle
+  design?: ButtonDesign
   icon?: string
   iconAfter?: boolean
   text?: string | number

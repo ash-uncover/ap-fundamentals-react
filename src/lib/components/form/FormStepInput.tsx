@@ -3,7 +3,7 @@ import React, { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { UUID } from '@uncover/js-utils'
 
 import { Button } from '../../components/button/Button'
-import { ButtonStyles } from '../../constants/ButtonStyle'
+import { ButtonDesigns } from '../../constants/ButtonDesign'
 
 export interface FormStepInputProperties {
   className?: string
@@ -79,7 +79,7 @@ export const FormStepInput = ({
         <Button
           className='fd-step-input__button'
           ariaLabel='Step down'
-          style={ButtonStyles.TRANSPARENT}
+          design={ButtonDesigns.TRANSPARENT}
           tabIndex={-1}
           icon='less'
           onClick={onValueDown}
@@ -98,7 +98,7 @@ export const FormStepInput = ({
         <Button
           className='fd-step-input__button'
           ariaLabel='Step Up'
-          style={ButtonStyles.TRANSPARENT}
+          design={ButtonDesigns.TRANSPARENT}
           tabIndex={-1}
           icon='add'
           onClick={onValueUp}

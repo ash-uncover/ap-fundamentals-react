@@ -18,6 +18,7 @@ export interface MenuItem {
   disabled?: boolean
   iconBefore?: string
   iconAfter?: string
+  onItemSelected?: () => void
 }
 
 export const Menu = ({
@@ -64,7 +65,7 @@ export const Menu = ({
             <MenuItem
               {...item}
               key={item.id}
-              onItemSelected={() => onItemClicked(item.id)}
+              onItemSelected={() => item.onItemSelected ? item.onItemSelected() : onItemClicked(item.id)}
             />
           )
         })}
