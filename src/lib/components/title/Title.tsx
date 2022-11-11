@@ -4,6 +4,7 @@ import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
 
 export type TitleProperties = {
   className?: string
+  style?: any
   level?: TitleLevel
   levelVisual?: TitleLevel
   wrap?: boolean
@@ -12,6 +13,7 @@ export type TitleProperties = {
 
 export const Title = ({
   className,
+  style,
   level,
   levelVisual,
   wrap,
@@ -32,32 +34,32 @@ export const Title = ({
   switch (level) {
     case TitleLevels.H6: {
       return (
-        <h6 className={classes.join(' ')}>{text}</h6>
+        <h6 className={classes.join(' ')} style={style}>{text}</h6>
       )
     }
     case TitleLevels.H5: {
       return (
-        <h5 className={classes.join(' ')}>{text}</h5>
+        <h5 className={classes.join(' ')} style={style}>{text}</h5>
       )
     }
     case TitleLevels.H4: {
       return (
-        <h4 className={classes.join(' ')}>{text}</h4>
+        <h4 className={classes.join(' ')} style={style}>{text}</h4>
       )
     }
     case TitleLevels.H3: {
       return (
-        <h3 className={classes.join(' ')}>{text}</h3>
+        <h3 className={classes.join(' ')} style={style}>{text}</h3>
       )
     }
     case TitleLevels.H2: {
       return (
-        <h2 className={classes.join(' ')}>{text}</h2>
+        <h2 className={classes.join(' ')} style={style}>{text}</h2>
       )
     }
     default: {
       return (
-        <h1 className={classes.join(' ')}>{text}</h1>
+        <h1 className={classes.join(' ')} style={style}>{text}</h1>
       )
     }
   }

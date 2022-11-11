@@ -2,6 +2,7 @@
   border-radius: 0.5rem;
   border: 2px solid #e5e5e5;
   margin: 2rem 0;
+  overflow: hidden;
 }
 .code-panel .header {
   padding: 0.5rem;

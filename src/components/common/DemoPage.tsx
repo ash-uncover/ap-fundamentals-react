@@ -1,5 +1,5 @@
 import React, { ReactElement } from 'react'
-import { AccentColor, AccentColors, InfoLabel, Table, Title, TitleLevels } from '../../lib'
+import { AccentColor, InfoLabel, Table, Title, TitleLevels } from '../../lib'
 import { CodePanel } from '../common/CodePanel'
 
 import './DemoPage.css'
@@ -8,12 +8,16 @@ export interface DemoPageProperties {
   title: string
   labels: DemoPageLabel[]
   description: ReactElement | ReactElement[] | string
-  props: DemoPageProp[]
+  types: DemoPageType[]
   examples: DemoPageExample[]
 }
 export interface DemoPageLabel {
   text: string
   accentColor: AccentColor
+}
+export interface DemoPageType {
+  id: string
+  props: DemoPageProp[]
 }
 export interface DemoPageProp {
   id: string
@@ -22,7 +26,7 @@ export interface DemoPageProp {
 }
 export interface DemoPageExample {
   title: string
-  description: string
+  description: ReactElement | ReactElement[] | string
   result: ReactElement | ReactElement[]
   code: ReactElement | ReactElement[]
 }
@@ -30,7 +34,7 @@ export const DemoPage = ({
   title,
   labels,
   description,
-  props,
+  types,
   examples,
 }: DemoPageProperties) => {
 
@@ -44,7 +48,10 @@ export const DemoPage = ({
 
       <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
         {labels.map(label => (
-          <InfoLabel key={label.text} {...label} />
+          <InfoLabel
+            key={label.text}
+            {...label}
+          />
         ))}
       </div>
 
@@ -53,19 +60,34 @@ export const DemoPage = ({
         level={TitleLevels.H2}
       />
 
-      <p>
-        {description}
-      </p>
+      {typeof description === 'string' ?
+        <p>{description}</p>
+        :
+        <div>{description}</div>
+      }
 
-      <Table
-        columns={[
-          { key: 'id', name: 'Property', formatter: prop => <strong>{prop.id}</strong> },
-          { key: 'type', name: 'Type' },
-          { key: 'description', name: 'Description' },
-        ]}
-        compact
-        rows={props.map(prop => ({ data: prop }))}
-      />
+      {types.map((type) => {
+        return (
+          <>
+            <Title
+              text={type.id}
+              level={TitleLevels.H3}
+              style={{
+                margin: '1rem 0'
+              }}
+            />
+            <Table
+              columns={[
+                { key: 'id', name: 'Property', formatter: prop => <strong>{prop.id}</strong> },
+                { key: 'type', name: 'Type' },
+                { key: 'description', name: 'Description' },
+              ]}
+              compact
+              rows={type.props.map(prop => ({ data: prop }))}
+            />
+          </>
+        )
+      })}
 
       <Title
         text='Examples'
@@ -79,7 +101,11 @@ export const DemoPage = ({
             level={TitleLevels.H3}
           />
 
-          <p>{example.description}</p>
+          {typeof example.description === 'string' ?
+            <p>{example.description}</p>
+            :
+            <div>{example.description}</div>
+          }
 
           <CodePanel
             title=''

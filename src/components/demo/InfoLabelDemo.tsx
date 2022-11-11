@@ -11,13 +11,16 @@ const DEMO_DATA = {
     { text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Info Label is a small non-interactive numeric or text-based label. Its primary use is to add user-defined characteristic to an object. Use the Info Label base class with following modifiers:',
-  props: [
-    { id: 'icon', type: 'string', description: '(Optional) If provided, an icon will be displayed as the first element of the Info Label' },
-    { id: 'text', type: 'string', description: '(Optional) If provided, a text will be displayed in the Info Label' },
-    { id: 'display', type: 'boolean', description: '(Optional) Apply the default styling to the Info Label' },
-    { id: 'numeric', type: 'boolean', description: '(Optional) Subbtle style modification to enhance display in case of numeric information' },
-    { id: 'accentColor', type: 'AccentColor', description: '(Optional) Apply semantic color to Info Label' },
-  ],
+  types: [{
+    id: 'InfoLabel',
+    props: [
+      { id: 'icon', type: 'string', description: '(Optional) If provided, an icon will be displayed as the first element of the Info Label' },
+      { id: 'text', type: 'string', description: '(Optional) If provided, a text will be displayed in the Info Label' },
+      { id: 'display', type: 'boolean', description: '(Optional) Apply the default styling to the Info Label' },
+      { id: 'numeric', type: 'boolean', description: '(Optional) Subbtle style modification to enhance display in case of numeric information' },
+      { id: 'accentColor', type: 'AccentColor', description: '(Optional) Apply semantic color to Info Label' },
+    ],
+  }],
   examples: [{
     title: 'Color Flavors',
     description: 'Use the fd-info-label--accent-color-* modifier class to apply semantic color to Info Label. Options include numbers from 1 to 10.',

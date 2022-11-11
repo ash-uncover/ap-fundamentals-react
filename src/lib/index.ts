@@ -35,6 +35,8 @@ export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'
 export { InfoLabel } from './components/infolabel/InfoLabel'
 // link
 export { Link } from './components/link/Link'
+// menu
+export { Menu } from './components/menu/Menu'
 // object
 export { ObjectAttribute } from './components/object/ObjectAttribute'
 export { ObjectHeaderAttribute } from './components/object/ObjectHeaderAttribute'
@@ -51,6 +53,8 @@ export { PageBody } from './components/page/PageBody'
 export { PageFooter } from './components/page/PageFooter'
 // panel
 export { Panel } from './components/panel/Panel'
+// popover
+export { Popover } from './components/popover/Popover'
 // select
 export { Select } from './components/select/Select'
 export { SelectItem } from './components/select/SelectItem'
