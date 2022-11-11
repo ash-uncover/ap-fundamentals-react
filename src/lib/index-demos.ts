@@ -8,6 +8,7 @@ import { CalendarDemo } from '../components/demo/CalendarDemo'
 import { CardDemo } from '../components/demo/CardDemo'
 import { DialogDemo } from '../components/demo/DialogDemo'
 import { FormDemo } from '../components/demo/FormDemo'
+import { IconDemo } from '../components/demo/IconDemo'
 import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
 import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
 import { LinkDemo } from '../components/demo/LinkDemo'
@@ -64,6 +65,11 @@ export const COMPONENT = {
     id: 'form',
     text: 'Form',
     demo: FormDemo
+  },
+  ICON: {
+    id: 'icon',
+    text: 'Icon',
+    demo: IconDemo
   },
   ICON_TAB_BAR: {
     id: 'icontabbar',
