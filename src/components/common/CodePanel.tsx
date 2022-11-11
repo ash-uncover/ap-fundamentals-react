@@ -31,7 +31,9 @@ export const CodePanel = ({
         {title}
       </div>
       <div className='rendering'>
-        {result}
+        <div>
+          {result}
+        </div>
         <button className='button-show' onClick={onShowCode}>
           {showCode ? 'Hide Code' : 'Show Code'}
         </button>

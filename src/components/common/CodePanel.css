@@ -2,7 +2,6 @@
   border-radius: 0.5rem;
   border: 2px solid #e5e5e5;
   margin: 2rem 0;
-  overflow: hidden;
 }
 .code-panel .header {
   padding: 0.5rem;
@@ -29,6 +28,8 @@
   background-color: #262626;
   color: white;
   font-size: 12px;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   font-family: ui-monospace, Menlo, Monaco, 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Droid Sans Mono', 'Courier New', monospace;
 }

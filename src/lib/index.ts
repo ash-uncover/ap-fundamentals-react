@@ -28,6 +28,8 @@ export { DialogFooter } from './components/dialog/DialogFooter'
 // from
 export { FormInput } from './components/form/FormInput'
 export { FormStepInput } from './components/form/FormStepInput'
+// icon
+export { Icon } from './components/icon/Icon'
 // icontabbar
 export { IconTabBar } from './components/icontabbar/IconTabBar'
 export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'

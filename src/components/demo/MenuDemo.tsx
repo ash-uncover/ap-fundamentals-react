@@ -6,8 +6,8 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Menu',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_5 },
+    { text: 'version 0.0.5', accentColor: AccentColors.COLOR_8 },
+    { text: 'reviewed 0.0.5', accentColor: AccentColors.COLOR_6 },
     { text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: (

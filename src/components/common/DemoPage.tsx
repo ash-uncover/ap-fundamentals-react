@@ -1,4 +1,5 @@
 import React, { ReactElement } from 'react'
+import ReactDOMServer from 'react-dom/server';
 import { AccentColor, InfoLabel, Table, Title, TitleLevels } from '../../lib'
 import { CodePanel } from '../common/CodePanel'
 
@@ -27,7 +28,7 @@ export interface DemoPageProp {
 export interface DemoPageExample {
   title: string
   description: ReactElement | ReactElement[] | string
-  result: ReactElement | ReactElement[]
+  result: ReactElement
   code: ReactElement | ReactElement[]
 }
 export const DemoPage = ({
@@ -39,7 +40,7 @@ export const DemoPage = ({
 }: DemoPageProperties) => {
 
   // Rendering //
-
+  
   return (
     <div className='demo-page'>
       <Title

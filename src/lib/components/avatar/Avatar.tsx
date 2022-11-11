@@ -3,8 +3,14 @@ import React, { CSSProperties } from 'react'
 import { AccentColor } from '../../constants/AccentColor'
 import { Size, Sizes } from '../../constants/Size'
 
+import { Icon } from '../icon/Icon'
+
 export interface AvatarProperties {
-  label: string
+  ariaLabel: string
+  ariaControls?: string
+  ariaExpanded?: boolean
+  ariaHaspopup?: boolean
+
   icon?: string
   initials?: string
   size?: Size
@@ -14,10 +20,16 @@ export interface AvatarProperties {
   bordered?: boolean
   transparent?: boolean
   circle?: boolean
+
+  onClick?: () => void
 }
 
 export const Avatar = ({
-  label,
+  ariaLabel,
+  ariaControls,
+  ariaExpanded,
+  ariaHaspopup,
+
   icon,
   initials,
   size = Sizes.MEDIUM,
@@ -27,6 +39,8 @@ export const Avatar = ({
   bordered,
   transparent,
   circle,
+
+  onClick,
 }: AvatarProperties) => {
 
   // Check
@@ -56,16 +70,15 @@ export const Avatar = ({
   return (
     <span
       className={classes.join(' ')}
-      aria-label={label}
+      aria-label={ariaLabel}
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
+      aria-haspopup={ariaHaspopup}
       style={style}
+      role={onClick ? 'button' : undefined}
+      onClick={onClick}
     >
-      {icon ?
-        <i
-          className={`fd-avatar__icon sap-icon--${icon}`}
-          role='presentation'
-        ></i>
-        : null}
-      {icon ? null : initials}
+      {icon ? <Icon className='fd-avatar__icon' icon={icon} /> : initials}
     </span>
   )
 }
