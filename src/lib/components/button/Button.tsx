@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
-import { ButtonStyle } from '../../constants/ButtonStyle'
+import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 
 export interface ButtonProperties {
   className?: string
+  style?: any
+
   ariaLabel?: string
-  style?: ButtonStyle
+  ariaControls?: string
+  ariaExpanded?: boolean
+  ariaHaspopup?: boolean
+
+  design?: ButtonDesign
   icon?: string
   iconAfter?: boolean
   text?: string | number
@@ -17,13 +23,20 @@ export interface ButtonProperties {
   compact?: boolean
   tabIndex?: number
   type?: ButtonType
+
   onClick?: () => void
 }
 
 export const Button = ({
   className,
-  ariaLabel,
   style,
+
+  ariaLabel,
+  ariaControls,
+  ariaExpanded,
+  ariaHaspopup,
+
+  design,
   icon,
   iconAfter,
   text,
@@ -34,6 +47,7 @@ export const Button = ({
   compact,
   tabIndex,
   type = ButtonTypes.BUTTON,
+
   onClick,
 }: ButtonProperties) => {
 
@@ -51,8 +65,8 @@ export const Button = ({
   if (className) {
     classes.push(className)
   }
-  if (style) {
-    classes.push(`fd-button--${style}`)
+  if (design) {
+    classes.push(`fd-button--${design}`)
   }
   if (selected) {
     classes.push('is-selected')
@@ -67,7 +81,11 @@ export const Button = ({
   return (
     <button
       className={classes.join(' ')}
+      style={style}
       aria-label={ariaLabel}
+      aria-controls={ariaControls}
+      aria-expanded={ariaExpanded}
+      aria-haspopup={ariaHaspopup}
       onClick={onClicked}
       tabIndex={tabIndex ? tabIndex : 0}
       type={type}
@@ -97,6 +115,7 @@ export const Button = ({
           {badge}
         </span>
         : null}
+
     </button>
   )
 }

@@ -11,7 +11,7 @@ const DEMO_DATA = {
     { text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'A table contains a set of line items and usually comprises rows (with each row showing one line item) and columns. Line items can contain data of any kind, but also interactive elements, for example, for editing the data, navigating, or triggering actions relating to the line item.',
-  props: [],
+  types: [],
   examples: [{
     title: 'Primary',
     description: 'The primary table contains columns with headers, and rows with links. In the first column, links are displayed. To display links within a table, add the fd-link class within the table data.',

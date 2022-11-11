@@ -8,12 +8,15 @@ import { CalendarDemo } from '../components/demo/CalendarDemo'
 import { CardDemo } from '../components/demo/CardDemo'
 import { DialogDemo } from '../components/demo/DialogDemo'
 import { FormDemo } from '../components/demo/FormDemo'
+import { IconDemo } from '../components/demo/IconDemo'
 import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
 import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
 import { LinkDemo } from '../components/demo/LinkDemo'
+import { MenuDemo } from '../components/demo/MenuDemo'
 import { ObjectDemo } from '../components/demo/ObjectDemo'
 import { PageDemo } from '../components/demo/PageDemo'
 import { PanelDemo } from '../components/demo/PanelDemo'
+import { PopoverDemo } from '../components/demo/PopoverDemo'
 import { SelectDemo } from '../components/demo/SelectDemo'
 import { ShellBarDemo } from '../components/demo/ShellBarDemo'
 import { TableDemo } from '../components/demo/TableDemo'
@@ -63,6 +66,11 @@ export const COMPONENT = {
     text: 'Form',
     demo: FormDemo
   },
+  ICON: {
+    id: 'icon',
+    text: 'Icon',
+    demo: IconDemo
+  },
   ICON_TAB_BAR: {
     id: 'icontabbar',
     text: 'IconTabBar',
@@ -78,6 +86,11 @@ export const COMPONENT = {
     text: 'Link',
     demo: LinkDemo
   },
+  MENU: {
+    id: 'menu',
+    text: 'Menu',
+    demo: MenuDemo
+  },
   OBJECT: {
     id: 'object',
     text: 'Object',
@@ -92,6 +105,11 @@ export const COMPONENT = {
     id: 'panel',
     text: 'Panel',
     demo: PanelDemo
+  },
+  POPOVER: {
+    id: 'popover',
+    text: 'Popover',
+    demo: PopoverDemo
   },
   SELECT: {
     id: 'select',

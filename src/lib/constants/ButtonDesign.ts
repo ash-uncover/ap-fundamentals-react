@@ -1,4 +1,4 @@
-export type ButtonStyle =
+export type ButtonDesign =
   'emphasized' |
   'ghost' |
   'positive' |
@@ -6,13 +6,13 @@ export type ButtonStyle =
   'attention' |
   'transparent'
 
-export const ButtonStyles: {
-  EMPHASIZED: ButtonStyle,
-  GHOST: ButtonStyle,
-  POSITIVE: ButtonStyle,
-  NEGATIVE: ButtonStyle,
-  ATTENTION: ButtonStyle,
-  TRANSPARENT: ButtonStyle,
+export const ButtonDesigns: {
+  EMPHASIZED: ButtonDesign,
+  GHOST: ButtonDesign,
+  POSITIVE: ButtonDesign,
+  NEGATIVE: ButtonDesign,
+  ATTENTION: ButtonDesign,
+  TRANSPARENT: ButtonDesign,
 } = {
   EMPHASIZED: 'emphasized',
   GHOST: 'ghost',

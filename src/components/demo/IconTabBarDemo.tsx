@@ -11,11 +11,14 @@ const DEMO_DATA = {
     { text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Info Label is a small non-interactive numeric or text-based label. Its primary use is to add user-defined characteristic to an object.',
-  props: [
-    { id: 'selectedTab', type: 'boolean', description: 'The identifier of the currently selected tab' },
-    { id: 'tabs', type: 'IconTabBarItemProperties[]', description: 'List of tabs to display' },
-    { id: 'onTabSelect', type: 'Callback (string) => void', description: 'Event called when a tab is selected' },
-  ],
+  types: [{
+    id: 'InfoTabBar',
+    props: [
+      { id: 'selectedTab', type: 'boolean', description: 'The identifier of the currently selected tab' },
+      { id: 'tabs', type: 'IconTabBarItemProperties[]', description: 'List of tabs to display' },
+      { id: 'onTabSelect', type: 'Callback (string) => void', description: 'Event called when a tab is selected' },
+    ],
+  }],
   examples: [{
     title: 'Text Only (Inline mode)',
     description: 'The text-only variant is one of the most common types. It allows longer labels, and can also display counters next to the text to indicate the number of items on the tab page. The labels of the tabs do not get truncated. The full text is always shown. As a result, you need to ensure that your labels do not become too long. They should still be easy to read on smaller screens. The control has the same look and feel in Cozy and Compact mode.',

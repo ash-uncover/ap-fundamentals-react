@@ -1,6 +1,6 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
-export { ButtonStyle, ButtonStyles } from './constants/ButtonStyle'
+export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
 export { LinkType, LinkTypes } from './constants/LinkType'
 export { Semantic, Semantics } from './constants/Semantic'
@@ -28,6 +28,8 @@ export { DialogFooter } from './components/dialog/DialogFooter'
 // from
 export { FormInput } from './components/form/FormInput'
 export { FormStepInput } from './components/form/FormStepInput'
+// icon
+export { Icon } from './components/icon/Icon'
 // icontabbar
 export { IconTabBar } from './components/icontabbar/IconTabBar'
 export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'
@@ -35,6 +37,8 @@ export { IconTabBarItem } from './components/icontabbar/IconTabBarItem'
 export { InfoLabel } from './components/infolabel/InfoLabel'
 // link
 export { Link } from './components/link/Link'
+// menu
+export { Menu } from './components/menu/Menu'
 // object
 export { ObjectAttribute } from './components/object/ObjectAttribute'
 export { ObjectHeaderAttribute } from './components/object/ObjectHeaderAttribute'
@@ -51,6 +55,8 @@ export { PageBody } from './components/page/PageBody'
 export { PageFooter } from './components/page/PageFooter'
 // panel
 export { Panel } from './components/panel/Panel'
+// popover
+export { Popover } from './components/popover/Popover'
 // select
 export { Select } from './components/select/Select'
 export { SelectItem } from './components/select/SelectItem'

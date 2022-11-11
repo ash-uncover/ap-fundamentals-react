@@ -2,10 +2,6 @@ import React, { useEffect, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import {
-  Button,
-  ButtonStyles
-} from '../../index'
 export interface SelectProperties {
   children: any
 }
