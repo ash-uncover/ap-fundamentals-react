@@ -3,6 +3,7 @@ import React from 'react'
 import { AvatarDemo } from '../components/demo/AvatarDemo'
 import { BadgeDemo } from '../components/demo/BadgeDemo'
 import { BarDemo } from '../components/demo/BarDemo'
+import { BreadcrumbDemo } from '../components/demo/BreadcrumbDemo'
 import { ButtonDemo } from '../components/demo/ButtonDemo'
 import { CalendarDemo } from '../components/demo/CalendarDemo'
 import { CardDemo } from '../components/demo/CardDemo'
@@ -40,6 +41,11 @@ export const COMPONENT = {
     id: 'bar',
     text: 'Bar',
     demo: BarDemo
+  },
+  BREADCRUMB: {
+    id: 'breadcrumb',
+    text: 'Breadcrumb',
+    demo: BreadcrumbDemo
   },
   BUTTON: {
     id: 'button',

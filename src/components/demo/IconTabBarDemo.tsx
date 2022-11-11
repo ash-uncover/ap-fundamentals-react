@@ -1,5 +1,6 @@
-import { AccentColors, IconTabBar } from 'lib'
 import React from 'react'
+
+import { AccentColors, IconTabBar } from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
 

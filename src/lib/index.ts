@@ -13,6 +13,8 @@ export { Avatar } from './components/avatar/Avatar'
 export { Badge } from './components/badge/Badge'
 // bar
 export { Bar } from './components/bar/Bar'
+// breadcrumb
+export { Breadcrumb } from './components/breadcrumb/Breadcrumb'
 // button
 export { Button } from './components/button/Button'
 // calendar
