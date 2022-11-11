@@ -41,16 +41,18 @@ export const Icon = ({
   }
 
   if (preferSpan) {
+    return (
     <span
-      className={classes.join(' ')}
-      style={style}
-      aria-label={ariaLabel}
-      aria-controls={ariaControls}
-      aria-expanded={ariaExpanded}
-      aria-haspopup={ariaHaspopup}
-      role={onClick ? 'button' : 'presentation'}
-      onClick={onClick}
-    />
+        className={classes.join(' ')}
+        style={style}
+        aria-label={ariaLabel}
+        aria-controls={ariaControls}
+        aria-expanded={ariaExpanded}
+        aria-haspopup={ariaHaspopup}
+        role={onClick ? 'button' : 'presentation'}
+        onClick={onClick}
+      />
+    )
   }
   return (
     <i
