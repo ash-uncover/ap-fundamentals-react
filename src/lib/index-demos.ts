@@ -4,6 +4,7 @@ import { AvatarDemo } from '../components/demo/AvatarDemo'
 import { BadgeDemo } from '../components/demo/BadgeDemo'
 import { BarDemo } from '../components/demo/BarDemo'
 import { BreadcrumbDemo } from '../components/demo/BreadcrumbDemo'
+import { BusyIndicatorDemo } from '../components/demo/BusyIndicatorDemo'
 import { ButtonDemo } from '../components/demo/ButtonDemo'
 import { CalendarDemo } from '../components/demo/CalendarDemo'
 import { CardDemo } from '../components/demo/CardDemo'
@@ -46,6 +47,11 @@ export const COMPONENT = {
     id: 'breadcrumb',
     text: 'Breadcrumb',
     demo: BreadcrumbDemo
+  },
+  BUSY_INDICATOR: {
+    id: 'busyindicator',
+    text: 'Busy Indicator',
+    demo: BusyIndicatorDemo
   },
   BUTTON: {
     id: 'button',

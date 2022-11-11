@@ -1,5 +1,6 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
+export { BusyIndicatorSize, BusyIndicatorSizes } from './constants/BusyIndicatorSize'
 export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
 export { LinkType, LinkTypes } from './constants/LinkType'
@@ -15,6 +16,8 @@ export { Badge } from './components/badge/Badge'
 export { Bar } from './components/bar/Bar'
 // breadcrumb
 export { Breadcrumb } from './components/breadcrumb/Breadcrumb'
+// busyindicator
+export { BusyIndicator } from './components/busyindicator/BusyIndicator'
 // button
 export { Button } from './components/button/Button'
 // calendar
