@@ -42,7 +42,6 @@ const DEMO_DATA = {
           { text: 'Super portable deluxe' },
           { text: 'Laptop' },
         ]}
-        onItemSelected={() => { }}
       />
     ),
     code: (

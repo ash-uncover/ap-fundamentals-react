@@ -9,7 +9,7 @@ export interface BreadcrumbProperties {
 
   items: BreadcrumbItem[]
 
-  onItemSelected: (id: string) => void
+  onItemSelected?: (id: string) => void
 }
 
 interface BreadcrumbItem {
@@ -28,6 +28,17 @@ export const Breadcrumb = ({
 
   onItemSelected,
 }: BreadcrumbProperties) => {
+
+  // Events //
+
+  const onItemClicked = (item: BreadcrumbItem) => {
+    if (item.onItemSelected) {
+      item.onItemSelected()
+    } else if (onItemSelected)  {
+      onItemSelected(item.text)
+    }
+    return false
+  }
 
   // Rendering //
 
@@ -49,7 +60,7 @@ export const Breadcrumb = ({
               key={index}
               text={item.text}
               current={index === items.length - 1}
-              onItemSelected={item.onItemSelected ? item.onItemSelected : () => onItemSelected(item.text)}
+              onItemSelected={() => onItemClicked(item)}
             />
           )
         })}
