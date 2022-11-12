@@ -6,16 +6,16 @@ import {
 } from 'react-router-dom'
 
 import RouteRoot from './index'
-import RouteDemos from './demo'
-import RouteDemo from './demo/#id'
+import RouteComponents from './components'
+import RouteComponent from './components/#id'
 
 
 const Root = () => {
   return (
     <Routes>
       <Route path='*' element={<RouteRoot />}>
-        <Route path='demo' element={<RouteDemos />}>
-          <Route path=':demoId' element={<RouteDemo />} />
+        <Route path='components' element={<RouteComponents />}>
+          <Route path=':componentId' element={<RouteComponent />} />
         </Route>
       </Route>
     </Routes>
