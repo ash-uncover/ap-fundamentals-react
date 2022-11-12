@@ -63,9 +63,9 @@ export const DemoPage = ({
       />
 
       <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
-        {labels.map(label => (
+        {labels.map((label, index) => (
           <InfoLabel
-            key={label.text}
+            key={`label-${index}`}
             {...label}
           />
         ))}
@@ -78,9 +78,9 @@ export const DemoPage = ({
 
       {renderDescription(description)}
 
-      {types.map((type) => {
+      {types.map((type, index) => {
         return (
-          <>
+          <div key={`type-${index}`}>
             <Title
               text={type.id}
               level={TitleLevels.H3}
@@ -97,7 +97,7 @@ export const DemoPage = ({
               compact
               rows={type.props.map(prop => ({ data: prop }))}
             />
-          </>
+          </div>
         )
       })}
 
@@ -106,8 +106,8 @@ export const DemoPage = ({
         level={TitleLevels.H2}
       />
 
-      {examples.map(example => (
-        <>
+      {examples.map((example, index) => (
+        <div key={`example-${index}`}>
           <Title
             text={example.title}
             level={TitleLevels.H3}
@@ -120,7 +120,7 @@ export const DemoPage = ({
             result={example.result}
             code={example.code}
           />
-        </>
+        </div>
       ))}
     </div>
   )
