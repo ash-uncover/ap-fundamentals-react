@@ -1,28 +1,35 @@
 import React, { ReactElement } from 'react'
+
 import { BarElement } from './BarElement'
 import { BarLeft } from './BarLeft'
 import { BarMiddle } from './BarMiddle'
 import { BarRight } from './BarRight'
 
+import { BarType } from 'constants/BarType'
+
 export interface BarProperties {
   className?: string
   style?: React.CSSProperties
 
+  cozy?: boolean
   left?: ReactElement | ReactElement[]
   middle?: ReactElement | ReactElement[]
+  responsivePaddings?: boolean
   right?: ReactElement | ReactElement[]
+  type?: BarType
 }
 
 export const Bar = ({
   className,
   style,
 
+  cozy,
   left,
   middle,
+  responsivePaddings,
   right,
+  type,
 }: BarProperties) => {
-
-  // Hooks //
 
   // Rendering //
 
@@ -44,6 +51,15 @@ export const Bar = ({
   const classes = ['fd-bar']
   if (className) {
     classes.push(className)
+  }
+  if (cozy) {
+    classes.push('fd-bar--cozy')
+  }
+  if (responsivePaddings) {
+    classes.push('fd-bar--responsive-paddings')
+  }
+  if (type) {
+    classes.push(`fd-bar--${type}`)
   }
 
   return (

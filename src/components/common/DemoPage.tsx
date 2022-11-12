@@ -7,7 +7,7 @@ import './DemoPage.css'
 export interface DemoPageProperties {
   title: string
   labels: DemoPageLabel[]
-  description: ReactElement | ReactElement[] | string
+  description: DemoDescription
   types: DemoPageType[]
   examples: DemoPageExample[]
 }
@@ -26,10 +26,12 @@ export interface DemoPageProp {
 }
 export interface DemoPageExample {
   title: string
-  description: ReactElement | ReactElement[] | string
+  description?: DemoDescription
   result: ReactElement
   code: ReactElement | ReactElement[]
 }
+export type DemoDescription = ReactElement | ReactElement[] | string | undefined
+
 export const DemoPage = ({
   title,
   labels,
@@ -39,6 +41,20 @@ export const DemoPage = ({
 }: DemoPageProperties) => {
 
   // Rendering //
+
+  const renderDescription = (description: DemoDescription) => {
+    if (description) {
+      if (typeof description === 'string') {
+        return (
+          <p>{description}</p>
+        )
+      }
+      return (
+        <div>{description}</div>
+      )
+    }
+    return null
+  }
 
   return (
     <div className='demo-page'>
@@ -60,11 +76,7 @@ export const DemoPage = ({
         level={TitleLevels.H2}
       />
 
-      {typeof description === 'string' ?
-        <p>{description}</p>
-        :
-        <div>{description}</div>
-      }
+      {renderDescription(description)}
 
       {types.map((type) => {
         return (
@@ -101,11 +113,7 @@ export const DemoPage = ({
             level={TitleLevels.H3}
           />
 
-          {typeof example.description === 'string' ?
-            <p>{example.description}</p>
-            :
-            <div>{example.description}</div>
-          }
+          {renderDescription(example.description)}
 
           <CodePanel
             title=''

@@ -1,5 +1,6 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
+export { BarType, BarTypes } from './constants/BarType'
 export { BusyIndicatorSize, BusyIndicatorSizes } from './constants/BusyIndicatorSize'
 export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
@@ -24,6 +25,7 @@ export { Breadcrumb } from './components/breadcrumb/Breadcrumb'
 export { BusyIndicator } from './components/busyindicator/BusyIndicator'
 // button
 export { Button } from './components/button/Button'
+export { SegmentedButton } from './components/button/SegmentedButton'
 // calendar
 export { Calendar } from './components/calendar/Calendar'
 // card
