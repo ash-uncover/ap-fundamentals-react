@@ -1,4 +1,4 @@
-import React, { CSSProperties } from 'react'
+import React from 'react'
 
 import { AccentColor } from '../../constants/AccentColor'
 import { Size, Sizes } from '../../constants/Size'
@@ -6,6 +6,9 @@ import { Size, Sizes } from '../../constants/Size'
 import { Icon } from '../icon/Icon'
 
 export interface AvatarProperties {
+  className?: string
+  style?: React.CSSProperties
+
   ariaLabel: string
   ariaControls?: string
   ariaExpanded?: boolean
@@ -14,7 +17,6 @@ export interface AvatarProperties {
   icon?: string
   initials?: string
   size?: Size
-  style?: CSSProperties
   accentColor?: AccentColor
   shell?: boolean
   bordered?: boolean
@@ -25,20 +27,22 @@ export interface AvatarProperties {
 }
 
 export const Avatar = ({
+  className,
+  style,
+
   ariaLabel,
   ariaControls,
   ariaExpanded,
   ariaHaspopup,
 
+  accentColor,
+  bordered,
+  circle,
   icon,
   initials,
-  size = Sizes.MEDIUM,
-  style,
-  accentColor,
   shell,
-  bordered,
+  size = Sizes.MEDIUM,
   transparent,
-  circle,
 
   onClick,
 }: AvatarProperties) => {
@@ -48,6 +52,9 @@ export const Avatar = ({
   // Rendering //
 
   const classes = ['fd-avatar']
+  if (className) {
+    classes.push(className)
+  }
   if (size) {
     classes.push(`fd-avatar--${size}`)
   }

@@ -2,22 +2,29 @@ import React from 'react'
 
 export interface PageFooterProperties {
   className?: string
+  style?: React.CSSProperties
+
   children?: any
 }
 export const PageFooter = ({
   className,
-  children
+  style,
+
+  children,
 }: PageFooterProperties) => {
 
   // Rendering //
 
-  const classes = ['fd-page__footer']
+  const classes = ['ap-fd-page__footer']
   if (className) {
     classes.push(className)
   }
 
   return (
-    <div className={classes.join(' ')}>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       {children}
     </div>
   )
