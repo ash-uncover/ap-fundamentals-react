@@ -3,16 +3,16 @@ import { useParams } from 'react-router-dom'
 
 import { COMPONENTS } from '../../../lib/index-demos'
 
-export const RouteDemo = () => {
+export const RouteComponent = () => {
 
   // Hooks //
 
   const params = useParams()
-  const demoId = params.demoId
+  const componentId = params.componentId
 
   // Rendering //
 
-  const component = COMPONENTS.find(compo => compo.id === demoId)
+  const component = COMPONENTS.find(compo => compo.id === componentId)
   if (component) {
     return <component.demo />
   }
@@ -23,4 +23,4 @@ export const RouteDemo = () => {
   )
 }
 
-export default RouteDemo
+export default RouteComponent

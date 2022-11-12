@@ -14,7 +14,7 @@ export const AppSidePanel = () => {
 
   const onComponentClicked = (component: string) => {
     if (component !== 'components') {
-      navigate(`/demo/${component}`)
+      navigate(`/components/${component}`)
     }
   }
 

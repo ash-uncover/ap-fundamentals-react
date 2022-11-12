@@ -1,5 +1,6 @@
-import { AccentColors, IconTabBar } from 'lib'
 import React from 'react'
+
+import { AccentColors, IconTabBar } from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
 
@@ -20,7 +21,7 @@ const DEMO_DATA = {
     ],
   }],
   examples: [{
-    title: 'Text Only (Inline mode)',
+    title: 'Primary',
     description: 'The text-only variant is one of the most common types. It allows longer labels, and can also display counters next to the text to indicate the number of items on the tab page. The labels of the tabs do not get truncated. The full text is always shown. As a result, you need to ensure that your labels do not become too long. They should still be easy to read on smaller screens. The control has the same look and feel in Cozy and Compact mode.',
     result: (
       <IconTabBar

@@ -1,27 +1,27 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 
 export interface ButtonProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
 
   ariaLabel?: string
   ariaControls?: string
   ariaExpanded?: boolean
   ariaHaspopup?: boolean
 
+  badge?: string
+  compact?: boolean
   design?: ButtonDesign
+  disabled?: boolean
   icon?: string
   iconAfter?: boolean
-  text?: string | number
-  badge?: string
-  selected?: boolean
   menu?: boolean
-  disabled?: boolean
-  compact?: boolean
+  selected?: boolean
   tabIndex?: number
+  text?: string | number
   type?: ButtonType
 
   onClick?: () => void
@@ -36,16 +36,16 @@ export const Button = ({
   ariaExpanded,
   ariaHaspopup,
 
+  badge,
+  compact,
   design,
+  disabled,
   icon,
   iconAfter,
-  text,
-  badge,
-  selected,
   menu,
-  disabled,
-  compact,
+  selected,
   tabIndex,
+  text,
   type = ButtonTypes.BUTTON,
 
   onClick,

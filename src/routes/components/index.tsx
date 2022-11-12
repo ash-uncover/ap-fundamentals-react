@@ -1,7 +1,7 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 
-export const RouteDemos = () => {
+export const RouteComponents = () => {
 
   // Rendering //
 
@@ -10,4 +10,4 @@ export const RouteDemos = () => {
   )
 }
 
-export default RouteDemos
+export default RouteComponents
