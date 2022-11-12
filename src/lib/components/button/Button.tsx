@@ -1,10 +1,7 @@
 import React from 'react'
 
-import {
-  ButtonDesign,
-  ButtonType,
-  ButtonTypes,
-} from '../../../lib'
+import { ButtonDesign } from '../../constants/ButtonDesign'
+import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 
 export interface ButtonProperties {
   className?: string
