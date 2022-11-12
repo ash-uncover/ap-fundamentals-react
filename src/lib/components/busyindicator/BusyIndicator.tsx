@@ -8,7 +8,10 @@ export interface BusyIndicatorProperties {
 
   ariaLabel?: string
 
+  contrast?: boolean
+  label?: string
   size?: BusyIndicatorSize
+  toast?: boolean
 }
 
 export const BusyIndicator = ({
@@ -17,10 +20,15 @@ export const BusyIndicator = ({
 
   ariaLabel,
 
+  contrast,
+  label,
   size,
+  toast,
 }: BusyIndicatorProperties) => {
 
   // Rendering //
+
+  const extended = label || toast
 
   const classes = ['fd-busy-indicator']
   if (size) {
@@ -29,8 +37,11 @@ export const BusyIndicator = ({
   if (className) {
     classes.push(className)
   }
+  if (contrast) {
+    classes.push('fd-busy-indicator--contrast')
+  }
 
-  return (
+  const JSX = (
     <div
       className={classes.join(' ')}
       style={style}
@@ -42,4 +53,26 @@ export const BusyIndicator = ({
       <div className='fd-busy-indicator__circle' />
     </div>
   )
+
+  if (extended) {
+    const classesExtended = ['fd-busy-indicator-extended']
+    if (toast) {
+      classesExtended.push('fd-message-toast')
+      if (label) {
+        classesExtended.push('fd-busy-indicator-extended--message-toast')
+      }
+    }
+    return (
+      <div className={classesExtended.join(' ')}>
+        {JSX}
+        {label ?
+          <div className='fd-busy-indicator-extended__label'>
+            {label}
+          </div>
+          : null}
+      </div>
+    )
+  }
+
+  return JSX
 }

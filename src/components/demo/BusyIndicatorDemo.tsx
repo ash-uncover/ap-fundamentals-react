@@ -32,6 +32,8 @@ const DEMO_DATA = {
     props: [
       { id: 'ariaLabel', type: 'string', description: '(Optional) The aria label provided for this busy indicator (defaults to "Loading")' },
       { id: 'size', type: 'BusyIndicatorSize', description: '(Optional) The size of the busy indicator (defaults to SMALL)' },
+      { id: 'contrast', type: 'boolean', description: '(Optional) Sets the busy indicator to contrst mode for display on darker backgrounds' },
+      { id: 'label', type: 'string', description: '(Optional) Disaplys an additional text information below the indicator' },
     ],
   }],
   examples: [{
@@ -50,15 +52,107 @@ const DEMO_DATA = {
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
-        <div>{`<BusyIndicator`}</div>
-        <div>{`  size={BusyIndicatorSizes.LARGE}`}</div>
-        <div>{`/>`}</div>
-        <br/>
-        <div>{`<BusyIndicator`}</div>
-        <div>{`  size={BusyIndicatorSizes.MEDIUM}`}</div>
-        <div>{`/>`}</div>
-        <br/>
-        <div>{`<BusyIndicator />`}</div>
+        <div>{`<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    size={BusyIndicatorSizes.LARGE}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    size={BusyIndicatorSizes.MEDIUM}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`  <BusyIndicator />`}</div>
+        <br />
+        <div>{`</div>>`}</div>
+      </div>
+    )
+  }, {
+    title: 'Contrast Mode',
+    description: 'The busy indicator also comes in contrast mode and displays white dots against a dark background. To apply contrast mode, add contrast into the element i.e. fd-busy-indicator--m contrast.',
+    result: (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', background: 'cadetblue', padding: '2rem' }}>
+        <BusyIndicator
+          contrast
+          size={BusyIndicatorSizes.LARGE}
+        />
+        <BusyIndicator
+          contrast
+          size={BusyIndicatorSizes.MEDIUM}
+        />
+        <BusyIndicator
+          contrast
+        />
+      </div>
+    ),
+    code: (
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', background: 'cadetblue', padding: '2rem' }}>`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    contrast`}</div>
+        <div>{`    size={BusyIndicatorSizes.LARGE}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    contrast`}</div>
+        <div>{`    size={BusyIndicatorSizes.MEDIUM}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    contrast`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`</div>>`}</div>
+      </div>
+    )
+  }, {
+    title: 'Extended Busy Indicator',
+    description: 'If more information needs to be displayed with the loading animation, it is replaced by the Extended Busy Indicator fd-busy-indicator-extended. The additional information is wrapped in an element with fd-busy-indicator-extended__label class.',
+    result: (
+      <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+        <BusyIndicator
+          label='Loading data...'
+          size={BusyIndicatorSizes.LARGE}
+        />
+      </div>
+    ),
+    code: (
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    label='Loading data...'`}</div>
+        <div>{`    size={BusyIndicatorSizes.LARGE}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <br />
+        <div>{`</div>>`}</div>
+      </div>
+    )
+  }, {
+    title: 'Extended Busy Indicator Inside Message Toast',
+    description: 'At the Page level the Busy Indicator should always be placed in a container. The simplest form of container will be centred on the page and inherit the color values from Message Toast.',
+    result: (
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+        <BusyIndicator
+          toast
+          label='Loading data...'
+          size={BusyIndicatorSizes.LARGE}
+        />
+      </div>
+    ),
+    code: (
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', alignItems: 'center' }}>`}</div>
+        <br />
+        <div>{`  <BusyIndicator`}</div>
+        <div>{`    toast`}</div>
+        <div>{`    label='Loading data...'`}</div>
+        <div>{`    size={BusyIndicatorSizes.LARGE}`}</div>
+        <div>{`  />`}</div>
+        <br />
+        <div>{`</div>>`}</div>
       </div>
     )
   }]
