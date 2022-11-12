@@ -42,15 +42,15 @@ export const DemoPage = ({
 
   // Rendering //
 
-  const renderDescription = (description: DemoDescription) => {
-    if (description) {
-      if (typeof description === 'string') {
+  const renderDescription = (desc: DemoDescription) => {
+    if (desc) {
+      if (typeof desc === 'string') {
         return (
-          <p>{description}</p>
+          <p>{desc}</p>
         )
       }
       return (
-        <div>{description}</div>
+        <div>{desc}</div>
       )
     }
     return null
