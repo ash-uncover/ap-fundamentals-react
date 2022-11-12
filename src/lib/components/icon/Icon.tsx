@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface IconProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
 
   ariaLabel?: string
   ariaControls?: string

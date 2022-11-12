@@ -3,7 +3,7 @@ import { BreadcrumbItem } from './BreadcrumbItem'
 
 export interface BreadcrumbProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
 
   ariaLabel: string
 

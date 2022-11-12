@@ -2,20 +2,25 @@ import React, { ReactElement, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { Menu, type MenuItem } from '../menu/Menu'
+import {
+  Menu,
+  type MenuItem
+} from '../menu/Menu'
 
 export interface PopoverProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
+
   alignRight?: boolean
-  noArrow?: boolean
   items: MenuItem[]
+  noArrow?: boolean
   children: ReactElement
 }
 
 export const Popover = ({
   className,
   style,
+
   alignRight,
   noArrow,
   items,

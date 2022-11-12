@@ -4,7 +4,7 @@ import { BusyIndicatorSize } from '../../index'
 
 export interface BusyIndicatorProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
 
   ariaLabel?: string
 

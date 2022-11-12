@@ -2,7 +2,7 @@ import React from 'react'
 
 export interface BreadcrumbItemProperties {
   className?: string
-  style?: any
+  style?: React.CSSProperties
 
   text: string
   current?: boolean

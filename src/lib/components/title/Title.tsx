@@ -4,20 +4,22 @@ import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
 
 export type TitleProperties = {
   className?: string
-  style?: any
+  style?: React.CSSProperties
+
   level?: TitleLevel
   levelVisual?: TitleLevel
-  wrap?: boolean
   text: string
+  wrap?: boolean
 }
 
 export const Title = ({
   className,
   style,
+
   level,
   levelVisual,
-  wrap,
   text,
+  wrap,
 }: TitleProperties) => {
 
   // Rendering //

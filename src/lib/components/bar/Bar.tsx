@@ -1,13 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-export const Bar = () => {
+export interface BarProperties {
+  className?: string
+  style?: React.CSSProperties
+}
+
+export const Bar = ({
+  className,
+  style,
+}: BarProperties) => {
 
   // Hooks //
 
   // Rendering //
 
+  const classes = ['fd-bar']
+  if (className) {
+    classes.push(className)
+  }
+
   return (
-    <div className='fd-bar'>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       <div className='fd-bar__left'>
         <div className='fd-bar__element'>
           <h5
