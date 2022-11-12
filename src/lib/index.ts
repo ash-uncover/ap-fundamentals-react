@@ -14,6 +14,10 @@ export { Avatar } from './components/avatar/Avatar'
 export { Badge } from './components/badge/Badge'
 // bar
 export { Bar } from './components/bar/Bar'
+export { BarElement } from './components/bar/BarElement'
+export { BarLeft } from './components/bar/BarLeft'
+export { BarMiddle } from './components/bar/BarMiddle'
+export { BarRight } from './components/bar/BarRight'
 // breadcrumb
 export { Breadcrumb } from './components/breadcrumb/Breadcrumb'
 // busyindicator
