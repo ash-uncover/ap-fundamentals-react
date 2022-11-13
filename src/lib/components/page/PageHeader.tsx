@@ -4,7 +4,6 @@ import { FioriComponentProperties } from '../FioriBase'
 
 import { Avatar } from '../avatar/Avatar'
 import { Bar } from '../bar/Bar'
-import { Breadcrumb } from '../breadcrumb/Breadcrumb'
 import { Button } from '../button/Button'
 import { Title } from '../title/Title'
 
@@ -17,7 +16,7 @@ import './PageHeader.css'
 
 export interface PageHeaderProperties extends FioriComponentProperties {
   actions?: ReactElement | ReactElement[]
-  attributes?: PageHeaderAttribute | PageHeaderAttribute[]
+  attributes?: ReactElement | ReactElement[]
   avatar?: PageHeaderAvatar
   breadcrumb: ReactElement
   hideBoxShadow?: boolean
@@ -26,11 +25,8 @@ export interface PageHeaderProperties extends FioriComponentProperties {
 }
 export interface PageHeaderAvatar {
   accentColor: AccentColor
-  icon: string
-}
-
-export interface PageHeaderAttribute {
-
+  icon?: string
+  initials?: string
 }
 
 export const PageHeader = ({
@@ -95,10 +91,9 @@ export const PageHeader = ({
             }}>
             {(!showExpand || !expanded) && avatar ?
               <Avatar
+                {...avatar}
                 className='ap-fd-page-header__controls__title__avatar'
                 ariaLabel={title}
-                accentColor={avatar.accentColor}
-                icon={avatar.icon}
                 size={Sizes.SMALL}
               />
               : null}
@@ -130,21 +125,16 @@ export const PageHeader = ({
       {showExpand && expanded ?
         <div
           className='ap-fd-page-header__content'
-          style={{ display: 'flex', flexWrap: 'wrap' }}
+          style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}
         >
           {avatar ?
             <Avatar
+              {...avatar}
+              className='ap-fd-page-header__content__avatar'
               ariaLabel={title}
-              accentColor={avatar.accentColor}
-              icon={avatar.icon}
             />
             : null}
-          {attributes && (!Array.isArray(attributes) || attributes.length) ?
-            <div
-              className='ap-fd-page-header__attributes'
-            >
-            </div>
-            : null}
+          {attributes}
         </div>
         : null}
 

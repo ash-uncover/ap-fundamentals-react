@@ -6,9 +6,14 @@ import {
   Button,
   ButtonDesigns,
   InfoLabel,
+  ObjectMarker,
+  ObjectNumber,
+  ObjectStatus,
   Page,
   PageBody,
-  PageHeader
+  PageHeader,
+  PageHeaderAttribute,
+  Semantics
 } from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
@@ -46,7 +51,7 @@ const DEMO_DATA = {
     title: 'Page Floorplan',
     description: '...',
     result: (
-      <Page style={{ height: '300px' }}>
+      <Page style={{ height: '400px' }}>
         <PageHeader
           breadcrumb={(
             <Breadcrumb
@@ -66,11 +71,27 @@ const DEMO_DATA = {
             <Button compact icon='action' design={ButtonDesigns.TRANSPARENT} />
           ]}
           avatar={{
-            icon: 'cart',
+            initials: 'AV',
             accentColor: AccentColors.COLOR_9
           }}
           attributes={[
-            
+            <PageHeaderAttribute
+              label='Marker 1'
+              semantic={Semantics.POSITIVE}
+              text='Positive Maker'
+              type='status'
+            />,
+            <PageHeaderAttribute
+              label='Marker 2'
+              semantic={Semantics.NEGATIVE}
+              text='-2345.78€'
+              type='status'
+            />,
+            <PageHeaderAttribute
+              label='My property'
+              text='Text Property are used for longer text such as description that can span a lot and require several lines to display.'
+              type='text'
+            />,
           ]}
         />
         <PageBody>

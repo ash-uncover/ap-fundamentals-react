@@ -56,15 +56,15 @@
   color: var(--sapObjectHeader_Title_TextColor);
   font-family: var(--sapObjectHeader_Title_FontFamily);
   font-size: var(--sapObjectHeader_Title_SnappedFontSize);
-  margin-top: -0.175rem;
+  font-weight: bold;
+  margin-top: -0.2rem;
 }
 
 .ap-fd-page-header.ap-fd-page-header--expanded
   .ap-fd-page-header__controls
   .ap-fd-page-header__controls__title
   .ap-fd-page-header__controls__title__title {
-  font-size: var(--sapObjectHeader_Title_FontSize);
-  font-weight: bold;
+  font-size: var(--sapFontHeader1Size);
   margin-top: 0;
 }
 
@@ -76,6 +76,12 @@
   font-size: var(--sapFontSize);
   font-weight: normal;
   color: var(--sapContent_LabelColor);
+}
+
+.ap-fd-page-header.ap-fd-page-header--expanded
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__subtitle {
   margin-top: 0.25rem;
 }
 
@@ -90,6 +96,15 @@
 
 
 .ap-fd-page-header .ap-fd-page-header__content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.ap-fd-page-header .ap-fd-page-header__content .ap-fd-page-header__content__avatar {
+  margin-right: 1rem;
+}
+.ap-fd-page-header .ap-fd-page-header__content .ap-fd-page-header-attribute:last-child {
+  margin-bottom: 1rem;
 }
 
 
@@ -101,8 +116,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1rem;
   margin: 0 -2rem;
+  z-index: 5;
 }
 .ap-fd-page-header .ap-fd-page-header__expander:before {
   content: '';
@@ -114,8 +129,8 @@
   );
   height: 1px;
   position: absolute;
-  right: calc(50% - 100px);
-  left: calc(50% - 100px);
+  right: calc(50% - 200px);
+  left: calc(50% - 200px);
 }
 .ap-fd-page-header .ap-fd-page-header__expander .ap-fd-page-header__expander-button {
   width: 1.25rem;

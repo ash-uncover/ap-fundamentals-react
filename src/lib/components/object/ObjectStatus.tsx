@@ -44,11 +44,13 @@ export const ObjectStatus = ({
       className={classes.join(' ')}
       style={style}
     >
-      <i
-        className={`fd-object-status__icon sap-icon--${icon}`}
-        aria-label={iconOnly ? text : undefined}
-        role={iconOnly ? undefined : 'presentation'}
-      ></i>
+      {icon ?
+        <i
+          className={`fd-object-status__icon sap-icon--${icon}`}
+          aria-label={iconOnly ? text : undefined}
+          role={iconOnly ? undefined : 'presentation'}
+        ></i>
+        : null}
       {!iconOnly ?
         <span className='fd-object-status__text'>
           {text}
