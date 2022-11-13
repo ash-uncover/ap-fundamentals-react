@@ -1,9 +1,8 @@
 import React, { ReactElement } from 'react'
 
-export interface BarRightProperties {
-  className?: string
-  style?: React.CSSProperties
+import { FioriComponentProperties } from '../FioriBase'
 
+export interface BarRightProperties extends FioriComponentProperties {
   children: ReactElement | ReactElement[]
 }
 

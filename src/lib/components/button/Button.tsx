@@ -1,12 +1,11 @@
 import React from 'react'
 
+import { FioriComponentProperties } from '../FioriBase'
+
 import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 
-export interface ButtonProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface ButtonProperties extends FioriComponentProperties {
   ariaLabel?: string
   ariaControls?: string
   ariaExpanded?: boolean

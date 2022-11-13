@@ -1,6 +1,8 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
-export interface PanelProperties {
+import { FioriComponentProperties } from '../FioriBase'
+
+export interface PanelProperties extends FioriComponentProperties {
   compact?: boolean
   expanded?: boolean
   expandable?: boolean

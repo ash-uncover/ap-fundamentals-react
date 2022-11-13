@@ -1,9 +1,8 @@
 import React from 'react'
 
-export interface PageBodyProperties {
-  className?: string
-  style?: React.CSSProperties
+import { FioriComponentProperties } from '../FioriBase'
 
+export interface PageBodyProperties extends FioriComponentProperties {
   children?: any
 }
 export const PageBody = ({

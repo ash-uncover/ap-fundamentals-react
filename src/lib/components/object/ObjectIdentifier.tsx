@@ -1,19 +1,23 @@
 import React from 'react'
 
 export interface ObjectIdentifierProperties {
-  title: string
-  text?: string
+  className?: string
+  style?: React.CSSProperties
+
   bold?: boolean
   medium?: boolean
-  className?: string
+  text?: string
+  title: string
 }
 
 export const ObjectIdentifier = ({
-  title,
-  text,
+  className,
+  style,
+
   bold,
   medium,
-  className,
+  text,
+  title,
 }: ObjectIdentifierProperties) => {
 
   // Rendering //
@@ -32,7 +36,10 @@ export const ObjectIdentifier = ({
   }
 
   return (
-    <div className={classes.join(' ')}>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       <p className={classesTitle.join(' ')}>
         {title}
       </p>

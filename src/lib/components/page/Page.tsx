@@ -1,15 +1,14 @@
 import React from 'react'
 
+import { FioriComponentProperties } from '../FioriBase'
+
 import { PageBodyProperties } from './PageBody'
 import { PageFooterProperties } from './PageFooter'
 import { PageHeaderProperties } from './PageHeader'
 
 import './Page.css'
 
-export interface PageProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface PageProperties extends FioriComponentProperties {
   children: [
     React.ReactElement<PageHeaderProperties>,
     React.ReactElement<PageBodyProperties>,

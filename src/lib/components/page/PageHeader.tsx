@@ -1,5 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
+import { FioriComponentProperties } from '../FioriBase'
+
 import { Avatar } from '../avatar/Avatar'
 import { Bar } from '../bar/Bar'
 import { Breadcrumb } from '../breadcrumb/Breadcrumb'
@@ -13,10 +15,7 @@ import { TitleLevels } from '../../constants/TitleLevel'
 
 import './PageHeader.css'
 
-export interface PageHeaderProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface PageHeaderProperties extends FioriComponentProperties {
   actions?: ReactElement | ReactElement[]
   attributes?: PageHeaderAttribute | PageHeaderAttribute[]
   avatar?: PageHeaderAvatar
@@ -26,8 +25,8 @@ export interface PageHeaderProperties {
   title: string
 }
 export interface PageHeaderAvatar {
-  icon: string
   accentColor: AccentColor
+  icon: string
 }
 
 export interface PageHeaderAttribute {

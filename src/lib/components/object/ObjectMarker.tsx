@@ -1,17 +1,21 @@
 import React from 'react'
 
 export interface ObjectMarkerProperties {
+  className?: string
+  style?: React.CSSProperties
+
   icon?: string
   iconOnly?: boolean
   text: string
-  className?: string
 }
 
 export const ObjectMarker = ({
+  className,
+  style,
+
   icon,
   iconOnly,
   text,
-  className,
 }: ObjectMarkerProperties) => {
 
   // Rendering //
@@ -22,7 +26,10 @@ export const ObjectMarker = ({
   }
 
   return (
-    <div className={classes.join(' ')}>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       {icon ?
         <i
           className={`fd-object-marker__icon sap-icon--${icon}`}

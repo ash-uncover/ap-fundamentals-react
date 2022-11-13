@@ -1,9 +1,8 @@
 import React from 'react'
 
-export interface PageFooterProperties {
-  className?: string
-  style?: React.CSSProperties
+import { FioriComponentProperties } from '../FioriBase'
 
+export interface PageFooterProperties extends FioriComponentProperties {
   children?: any
 }
 export const PageFooter = ({

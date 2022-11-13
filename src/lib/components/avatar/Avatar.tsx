@@ -1,14 +1,13 @@
 import React from 'react'
 
+import { FioriComponentProperties } from '../FioriBase'
+
 import { AccentColor } from '../../constants/AccentColor'
 import { Size, Sizes } from '../../constants/Size'
 
 import { Icon } from '../icon/Icon'
 
-export interface AvatarProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface AvatarProperties extends FioriComponentProperties {
   ariaLabel: string
   ariaControls?: string
   ariaExpanded?: boolean

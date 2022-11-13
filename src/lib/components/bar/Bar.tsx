@@ -1,16 +1,15 @@
 import React, { ReactElement } from 'react'
 
+import { FioriComponentProperties } from '../FioriBase'
+
 import { BarElement } from './BarElement'
 import { BarLeft } from './BarLeft'
 import { BarMiddle } from './BarMiddle'
 import { BarRight } from './BarRight'
 
-import { BarType } from 'constants/BarType'
+import { BarType } from '../../constants/BarType'
 
-export interface BarProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface BarProperties extends FioriComponentProperties {
   cozy?: boolean
   left?: ReactElement | ReactElement[]
   middle?: ReactElement | ReactElement[]

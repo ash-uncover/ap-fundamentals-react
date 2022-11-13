@@ -1,10 +1,28 @@
 import React from 'react'
 import './ObjectHeaderAttribute.css'
+
 export interface ObjectHeaderAttributeProperties {
   className?: string,
   label: string,
   text: string,
 }
+
+export interface ObjectAttributeIdentifier {
+
+}
+
+export interface ObjectAttributeMarker {
+
+}
+
+export interface ObjectAttributeNumber {
+
+}
+
+export interface ObjectAttributeStatus {
+
+}
+
 export const ObjectHeaderAttribute = ({
   className,
   label,

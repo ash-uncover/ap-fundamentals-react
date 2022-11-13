@@ -69,6 +69,9 @@ const DEMO_DATA = {
             icon: 'cart',
             accentColor: AccentColors.COLOR_9
           }}
+          attributes={[
+            
+          ]}
         />
         <PageBody>
           <div>MY PAGE CONTENT</div>
