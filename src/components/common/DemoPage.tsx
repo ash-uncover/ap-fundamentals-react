@@ -72,8 +72,9 @@ export const DemoPage = ({
       </div>
 
       <Title
-        text='Properties'
+        className='demo-page-section-title'
         level={TitleLevels.H2}
+        text='Properties'
       />
 
       {renderDescription(description)}
@@ -82,11 +83,12 @@ export const DemoPage = ({
         return (
           <div key={`type-${index}`}>
             <Title
-              text={type.id}
+              className='demo-page-item-title'
               level={TitleLevels.H3}
               style={{
                 margin: '1rem 0'
               }}
+              text={type.id}
             />
             <Table
               columns={[
@@ -102,15 +104,17 @@ export const DemoPage = ({
       })}
 
       <Title
-        text='Examples'
+        className='demo-page-section-title'
         level={TitleLevels.H2}
+        text='Examples'
       />
 
       {examples.map((example, index) => (
         <div key={`example-${index}`}>
           <Title
-            text={example.title}
+            className='demo-page-item-title'
             level={TitleLevels.H3}
+            text={example.title}
           />
 
           {renderDescription(example.description)}

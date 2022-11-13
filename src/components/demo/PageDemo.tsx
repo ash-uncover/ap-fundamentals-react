@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
   AccentColors,
+  Breadcrumb,
   Button,
   ButtonDesigns,
   InfoLabel,
@@ -45,15 +46,24 @@ const DEMO_DATA = {
     title: 'Page Floorplan',
     description: '...',
     result: (
-      <Page>
+      <Page style={{ height: '300px' }}>
         <PageHeader
-          style={{ background: 'red' }}
+          breadcrumb={(
+            <Breadcrumb
+              ariaLabel='breadcrumb'
+              items={[
+                { text: 'Level 1' },
+                { text: 'Level 2' },
+                { text: 'Level 3' }
+              ]}
+            />
+          )}
+          // style={{ background: 'red' }}
           title='My Page'
           subtitle='Its a great page'
-          content={<InfoLabel text='Best Page' accentColor={AccentColors.COLOR_6} />}
           actions={[
-            <Button icon='cart' />,
-            <Button icon='action' design={ButtonDesigns.TRANSPARENT} />
+            <Button compact icon='cart' />,
+            <Button compact icon='action' design={ButtonDesigns.TRANSPARENT} />
           ]}
           avatar={{
             icon: 'cart',
