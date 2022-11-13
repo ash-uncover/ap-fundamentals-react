@@ -51,8 +51,7 @@ export { Link } from './components/link/Link'
 // menu
 export { Menu } from './components/menu/Menu'
 // object
-export { ObjectAttribute } from './components/object/ObjectAttribute'
-export { ObjectHeaderAttribute } from './components/object/ObjectHeaderAttribute'
+export { ObjectText } from './components/object/ObjectText'
 export { ObjectIdentifier } from './components/object/ObjectIdentifier'
 export { ObjectList } from './components/object/ObjectList'
 export { ObjectListItem } from './components/object/ObjectListItem'
@@ -62,6 +61,7 @@ export { ObjectStatus } from './components/object/ObjectStatus'
 // page
 export { Page } from './components/page/Page'
 export { PageHeader } from './components/page/PageHeader'
+export { PageHeaderAttribute } from './components/page/PageHeaderAttribute'
 export { PageBody } from './components/page/PageBody'
 export { PageFooter } from './components/page/PageFooter'
 // panel

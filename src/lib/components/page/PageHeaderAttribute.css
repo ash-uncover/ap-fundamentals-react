@@ -1,0 +1,22 @@
+.ap-fd-page-header-attribute {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
+.ap-fd-page-header-attribute .ap-fd-page-header-attribute__label {
+  color: var(--sapContent_LabelColor);
+  font-family: var(--sapFontFamily);
+  font-size: var(--sapFontSize);
+  margin-bottom: 0.5rem;
+}
+
+.ap-fd-page-header-attribute .ap-fd-page-header-attribute__control.fd-object-status {
+  font-size: var(--sapObjectHeader_Title_SnappedFontSize);
+}
+
+.ap-fd-page-header-attribute .ap-fd-page-header-attribute__control.fd-object-text {
+  color: var(--sapPageHeader_TextColor);
+  font-family: var(--sapFontFamily);
+  font-size: var(--sapFontSize);
+}

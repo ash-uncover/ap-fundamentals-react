@@ -1,9 +1,9 @@
 .demo-page {
-  & .fd-title--h2 {
+  & .demo-page-section-title {
     margin-top: 2rem;
     border-bottom: var(--sapList_BorderWidth) solid var(--sapList_BorderColor);
   }
-  & .fd-title--h3 {
+  & .demo-page-item-title {
     margin-top: 1rem;
   }
 }

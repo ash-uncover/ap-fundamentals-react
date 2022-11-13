@@ -2,19 +2,20 @@ import React from 'react'
 
 import { FioriComponentProperties } from '../FioriBase'
 
-export interface PageFooterProperties extends FioriComponentProperties {
-  children?: any
+export interface ObjectTextProperties extends FioriComponentProperties {
+  text: string
 }
-export const PageFooter = ({
+
+export const ObjectText = ({
   className,
   style,
 
-  children,
-}: PageFooterProperties) => {
+  text,
+}: ObjectTextProperties) => {
 
   // Rendering //
 
-  const classes = ['ap-fd-page__footer']
+  const classes = ['fd-object-text']
   if (className) {
     classes.push(className)
   }
@@ -24,7 +25,7 @@ export const PageFooter = ({
       className={classes.join(' ')}
       style={style}
     >
-      {children}
+      {text}
     </div>
   )
 }

@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react'
 
 import { Avatar, AvatarProperties } from '../../components/avatar/Avatar'
-import { ObjectAttribute } from '../../components/object/ObjectAttribute'
+import { ObjectText } from './ObjectText'
 import { ObjectIdentifier } from '../../components/object/ObjectIdentifier'
 import { ObjectMarker } from '../../components/object/ObjectMarker'
 import { ObjectNumber } from '../../components/object/ObjectNumber'
@@ -133,7 +133,7 @@ export const ObjectListItem = ({
             return (
               <ObjectListItemRow key={`attribute-${index}`}>
                 <ObjectListItemRowLeft>
-                  <ObjectAttribute text={attribute.name} />
+                  <ObjectText text={attribute.name} />
                 </ObjectListItemRowLeft>
                 <ObjectListItemRowRight>
                   {attribute.items?.map((item: ObjectListItemInfoProperties, indexItem: number) => {
@@ -263,7 +263,7 @@ const ObjectListItemInfo = ({
   switch (type) {
     case 'attribute': {
       return (
-        <ObjectAttribute
+        <ObjectText
           text={props.text}
         />
       )

@@ -2,18 +2,15 @@ import React, { ReactElement, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import {
-  Menu,
-  type MenuItem
-} from '../menu/Menu'
+import { FioriComponentProperties } from '../FioriBase'
 
-export interface PopoverProperties {
-  className?: string
-  style?: React.CSSProperties
+import { Menu, type MenuItem } from '../menu/Menu'
 
+export interface PopoverProperties extends FioriComponentProperties {
   alignRight?: boolean
   items: MenuItem[]
   noArrow?: boolean
+
   children: ReactElement
 }
 
@@ -22,8 +19,9 @@ export const Popover = ({
   style,
 
   alignRight,
-  noArrow,
   items,
+  noArrow,
+
   children,
 }: PopoverProperties) => {
 

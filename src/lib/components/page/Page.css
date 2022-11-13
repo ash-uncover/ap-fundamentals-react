@@ -1,4 +1,4 @@
-.fd-page {
+.ap-fd-page {
   display: flex;
   flex-direction: column;
 
@@ -6,32 +6,7 @@
   overflow: hidden;
 }
 
-.fd-page .fd-page__header {
-  flex-shrink: 0;
-  flex-basis: 100px;
-  padding: 1rem 0.5rem 1rem 0.5rem;
-
-  background: var(--sapList_Background);
-}
-
-@media screen and (min-width: 600px) {
-  .fd-page .fd-page__header {
-    padding: 1rem 2rem 1rem 2rem;
-  }
-}
-
-@media screen and (min-width: 1400px) {
-  .fd-page .fd-page__header {
-    padding: 1rem 3rem 1rem 3rem;
-  }
-}
-
-.fd-page .fd-page__header .fd-toolbar {
-  padding: 0;
-  margin-bottom: 2rem;
-}
-
-.fd-page .fd-page__content {
+.ap-fd-page .ap-fd-page__content {
   flex-grow: 1;
   flex-basis: 0;
 
@@ -41,14 +16,14 @@
   overflow: auto;
 }
 
-.fd-page .fd-page__content .fd-page__body {
+.ap-fd-page .ap-fd-page__content .ap-fd-page__body {
   flex-grow: 1;
   flex-basis: 0;
 
   background: var(--sapBackgroundColor);
 }
 
-.fd-page .fd-page__content .fd-page__footer {
+.ap-fd-page .ap-fd-page__content .ap-fd-page__footer {
   flex-shrink: 0;
   flex-basis: 100px;
 }

@@ -3,21 +3,25 @@ import React from 'react'
 import { Semantic } from '../../constants/Semantic'
 
 export interface ObjectNumberProperties {
-  value: string
-  unit: string
+  className?: string
+  style?: React.CSSProperties
+
   bold?: boolean
   large?: boolean
   semantic?: Semantic
-  className?: string
+  unit: string
+  value: string
 }
 
 export const ObjectNumber = ({
-  value,
-  unit,
+  className,
+  style,
+
   bold,
   large,
   semantic,
-  className,
+  unit,
+  value,
 }: ObjectNumberProperties) => {
 
   // Rendering //
@@ -39,7 +43,10 @@ export const ObjectNumber = ({
   }
 
   return (
-    <span className={classes.join(' ')}>
+    <span
+      className={classes.join(' ')}
+      style={style}
+    >
       <span className={classesText.join(' ')}>
         {value}
       </span>

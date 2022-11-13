@@ -1,0 +1,150 @@
+.ap-fd-page-header {
+  flex-shrink: 0;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+  background: var(--sapPageHeader_Background);
+  color: var(--sapPageHeader_TextColor);
+
+  position: relative;
+}
+
+@media screen and (min-width: 600px) {
+  .ap-fd-page-header {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .ap-fd-page-header {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.ap-fd-page-header .ap-fd-page-header__controls {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.ap-fd-page-header.ap-fd-page-header--expanded .ap-fd-page-header__controls {
+  padding-bottom: 0.5rem;
+}
+
+.ap-fd-page-header .ap-fd-page-header__controls .ap-fd-page-header__controls__breadcrumb {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.ap-fd-page-header .ap-fd-page-header__controls .ap-fd-page-header__controls__title {
+  display: flex;
+}
+
+.ap-fd-page-header
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__avatar {
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.ap-fd-page-header
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__title {
+  color: var(--sapObjectHeader_Title_TextColor);
+  font-family: var(--sapObjectHeader_Title_FontFamily);
+  font-size: var(--sapObjectHeader_Title_SnappedFontSize);
+  font-weight: bold;
+  margin-top: -0.2rem;
+}
+
+.ap-fd-page-header.ap-fd-page-header--expanded
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__title {
+  font-size: var(--sapFontHeader1Size);
+  margin-top: 0;
+}
+
+.ap-fd-page-header
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__subtitle {
+  font-family: var(--sapFontFamily);
+  font-size: var(--sapFontSize);
+  font-weight: normal;
+  color: var(--sapContent_LabelColor);
+}
+
+.ap-fd-page-header.ap-fd-page-header--expanded
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__subtitle {
+  margin-top: 0.25rem;
+}
+
+.ap-fd-page-header
+  .ap-fd-page-header__controls
+  .ap-fd-page-header__controls__title
+  .ap-fd-page-header__controls__title__actions {
+  flex-grow: 1;
+  padding: 0;
+  height: 2rem;
+}
+
+
+.ap-fd-page-header .ap-fd-page-header__content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.ap-fd-page-header .ap-fd-page-header__content .ap-fd-page-header__content__avatar {
+  margin-right: 1rem;
+}
+.ap-fd-page-header .ap-fd-page-header__content .ap-fd-page-header-attribute:last-child {
+  margin-bottom: 1rem;
+}
+
+
+.ap-fd-page-header .ap-fd-page-header__expander {
+  position: absolute;
+  top: 100%;
+  height: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 -2rem;
+  z-index: 5;
+}
+.ap-fd-page-header .ap-fd-page-header__expander:before {
+  content: '';
+  background: linear-gradient(
+    0.25turn,
+    var(--sapPageHeader_Background),
+    var(--sapButton_BorderColor),
+    var(--sapPageHeader_Background)
+  );
+  height: 1px;
+  position: absolute;
+  right: calc(50% - 200px);
+  left: calc(50% - 200px);
+}
+.ap-fd-page-header .ap-fd-page-header__expander .ap-fd-page-header__expander-button {
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 0;
+}
+.ap-fd-page-header .ap-fd-page-header__expander .ap-fd-page-header__expander-button i {
+  font-size: 0.75rem;
+}
+
+.ap-fd-page
+  .ap-fd-page-header
+  .ap-fd-page-header__expander
+  .ap-fd-page-header__expander-button
+  + .ap-fd-page-header__expander-button {
+  margin-left: 0.35rem;
+}

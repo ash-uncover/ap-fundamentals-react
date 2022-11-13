@@ -1,11 +1,10 @@
 import React from 'react'
 
-import { BusyIndicatorSize } from '../../index'
+import { FioriComponentProperties } from '../FioriBase'
 
-export interface BusyIndicatorProperties {
-  className?: string
-  style?: React.CSSProperties
+import { BusyIndicatorSize } from '../../constants/BusyIndicatorSize'
 
+export interface BusyIndicatorProperties extends FioriComponentProperties {
   ariaLabel?: string
 
   contrast?: boolean

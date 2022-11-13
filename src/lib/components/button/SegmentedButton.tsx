@@ -1,10 +1,10 @@
 import React, { ReactElement } from 'react'
+
+import { FioriComponentProperties } from '../FioriBase'
+
 import { ButtonProperties } from './Button'
 
-export interface SegmentedButtonProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface SegmentedButtonProperties extends FioriComponentProperties {
   ariaLabel?: string
 
   children: ReactElement<ButtonProperties> | ReactElement<ButtonProperties>[]

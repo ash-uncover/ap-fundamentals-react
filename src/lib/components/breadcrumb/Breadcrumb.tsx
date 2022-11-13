@@ -1,10 +1,10 @@
 import React from 'react'
+
+import { FioriComponentProperties } from '../FioriBase'
+
 import { BreadcrumbItem } from './BreadcrumbItem'
 
-export interface BreadcrumbProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface BreadcrumbProperties extends FioriComponentProperties {
   ariaLabel: string
 
   items: BreadcrumbItem[]
