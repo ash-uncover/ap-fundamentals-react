@@ -133,8 +133,8 @@
   left: calc(50% - 200px);
 }
 .ap-fd-page-header .ap-fd-page-header__expander .ap-fd-page-header__expander-button {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   min-width: 0;
 }
 .ap-fd-page-header .ap-fd-page-header__expander .ap-fd-page-header__expander-button i {
