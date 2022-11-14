@@ -5,26 +5,34 @@ import React, {
 } from 'react'
 
 export interface VerticalNavigationItemProperties {
-  id: string
   className?: string
+
+  id: string
+  condensed?: boolean
   expanded?: boolean
+  icon?: string
   items?: VerticalNavigationItemProperties[]
-  glyph?: string
   selected?: boolean
   text: string
+
   onItemSelect?: (id: string) => void
+
   children?: any | any[]
 }
 
 export const VerticalNavigationItem = ({
-  id,
   className,
+
+  id,
+  condensed,
   expanded,
+  icon,
   items,
-  glyph,
   selected,
   text,
+
   onItemSelect,
+
   children,
 }: VerticalNavigationItemProperties) => {
 
@@ -64,6 +72,9 @@ export const VerticalNavigationItem = ({
   if (className) {
     classes.push(className)
   }
+  if (condensed) {
+    classes.push('fd-list__navigation-item--condensed')
+  }
   if (expandable) {
     classes.push('fd-list__navigation-item--expandable')
   }
@@ -89,9 +100,9 @@ export const VerticalNavigationItem = ({
       onClick={onClick}
       onKeyUp={onKeyUp}
     >
-      {glyph ?
+      {icon ?
         <i
-          className={`fd-list__navigation-item-icon sap-icon--${glyph}`}
+          className={`fd-list__navigation-item-icon sap-icon--${icon}`}
           role='presentation'
         ></i>
         : null}
@@ -111,11 +122,12 @@ export const VerticalNavigationItem = ({
             return (
               <VerticalNavigationItem
                 key={item.id}
-                id={item.id}
                 className={item.className}
+                id={item.id}
+                condensed={condensed || item.condensed}
                 expanded={item.expanded}
+                icon={item.icon}
                 items={item.items}
-                glyph={item.glyph}
                 text={item.text}
                 selected={item.selected}
                 onItemSelect={onItemSelect}
