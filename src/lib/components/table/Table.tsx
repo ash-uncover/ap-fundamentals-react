@@ -1,7 +1,10 @@
 import React, { ReactElement } from 'react'
+
 import { TableCell, TableCellIndicator, TableCellType } from './TableCell'
 import { TableHeaderCell } from './TableHeaderCell'
 import { TableRow } from './TableRow'
+
+import './Table.css'
 
 /*
   <Table

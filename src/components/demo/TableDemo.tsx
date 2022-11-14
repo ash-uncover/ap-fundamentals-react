@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AccentColors, Table } from '../../lib'
+import { AccentColors, Button, ButtonDesigns, Table } from '../../lib'
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
@@ -37,6 +37,16 @@ const DEMO_DATA = {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             data: {
@@ -146,6 +156,16 @@ const DEMO_DATA = {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             data: {
@@ -255,6 +275,16 @@ const DEMO_DATA = {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             hoverable: true,
