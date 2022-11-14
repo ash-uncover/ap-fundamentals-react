@@ -118,7 +118,7 @@ export const Table = ({
                 )
                 : null}
               {columns.map((column) => {
-                const rendered = column.render || ((data) => (<span>{column.formatter ? column.formatter(data) : data[column.key]}</span>))
+                const rendered = column.render || ((data) => (<span className='fd-table__cell__label'>{column.formatter ? column.formatter(data) : data[column.key]}</span>))
                 return (
                   <TableCell
                     key={column.key}

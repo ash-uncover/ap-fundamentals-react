@@ -1,6 +1,7 @@
+import { StringUtils } from '@uncover/js-utils'
 import React from 'react'
 
-import { AccentColors, Button, ButtonDesigns, Table } from '../../lib'
+import { AccentColors, Avatar, Button, ButtonDesigns, Sizes, Table } from '../../lib'
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
@@ -28,11 +29,15 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
           }, {
             key: 'date',
             name: 'Date',
@@ -147,11 +152,15 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
           }, {
             key: 'date',
             name: 'Date',
@@ -266,11 +275,15 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
           }, {
             key: 'date',
             name: 'Date',
