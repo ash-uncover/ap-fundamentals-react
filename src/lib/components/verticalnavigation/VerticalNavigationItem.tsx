@@ -6,6 +6,7 @@ import React, {
 
 export interface VerticalNavigationItemProperties {
   className?: string
+  style?: React.CSSProperties
 
   id: string
   condensed?: boolean
@@ -22,6 +23,7 @@ export interface VerticalNavigationItemProperties {
 
 export const VerticalNavigationItem = ({
   className,
+  style,
 
   id,
   condensed,
@@ -96,6 +98,7 @@ export const VerticalNavigationItem = ({
   return (
     <li
       className={classes.join(' ')}
+      style={style}
       tabIndex={0}
       onClick={onClick}
       onKeyUp={onKeyUp}
@@ -116,20 +119,21 @@ export const VerticalNavigationItem = ({
           onClick={() => setExpanded(!isExpanded)}
         ></button>
         : null}
-      {expandable && isExpanded && (Boolean(items?.length) || Boolean(children)) ?
+      {expandable && isExpanded ?
         <ul className='fd-list'>
           {items?.map(item => {
             return (
               <VerticalNavigationItem
                 key={item.id}
                 className={item.className}
+                style={style ? style : item.style}
                 id={item.id}
                 condensed={condensed || item.condensed}
                 expanded={item.expanded}
                 icon={item.icon}
                 items={item.items}
-                text={item.text}
                 selected={item.selected}
+                text={item.text}
                 onItemSelect={onItemSelect}
               />
             )

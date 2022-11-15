@@ -29,6 +29,7 @@ export interface TableProperties {
   columns: TableColumn[]
   rows?: TableRow[]
   children?: ReactElement | ReactElement[]
+  onRowClick?: (id: string) => void
 }
 export type TableColumn = {
   key: string
@@ -44,6 +45,7 @@ export type TableRow = {
   activable?: boolean
   hoverable?: boolean
   data: TableRowData
+  onClick?: () => void
 }
 export type TableRowData = {
   id: string
@@ -64,8 +66,19 @@ export const Table = ({
   indicator,
   columns,
   rows,
+
+  onRowClick,
+
   children,
 }: TableProperties) => {
+
+  // Events //
+
+  const onRowClicked = (id: string) => {
+    if (onRowClick) {
+      onRowClick(id)
+    }
+  }
 
   // Rendering //
 
@@ -107,6 +120,7 @@ export const Table = ({
             key={row.data.id}
             activable={row.activable}
             hoverable={row.hoverable}
+            onClick={() => onRowClicked(row.data.id)}
           >
             <>
               {indicator
