@@ -13,8 +13,6 @@ export { TitleLevel, TitleLevels } from './constants/TitleLevel'
 
 // avatar
 export { Avatar } from './components/avatar/Avatar'
-// badge
-export { Badge } from './components/badge/Badge'
 // bar
 export { Bar } from './components/bar/Bar'
 export { BarElement } from './components/bar/BarElement'

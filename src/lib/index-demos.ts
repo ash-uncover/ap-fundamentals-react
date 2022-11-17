@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { AvatarDemo } from '../components/demo/AvatarDemo'
-import { BadgeDemo } from '../components/demo/BadgeDemo'
 import { BarDemo } from '../components/demo/BarDemo'
 import { BreadcrumbDemo } from '../components/demo/BreadcrumbDemo'
 import { BusyIndicatorDemo } from '../components/demo/BusyIndicatorDemo'
@@ -32,11 +31,6 @@ export const COMPONENT = {
     id: 'avatar',
     text: 'Avatar',
     demo: AvatarDemo
-  },
-  BADGE: {
-    id: 'badge',
-    text: 'Badge',
-    demo: BadgeDemo
   },
   BAR: {
     id: 'bar',

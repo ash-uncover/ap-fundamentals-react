@@ -14,11 +14,23 @@ const DEMO_DATA = {
   types: [{
     id: 'Avatar',
     props: [
-      { id: 'icon', type: 'string', description: '(Optional) If provided, an icon will be displayed as the first element of the Info Label' },
-      { id: 'text', type: 'string', description: '(Optional) If provided, a text will be displayed in the Info Label' },
-      { id: 'display', type: 'boolean', description: '(Optional) Apply the default styling to the Info Label' },
-      { id: 'numeric', type: 'boolean', description: '(Optional) Subbtle style modification to enhance display in case of numeric information' },
-      { id: 'accentColor', type: 'AccentColor', description: '(Optional) Apply semantic color to Info Label' },
+      { id: 'ariaLabel', type: 'string', description: 'Accessibility label for the avatar' },
+      { id: 'ariaLabelZoom', type: 'string', description: '(Optional)' },
+      { id: 'ariaControls', type: 'string', description: '(Optional)' },
+      { id: 'ariaExpanded', type: 'boolean', description: '(Optional)' },
+      { id: 'ariaHaspopup', type: 'boolean', description: '(Optional)' },
+
+      { id: 'accentColor', type: 'AccentColor', description: '(Optional) Sets the color accent of the avatar (exclusive with "design" property)' },
+      { id: 'bordered', type: 'boolean', description: '(Optional) Displays light borders around the avatar' },
+      { id: 'circle', type: 'boolean', description: '(Optional) Displays the avatar as a circle (default display is a square)' },
+      { id: 'design', type: 'AvatarDesign', description: '(Optional) Sets the design of the avatar (exclusive with "accentColor" property)' },
+      { id: 'icon', type: 'string', description: '(Optional) Sets the content of the avatar to an icon (exclusive with "initials" property)' },
+      { id: 'iconZoom', type: 'string', description: '(Optional) Sets an additionnal icon for clickable avatars (requires onClick)' },
+      { id: 'initials', type: 'string', description: '(Optional) Sets the content of the avatar to some initials (xclusive with "icon" property)' },
+      { id: 'size', type: 'Size', description: '(Optional) Sets the size of the avatar' },
+
+      { id: 'onClick', type: '() => void', description: '(Optional) Event fired when the avatar is clicked' },
+
     ],
   }],
   examples: [{
