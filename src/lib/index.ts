@@ -74,7 +74,6 @@ export { Panel } from './components/panel/Panel'
 export { Popover } from './components/popover/Popover'
 // select
 export { Select } from './components/select/Select'
-export { SelectItem } from './components/select/SelectItem'
 // shellbar
 export { ShellBar } from './components/shellbar/ShellBar'
 // table

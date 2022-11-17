@@ -16,11 +16,6 @@ const DEMO_DATA = {
     props: [
       { id: '', type: '', description: '' },
     ],
-  }, {
-    id: 'SelectItem',
-    props: [
-      { id: '', type: '', description: '' },
-    ],
   }],
   examples: [{
     title: 'Cozy',
@@ -41,11 +36,20 @@ const DEMO_DATA = {
           ]}
           onItemSelected={(item) => alert(item.text)}
         />
-
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<Select`}</div>
+        <div>{`  placeholder='Select'`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'List Item 1' },`}</div>
+        <div>{`    { text: 'List Item 2' },`}</div>
+        <div>{`    { text: 'List Item 3' },`}</div>
+        <div>{`    { text: 'List Item 4' }`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
       </div>
     )
   }, {
@@ -68,11 +72,21 @@ const DEMO_DATA = {
           ]}
           onItemSelected={(item) => alert(item.text)}
         />
-
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<Select`}</div>
+        <div>{`  compact`}</div>
+        <div>{`  placeholder='Select'`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.' },`}</div>
+        <div>{`    { text: 'List Item 2' },`}</div>
+        <div>{`    { text: 'List Item 3' },`}</div>
+        <div>{`    { text: 'List Item 4' }`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
       </div>
     )
   }, {
@@ -83,7 +97,7 @@ const DEMO_DATA = {
       </>
     ),
     result: (
-      <div style={{ display: 'flex', gap: '1rem', height: '220px' }}>
+      <div style={{ display: 'flex', gap: '1rem', height: '220px', width: '100%' }}>
         <div
           style={{ flexGrow: 1, flexBasis: 0 }}
         >
@@ -153,7 +167,56 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
+        <div>{`<Select`}</div>
+        <div>{`  placeholder='Success'`}</div>
+        <div>{`  state={InputStates.SUCCESS}`}</div>
+        <div>{`  stateMessage='Success message'`}</div>
+        <div>{`  style={{ width: '200px' }}`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'List Item 1' },`}</div>
+        <div>{`    { text: 'List Item 2' },`}</div>
+        <div>{`    { text: 'List Item 3' },`}</div>
+        <div>{`    { text: 'List Item 4' }`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
+        <br/>
+        <div>{`<Select`}</div>
+        <div>{`  placeholder='Error'`}</div>
+        <div>{`  state={InputStates.ERROR}`}</div>
+        <div>{`  stateMessage='Error message'`}</div>
+        <div>{`  style={{ width: '200px' }}`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'Error' },`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
+        <br/>
+        <div>{`<Select`}</div>
+        <div>{`  placeholder='Warning'`}</div>
+        <div>{`  state={InputStates.WARNING}`}</div>
+        <div>{`  stateMessage='Warning message'`}</div>
+        <div>{`  style={{ width: '200px' }}`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'List Item 1' },`}</div>
+        <div>{`    { text: 'List Item 2' },`}</div>
+        <div>{`    { text: 'List Item 3' },`}</div>
+        <div>{`    { text: 'List Item 4' }`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
+        <br/>
+        <div>{`<Select`}</div>
+        <div>{`  placeholder='Information'`}</div>
+        <div>{`  state={InputStates.INFORMATION}`}</div>
+        <div>{`  stateMessage='Information message'`}</div>
+        <div>{`  style={{ width: '200px' }}`}</div>
+        <div>{`  items={[`}</div>
+        <div>{`    { text: 'List Item 1' },`}</div>
+        <div>{`  ]}`}</div>
+        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`/>`}</div>
       </div>
     )
   }]

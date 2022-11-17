@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { InputState } from '../../constants/InputState'
+import { ListTypes } from '../../constants/ListType'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
 
@@ -80,6 +81,7 @@ export const Select = ({
         items={items}
         state={state}
         stateMessage={stateMessage}
+        type={ListTypes.DROPDOWN}
         onItemSelected={onItemSelected}
       />
     </Popover>
