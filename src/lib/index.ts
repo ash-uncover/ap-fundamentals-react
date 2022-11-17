@@ -9,6 +9,7 @@ export { IconTabBarDesign, IconTabBarDesigns } from './constants/IconTabBarDesig
 export { InputState, InputStates } from './constants/InputState'
 export { ListType, ListTypes } from './constants/ListType'
 export { LinkType, LinkTypes } from './constants/LinkType'
+export { PageHeaderAttributeType, PageHeaderAttributeTypes } from './constants/PageHeaderAttributeType'
 export { Semantic, Semantics } from './constants/Semantic'
 export { Size, Sizes } from './constants/Size'
 export { TitleLevel, TitleLevels } from './constants/TitleLevel'

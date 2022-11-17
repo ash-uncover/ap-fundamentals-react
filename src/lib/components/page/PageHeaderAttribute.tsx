@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
+import { PageHeaderAttributeType } from '../../constants/PageHeaderAttributeType'
 import { Semantic } from '../../constants/Semantic'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
+
 import { ObjectStatus } from '../../components/object/ObjectStatus'
 import { ObjectText } from '../../components/object/ObjectText'
 
@@ -14,7 +16,7 @@ export interface PageHeaderAttributeInfo {
   label: string
   semantic?: Semantic
   text: string
-  type: 'text' | 'status'
+  type: PageHeaderAttributeType
 }
 
 export interface PageHeaderAttributeProperties extends
