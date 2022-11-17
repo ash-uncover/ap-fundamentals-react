@@ -2,15 +2,29 @@ import React, { ReactElement, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { FioriComponentProperties } from '../FioriBase'
+import { InputState } from '../../constants/InputState'
+import { PopoverMode, PopoverModes } from '../../constants/PopoverMode'
 
-import { Menu, type MenuItem } from '../menu/Menu'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface PopoverProperties extends FioriComponentProperties {
+import { List } from '../../components/list/List'
+import { ListItemInfo } from '../../components/list/ListItem'
+import { Menu } from '../../components/menu/Menu'
+import { MenuItemInfo } from '../../components/menu/MenuItem'
+
+export interface PopoverInfo {
   alignRight?: boolean
-  items: MenuItem[]
+  compact?: boolean
+  dropdown?: boolean
+  items: MenuItemInfo[] | ListItemInfo[]
+  mode?: PopoverMode
   noArrow?: boolean
-
+  state?: InputState
+  stateMessage?: string
+}
+export interface PopoverProperties extends
+  FioriComponentProperties,
+  PopoverInfo {
   children: ReactElement
 }
 
@@ -19,8 +33,13 @@ export const Popover = ({
   style,
 
   alignRight,
+  compact,
+  dropdown,
   items,
+  mode,
   noArrow,
+  state,
+  stateMessage,
 
   children,
 }: PopoverProperties) => {
@@ -74,6 +93,9 @@ export const Popover = ({
   if (noArrow) {
     classesBody.push('fd-popover__body--no-arrow')
   }
+  if (dropdown) {
+    classesBody.push('fd-popover__body--dropdown')
+  }
 
   const renderChild = () => {
     if (React.isValidElement(children)) {
@@ -105,10 +127,20 @@ export const Popover = ({
         aria-hidden={!open}
         id={id}
       >
-        <Menu
-          noShadow={true}
-          items={items}
-        />
+        {mode === PopoverModes.LIST ?
+          <List
+            compact={compact}
+            items={items}
+            state={state}
+            stateMessage={stateMessage}
+          />
+          :
+          <Menu
+            compact={compact}
+            items={items}
+            noShadow={true}
+          />
+        }
       </div>
     </div>
   )

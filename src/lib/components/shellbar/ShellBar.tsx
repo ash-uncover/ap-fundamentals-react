@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Sizes } from '../../constants/Size'
 import { Avatar } from '../avatar/Avatar'
-import { MenuItem } from '../menu/Menu'
+import { MenuItemInfo } from '../menu/MenuItem'
 import { Popover } from '../popover/Popover'
 
 export interface ShellBarProperties {
@@ -16,7 +16,7 @@ export interface ShellBarProperties {
 export interface ShellBarProfile {
   name: string,
   initials: string,
-  menu: MenuItem[]
+  menu: MenuItemInfo[]
 }
 
 export const ShellBar = ({
