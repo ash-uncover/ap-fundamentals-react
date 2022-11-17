@@ -1,9 +1,11 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
+export { AvatarDesign, AvatarDesigns } from './constants/AvatarDesign'
 export { BarType, BarTypes } from './constants/BarType'
 export { BusyIndicatorSize, BusyIndicatorSizes } from './constants/BusyIndicatorSize'
 export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
 export { ButtonType, ButtonTypes } from './constants/ButtonType'
+export { IconTabBarDesign, IconTabBarDesigns } from './constants/IconTabBarDesign'
 export { LinkType, LinkTypes } from './constants/LinkType'
 export { Semantic, Semantics } from './constants/Semantic'
 export { Size, Sizes } from './constants/Size'
@@ -11,8 +13,6 @@ export { TitleLevel, TitleLevels } from './constants/TitleLevel'
 
 // avatar
 export { Avatar } from './components/avatar/Avatar'
-// badge
-export { Badge } from './components/badge/Badge'
 // bar
 export { Bar } from './components/bar/Bar'
 export { BarElement } from './components/bar/BarElement'

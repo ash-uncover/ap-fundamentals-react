@@ -5,26 +5,36 @@ import React, {
 } from 'react'
 
 export interface VerticalNavigationItemProperties {
-  id: string
   className?: string
+  style?: React.CSSProperties
+
+  id: string
+  condensed?: boolean
   expanded?: boolean
+  icon?: string
   items?: VerticalNavigationItemProperties[]
-  glyph?: string
   selected?: boolean
   text: string
+
   onItemSelect?: (id: string) => void
+
   children?: any | any[]
 }
 
 export const VerticalNavigationItem = ({
-  id,
   className,
+  style,
+
+  id,
+  condensed,
   expanded,
+  icon,
   items,
-  glyph,
   selected,
   text,
+
   onItemSelect,
+
   children,
 }: VerticalNavigationItemProperties) => {
 
@@ -64,6 +74,9 @@ export const VerticalNavigationItem = ({
   if (className) {
     classes.push(className)
   }
+  if (condensed) {
+    classes.push('fd-list__navigation-item--condensed')
+  }
   if (expandable) {
     classes.push('fd-list__navigation-item--expandable')
   }
@@ -85,13 +98,14 @@ export const VerticalNavigationItem = ({
   return (
     <li
       className={classes.join(' ')}
+      style={style}
       tabIndex={0}
       onClick={onClick}
       onKeyUp={onKeyUp}
     >
-      {glyph ?
+      {icon ?
         <i
-          className={`fd-list__navigation-item-icon sap-icon--${glyph}`}
+          className={`fd-list__navigation-item-icon sap-icon--${icon}`}
           role='presentation'
         ></i>
         : null}
@@ -105,19 +119,21 @@ export const VerticalNavigationItem = ({
           onClick={() => setExpanded(!isExpanded)}
         ></button>
         : null}
-      {expandable && isExpanded && (Boolean(items?.length) || Boolean(children)) ?
+      {expandable && isExpanded ?
         <ul className='fd-list'>
           {items?.map(item => {
             return (
               <VerticalNavigationItem
                 key={item.id}
-                id={item.id}
                 className={item.className}
+                style={style ? style : item.style}
+                id={item.id}
+                condensed={condensed || item.condensed}
                 expanded={item.expanded}
+                icon={item.icon}
                 items={item.items}
-                glyph={item.glyph}
-                text={item.text}
                 selected={item.selected}
+                text={item.text}
                 onItemSelect={onItemSelect}
               />
             )

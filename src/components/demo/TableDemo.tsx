@@ -1,6 +1,7 @@
+import { StringUtils } from '@uncover/js-utils'
 import React from 'react'
 
-import { AccentColors, Table } from '../../lib'
+import { AccentColors, Avatar, Button, ButtonDesigns, Sizes, Table } from '../../lib'
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
@@ -21,6 +22,16 @@ const DEMO_DATA = {
           borderedHorizontal={true}
           borderedVertical={true}
           columns={[{
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
+          }, {
             key: 'email',
             name: 'Email',
             render: user => <a href='#'>{user.email}</a>
@@ -28,15 +39,19 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
-          }, {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             data: {
@@ -71,55 +86,7 @@ const DEMO_DATA = {
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
-        <div>{`<Table`}</div>
-        <div>{`  borderedHorizontal={true}`}</div>
-        <div>{`  borderedVertical={true}`}</div>
-        <div>{`  columns={[{`}</div>
-        <div>{`    key: 'email',`}</div>
-        <div>{`    name: 'Email',`}</div>
-        <div>{`    render: user => <a href='#'>{user.email}</a>`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'text',`}</div>
-        <div>{`    name: 'Text'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'name',`}</div>
-        <div>{`    name: 'Middle Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'lastName',`}</div>
-        <div>{`    name: 'Last Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'date',`}</div>
-        <div>{`    name: 'Date',`}</div>
-        <div>{`    formatter: user => user.date.toLocaleString()`}</div>
-        <div>{`  }]}`}</div>
-        <div>{`  rows={[{`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user1',`}</div>
-        <div>{`      text: 'I am User One',`}</div>
-        <div>{`      email: 'user1@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'One',`}</div>
-        <div>{`      date: new Date(2010, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user2',`}</div>
-        <div>{`      text: 'I am User Two',`}</div>
-        <div>{`      email: 'user2@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Two',`}</div>
-        <div>{`      date: new Date(2011, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user3',`}</div>
-        <div>{`      text: 'I am User Three',`}</div>
-        <div>{`      email: 'user3@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Three',`}</div>
-        <div>{`      date: new Date(2012, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }]}`}</div>
+
         <div>{`/>`}</div>
       </div>
     )
@@ -130,6 +97,16 @@ const DEMO_DATA = {
       <div>
         <Table
           columns={[{
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
+          }, {
             key: 'email',
             name: 'Email',
             render: user => <a href='#'>{user.email}</a>
@@ -137,15 +114,19 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
-          }, {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             data: {
@@ -180,54 +161,7 @@ const DEMO_DATA = {
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
-        <div>{`<Table`}</div>
-        <div>{`  columns={[{`}</div>
-        <div>{`    key: 'email',`}</div>
-        <div>{`    name: 'Email',`}</div>
-        <div>{`    render: user => <a href='#'>{user.email}</a>`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'text',`}</div>
-        <div>{`    name: 'Text'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'name',`}</div>
-        <div>{`    name: 'Middle Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'lastName',`}</div>
-        <div>{`    name: 'Last Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'date',`}</div>
-        <div>{`    name: 'Date',`}</div>
-        <div>{`    formatter: user => user.date.toLocaleString()`}</div>
-        <div>{`  }]}`}</div>
-        <div>{`  rows={[{`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user1',`}</div>
-        <div>{`      text: 'I am User One',`}</div>
-        <div>{`      email: 'user1@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'One',`}</div>
-        <div>{`      date: new Date(2010, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user2',`}</div>
-        <div>{`      text: 'I am User Two',`}</div>
-        <div>{`      email: 'user2@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Two',`}</div>
-        <div>{`      date: new Date(2011, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user3',`}</div>
-        <div>{`      text: 'I am User Three',`}</div>
-        <div>{`      email: 'user3@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Three',`}</div>
-        <div>{`      date: new Date(2012, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }]}`}</div>
-        <div>{`/>`}</div>
+
       </div>
     )
   }, {
@@ -239,6 +173,16 @@ const DEMO_DATA = {
           borderedHorizontal={true}
           borderedVertical={true}
           columns={[{
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
+          }, {
             key: 'email',
             name: 'Email',
             render: user => <a href='#'>{user.email}</a>
@@ -246,15 +190,19 @@ const DEMO_DATA = {
             key: 'text',
             name: 'Text'
           }, {
-            key: 'name',
-            name: 'Middle Name'
-          }, {
-            key: 'lastName',
-            name: 'Last Name'
-          }, {
             key: 'date',
             name: 'Date',
             formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
           }]}
           rows={[{
             hoverable: true,
@@ -293,55 +241,96 @@ const DEMO_DATA = {
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
+
+        <div>{`/>`}</div>
+      </div>
+    )
+  }, {
+    title: 'Click Events',
+    description: '',
+    result: (
+      <div>
+        <Table
+          borderedHorizontal={true}
+          borderedVertical={true}
+          onRowClick={(id) => window.alert(`[Table] Row clicked ${id}`)}
+          columns={[{
+            key: 'avatar',
+            name: 'User',
+            render: (row) => (
+              <Avatar
+                ariaLabel={`${row.name} ${row.lastName}`}
+                initials={`${StringUtils.capitalizeFirst(row.name)}${StringUtils.capitalizeFirst(row.lastName)}`}
+                size={Sizes.X_SMALL}
+              />
+            )
+          }, {
+            key: 'email',
+            name: 'Email',
+            render: user => <a href='#'>{user.email}</a>
+          }, {
+            key: 'text',
+            name: 'Text'
+          }, {
+            key: 'date',
+            name: 'Date',
+            formatter: user => user.date.toLocaleString()
+          }, {
+            key: 'actions',
+            name: '',
+            render: () => (
+              <Button
+                icon='overflow'
+                design={ButtonDesigns.TRANSPARENT}
+                compact
+              />
+            )
+          }]}
+          rows={[{
+            activable: true,
+            hoverable: true,
+            data: {
+              id: 'user1',
+              text: 'I am User One',
+              email: 'user1@email.com',
+              name: 'User',
+              lastName: 'One',
+              date: new Date(2010, 1, 5),
+            }
+          }, {
+            activable: true,
+            hoverable: true,
+            data: {
+              id: 'user2',
+              text: 'I am User Two',
+              email: 'user2@email.com',
+              name: 'User',
+              lastName: 'Two',
+              date: new Date(2011, 1, 5)
+            }
+          }, {
+            activable: true,
+            hoverable: true,
+            data: {
+              id: 'user3',
+              text: 'I am User Three',
+              email: 'user3@email.com',
+              name: 'User',
+              lastName: 'Three',
+              date: new Date(2012, 1, 5)
+            }
+          }]}
+        />
+      </div>
+    ),
+    code: (
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<Table`}</div>
         <div>{`  borderedHorizontal={true}`}</div>
         <div>{`  borderedVertical={true}`}</div>
-        <div>{`  columns={[{`}</div>
-        <div>{`    key: 'email',`}</div>
-        <div>{`    name: 'Email',`}</div>
-        <div>{`    render: user => <a href='#'>{user.email}</a>`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'text',`}</div>
-        <div>{`    name: 'Text'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'name',`}</div>
-        <div>{`    name: 'Middle Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'lastName',`}</div>
-        <div>{`    name: 'Last Name'`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    key: 'date',`}</div>
-        <div>{`    name: 'Date',`}</div>
-        <div>{`    formatter: user => user.date.toLocaleString()`}</div>
-        <div>{`  }]}`}</div>
-        <div>{`  rows={[{`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user1',`}</div>
-        <div>{`      text: 'I am User One',`}</div>
-        <div>{`      email: 'user1@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'One',`}</div>
-        <div>{`      date: new Date(2010, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user2',`}</div>
-        <div>{`      text: 'I am User Two',`}</div>
-        <div>{`      email: 'user2@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Two',`}</div>
-        <div>{`      date: new Date(2011, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }, {`}</div>
-        <div>{`    data: {`}</div>
-        <div>{`      id: 'user3',`}</div>
-        <div>{`      text: 'I am User Three',`}</div>
-        <div>{`      email: 'user3@email.com',`}</div>
-        <div>{`      name: 'User',`}</div>
-        <div>{`      lastName: 'Three',`}</div>
-        <div>{`      date: new Date(2012, 1, 5)`}</div>
-        <div>{`    }`}</div>
-        <div>{`  }]}`}</div>
+        <div>{`  onRowClick={(id) => window.alert(\`[Table] Row clicked \${id}\`)}`}</div>
+        <div>{`  columns={[...]}`}</div>
+        <div>{`  rows={[...]}`}</div>
         <div>{`/>`}</div>
       </div>
     )

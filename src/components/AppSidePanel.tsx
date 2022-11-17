@@ -28,12 +28,12 @@ export const AppSidePanel = () => {
         {
           id: 'components',
           text: 'Components',
-          glyph: 'folder-blank',
+          icon: 'folder-blank',
           expanded: true,
           items: COMPONENTS.map((compo) => {
             return {
               ...compo,
-              glyph: 'document-text'
+              icon: 'document-text'
             }
           })
         }
