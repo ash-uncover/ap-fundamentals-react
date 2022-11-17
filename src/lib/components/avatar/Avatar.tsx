@@ -6,21 +6,23 @@ import { AccentColor } from '../../constants/AccentColor'
 import { Size, Sizes } from '../../constants/Size'
 
 import { Icon } from '../icon/Icon'
+import { AvatarDesign } from 'constants/AvatarDesign'
 
 export interface AvatarProperties extends FioriComponentProperties {
   ariaLabel: string
+  ariaLabelZoom?: string
   ariaControls?: string
   ariaExpanded?: boolean
   ariaHaspopup?: boolean
 
+  accentColor?: AccentColor
+  bordered?: boolean
+  circle?: boolean
+  design?: AvatarDesign
   icon?: string
+  iconZoom?: string
   initials?: string
   size?: Size
-  accentColor?: AccentColor
-  shell?: boolean
-  bordered?: boolean
-  transparent?: boolean
-  circle?: boolean
 
   onClick?: () => void
 }
@@ -30,6 +32,7 @@ export const Avatar = ({
   style,
 
   ariaLabel,
+  ariaLabelZoom,
   ariaControls,
   ariaExpanded,
   ariaHaspopup,
@@ -37,11 +40,11 @@ export const Avatar = ({
   accentColor,
   bordered,
   circle,
+  design,
   icon,
+  iconZoom,
   initials,
-  shell,
   size = Sizes.MEDIUM,
-  transparent,
 
   onClick,
 }: AvatarProperties) => {
@@ -60,14 +63,11 @@ export const Avatar = ({
   if (accentColor) {
     classes.push(`fd-avatar--${accentColor}`)
   }
-  if (shell) {
-    classes.push('fd-avatar--shell')
-  }
   if (bordered) {
     classes.push('fd-avatar--border')
   }
-  if (transparent) {
-    classes.push('fd-avatar--transparent')
+  if (design) {
+    classes.push(`fd-avatar--${design}`)
   }
   if (circle) {
     classes.push('fd-avatar--circle')
@@ -82,9 +82,22 @@ export const Avatar = ({
       aria-haspopup={ariaHaspopup}
       style={style}
       role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
       onClick={onClick}
     >
-      {icon ? <Icon className='fd-avatar__icon' icon={icon} /> : initials}
+      {icon ?
+        <Icon
+          className='fd-avatar__icon'
+          icon={icon}
+        />
+        : initials}
+      {onClick && iconZoom ?
+        <Icon
+          className='fd-avatar__zoom-icon'
+          icon={iconZoom}
+          ariaLabel={ariaLabelZoom ? ariaLabelZoom : 'Edit'}
+        />
+        : null}
     </span>
   )
 }

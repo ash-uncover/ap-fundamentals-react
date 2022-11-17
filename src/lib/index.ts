@@ -1,5 +1,6 @@
 // constants
 export { AccentColor, AccentColors} from './constants/AccentColor'
+export { AvatarDesign, AvatarDesigns } from './constants/AvatarDesign'
 export { BarType, BarTypes } from './constants/BarType'
 export { BusyIndicatorSize, BusyIndicatorSizes } from './constants/BusyIndicatorSize'
 export { ButtonDesign, ButtonDesigns } from './constants/ButtonDesign'
