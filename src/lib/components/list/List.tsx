@@ -41,7 +41,9 @@ export const List = ({
   // Events //
 
   const onItemClicked = (item: ListItemInfo) => {
-    if (onItemSelected) {
+    if (item.onItemSelected) {
+      item.onItemSelected()
+    } else if (onItemSelected) {
       onItemSelected(item)
     }
     return false
@@ -91,7 +93,7 @@ export const List = ({
               id={index === 0 ? idState : undefined}
               key={`item-${index}`}
               {...item}
-              onItemSelected={() => item.onItemSelected ? item.onItemSelected() : onItemClicked(item)}
+              onItemSelected={() => onItemClicked(item)}
               type={type}
             />
           )

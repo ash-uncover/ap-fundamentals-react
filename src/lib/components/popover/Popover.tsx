@@ -2,30 +2,19 @@ import React, { ReactElement, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { InputState } from '../../constants/InputState'
-import { PopoverMode, PopoverModes } from '../../constants/PopoverMode'
-
 import { FioriComponentProperties } from '../../components/FioriBase'
-
-import { List } from '../../components/list/List'
-import { ListItemInfo } from '../../components/list/ListItem'
-import { Menu } from '../../components/menu/Menu'
-import { MenuItemInfo } from '../../components/menu/MenuItem'
 
 export interface PopoverInfo {
   alignRight?: boolean
   compact?: boolean
+  control: ReactElement
   dropdown?: boolean
-  items: MenuItemInfo[] | ListItemInfo[]
-  mode?: PopoverMode
   noArrow?: boolean
-  state?: InputState
-  stateMessage?: string
 }
 export interface PopoverProperties extends
   FioriComponentProperties,
   PopoverInfo {
-  children: ReactElement
+  children: ReactElement | ReactElement[]
 }
 
 export const Popover = ({
@@ -34,12 +23,9 @@ export const Popover = ({
 
   alignRight,
   compact,
+  control,
   dropdown,
-  items,
-  mode,
   noArrow,
-  state,
-  stateMessage,
 
   children,
 }: PopoverProperties) => {
@@ -97,12 +83,12 @@ export const Popover = ({
     classesBody.push('fd-popover__body--dropdown')
   }
 
-  const renderChild = () => {
-    if (React.isValidElement(children)) {
+  const renderControl = () => {
+    if (React.isValidElement(control)) {
       const injection: any = {
         onClick: onTogglePopover
       }
-      if (typeof children.type === 'string') {
+      if (typeof control.type === 'string') {
         injection['aria-controls'] = id
         injection['aria-expanded'] = open
         injection['aria-haspopup'] = true
@@ -112,35 +98,22 @@ export const Popover = ({
         injection.ariaExpanded = open
         injection.ariaHaspopup = true
       }
-      return React.cloneElement(children, injection)
+      return React.cloneElement(control, injection)
     }
-    return children
+    return control
   }
 
   return (
     <div className={classes.join(' ')} style={style}>
       <div className='fd-popover__control'>
-        {renderChild()}
+        {renderControl()}
       </div>
       <div
         className={classesBody.join(' ')}
         aria-hidden={!open}
         id={id}
       >
-        {mode === PopoverModes.LIST ?
-          <List
-            compact={compact}
-            items={items}
-            state={state}
-            stateMessage={stateMessage}
-          />
-          :
-          <Menu
-            compact={compact}
-            items={items}
-            noShadow={true}
-          />
-        }
+        {children}
       </div>
     </div>
   )

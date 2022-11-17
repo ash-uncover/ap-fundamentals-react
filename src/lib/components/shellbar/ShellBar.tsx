@@ -1,23 +1,32 @@
 import React from 'react'
 
 import { Sizes } from '../../constants/Size'
-import { Avatar } from '../avatar/Avatar'
-import { MenuItemInfo } from '../menu/MenuItem'
-import { Popover } from '../popover/Popover'
 
-export interface ShellBarProperties {
+import { FioriComponentProperties } from '../../components/FioriBase'
+
+import { Avatar } from '../../components/avatar/Avatar'
+import { Menu } from '../../components/menu/Menu'
+import { MenuItemInfo } from '../../components/menu/MenuItem'
+import { Popover } from '../../components/popover/Popover'
+
+export interface ShellBarInfo {
   logo: string
   logoAlt: string
   title: string
   subTitle?: string
-  profile?: ShellBarProfile
+  profile?: ShellBarProfileInfo
 }
 
-export interface ShellBarProfile {
+export interface ShellBarProfileInfo {
   name: string,
   initials: string,
   menu: MenuItemInfo[]
 }
+
+export interface ShellBarProperties extends
+  FioriComponentProperties,
+  ShellBarInfo { }
+
 
 export const ShellBar = ({
   logo,
@@ -53,13 +62,18 @@ export const ShellBar = ({
           {profile ?
             <Popover
               alignRight
-              items={profile.menu}
+              control={(
+                <Avatar
+                  ariaLabel={profile.name}
+                  initials={profile.initials}
+                  size={Sizes.X_SMALL}
+                  circle
+                />
+              )}
             >
-              <Avatar
-                ariaLabel={profile.name}
-                initials={profile.initials}
-                size={Sizes.X_SMALL}
-                circle
+              <Menu
+                items={profile.menu}
+                noShadow={true}
               />
             </Popover>
             : null}

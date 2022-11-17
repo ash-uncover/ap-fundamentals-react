@@ -36,6 +36,15 @@ export const ListItem = ({
   onItemSelected,
 }: ListItemProperties) => {
 
+  // Events //
+
+  const onItemClicked = () => {
+    if (onItemSelected) {
+      onItemSelected()
+    }
+    return false
+  }
+
   // Rendering //
 
   const renderContent = () => {
@@ -102,6 +111,7 @@ export const ListItem = ({
       role={type === ListTypes.DROPDOWN ? 'option' : 'listitem'}
       tabIndex={type === ListTypes.NAVIGATION ? -1 : 0}
       style={style}
+      onClick={onItemClicked}
     >
       {renderContent()}
     </li>
