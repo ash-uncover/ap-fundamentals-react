@@ -77,11 +77,9 @@ export const Select = ({
           >
             {value || placeholder}
           </span>
-          <Button
-            className='fd-select__button'
-            design={ButtonDesigns.TRANSPARENT}
-            icon='slim-arrow-down'
-          />
+          <span className='fd-button fd-select__button fd-button--transparent'>
+            <i className='sap-icon--slim-arrow-down' />
+          </span>
         </button>
       </div>
     </Popover>
