@@ -1,22 +1,25 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-import { Avatar } from '../avatar/Avatar'
-import { Bar } from '../bar/Bar'
-import { Button } from '../button/Button'
-import { Title } from '../title/Title'
 
 import { AccentColor } from '../../constants/AccentColor'
 import { BarTypes } from '../../constants/BarType'
 import { Sizes } from '../../constants/Size'
 import { TitleLevels } from '../../constants/TitleLevel'
 
+import { FioriComponentProperties } from '../../components/FioriBase'
+
+import { Avatar } from '../../components/avatar/Avatar'
+import { Bar } from '../../components/bar/Bar'
+import { Button } from '../../components/button/Button'
+import { Title } from '../../components/title/Title'
+
+import { PageHeaderAttribute, PageHeaderAttributeInfo } from './PageHeaderAttribute'
+
 import './PageHeader.css'
 
 export interface PageHeaderProperties extends FioriComponentProperties {
   actions?: ReactElement | ReactElement[]
-  attributes?: ReactElement | ReactElement[]
+  attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
   avatar?: PageHeaderAvatar
   breadcrumb: ReactElement
   hideBoxShadow?: boolean
@@ -65,6 +68,24 @@ export const PageHeader = ({
   }
 
   // Rendering //
+
+  const renderAttributes = (atts: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]) => {
+    if (Array.isArray(atts)) {
+      return atts.map((att, index) => {
+        return renderAttribute(att, `attribute-${index}`)
+      })
+    }
+    return renderAttribute(atts)
+  }
+
+  const renderAttribute = (att: PageHeaderAttributeInfo, key?: string) => {
+    return (
+      <PageHeaderAttribute
+        {...att}
+        key={key}
+      />
+    )
+  }
 
   const classes = ['ap-fd-page-header']
   if (className) {
@@ -134,7 +155,9 @@ export const PageHeader = ({
               ariaLabel={title}
             />
             : null}
-          {attributes}
+          {attributes ?
+            renderAttributes(attributes)
+            : null}
         </div>
         : null}
 

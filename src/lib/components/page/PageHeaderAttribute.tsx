@@ -1,20 +1,25 @@
-import React, { ReactElement, useState } from 'react'
+import React, { useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
 import { Semantic } from '../../constants/Semantic'
 
-import { FioriComponentProperties } from '../FioriBase'
-import { ObjectStatus } from '../object/ObjectStatus'
-import { ObjectText } from '../object/ObjectText'
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { ObjectStatus } from '../../components/object/ObjectStatus'
+import { ObjectText } from '../../components/object/ObjectText'
 
 import './PageHeaderAttribute.css'
 
-export interface PageHeaderAttributeProperties extends FioriComponentProperties {
+export interface PageHeaderAttributeInfo {
   label: string
   semantic?: Semantic
   text: string
   type: 'text' | 'status'
+}
+
+export interface PageHeaderAttributeProperties extends
+  FioriComponentProperties,
+  PageHeaderAttributeInfo {
 }
 
 export const PageHeaderAttribute = ({
@@ -29,7 +34,7 @@ export const PageHeaderAttribute = ({
 
   // Rendering //
 
-  const [id] = useState(UUID.next())
+  const [id] = useState(`page-header-attribute-${UUID.next()}`)
 
   const renderControl = () => {
     switch (type) {
