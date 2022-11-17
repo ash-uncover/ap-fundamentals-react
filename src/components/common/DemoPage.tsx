@@ -131,6 +131,8 @@ export const DemoPage = ({
 }
 
 export const demoCallback = (message: string) => {
+  /* tslint:disable */
   console.log(message)
+  /* tslint:enable */
   alert(message)
 }
