@@ -3,23 +3,33 @@ import React, { ReactElement } from 'react'
 import {
   VerticalNavigationItem,
   VerticalNavigationItemProperties
-} from '../../components/verticalnavigation/VerticalNavigationItem'
+} from './VerticalNavigationItem'
 
 export interface VerticalNavigationProperties {
   className?: string
+  style?: React.CSSProperties
+
+  condensed?: boolean
   label: string
-  itemsLabel: string
   items?: VerticalNavigationItemProperties[],
+  itemsLabel: string
+
   onItemSelect?: (id: string) => void
+
   children?: ReactElement | ReactElement[]
 }
 
 export const VerticalNavigation = ({
   className,
+  style,
+
+  condensed,
   label,
-  itemsLabel,
   items,
+  itemsLabel,
+
   onItemSelect,
+
   children,
 }: VerticalNavigationProperties) => {
 
@@ -29,20 +39,33 @@ export const VerticalNavigation = ({
   if (className) {
     classes.push(className)
   }
+  if (condensed) {
+    classes.push('fd-vertical-nav--condensed')
+  }
 
   return (
-    <div className={classes.join(' ')}>
-      <nav className='fd-vertical-nav__main-navigation' aria-label={label}>
-        <ul className='fd-list' aria-label={itemsLabel}>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
+      <nav
+        className='fd-vertical-nav__main-navigation'
+        aria-label={label}
+      >
+        <ul
+          className='fd-list'
+          aria-label={itemsLabel}
+        >
           {items?.map(item => {
             return (
               <VerticalNavigationItem
                 key={item.id}
-                id={item.id}
                 className={item.className}
+                id={item.id}
+                condensed={condensed || item.condensed}
                 expanded={item.expanded}
                 items={item.items}
-                glyph={item.glyph}
+                icon={item.icon}
                 text={item.text}
                 selected={item.selected}
                 onItemSelect={item.onItemSelect || onItemSelect}

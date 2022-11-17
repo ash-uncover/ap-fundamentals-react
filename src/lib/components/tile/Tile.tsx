@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 
-import { Badge } from '../../components/badge/Badge'
+import { InfoLabel } from '../../components/infolabel/InfoLabel'
 import { Size, Sizes } from '../../constants/Size'
 
 export interface TileProperties {
@@ -50,7 +50,7 @@ export const Tile = ({
       tabIndex={0}
       onClick={onClicked}
     >
-      {badge ? <Badge text={badge} /> : null}
+      {badge ? <InfoLabel text={badge} /> : null}
       <div className='fd-tile__header'>
         <div className='fd-tile__title'>
           {title}

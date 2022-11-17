@@ -1,12 +1,12 @@
 import React, { ReactElement } from 'react'
 
-import { Badge, BadgeProperties } from '../../components/badge/Badge'
 
-import { CardHeaderProperties, CardHeader } from '../../components/card/CardHeader'
-import { CardFooterProperties, CardFooter } from '../../components/card/CardFooter'
+import { CardHeader, CardHeaderProperties } from '../../components/card/CardHeader'
+import { CardFooter, CardFooterProperties } from '../../components/card/CardFooter'
+import { InfoLabel, InfoLabelProperties } from '../../components/infolabel/InfoLabel'
 
 export interface CardProperties {
-  badge?: BadgeProperties
+  badge?: InfoLabelProperties
   header: CardHeaderProperties
   footer?: CardFooterProperties
   children?: ReactElement | ReactElement[],
@@ -31,7 +31,7 @@ export const Card = ({
     <div
       className={classes.join(' ')}
     >
-      {badge ? <Badge {...badge} /> : null}
+      {badge ? <InfoLabel {...badge} /> : null}
       <CardHeader {...header} />
       {children ?
         <div

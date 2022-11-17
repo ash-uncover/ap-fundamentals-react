@@ -1,7 +1,10 @@
 import React, { ReactElement } from 'react'
+
 import { TableCell, TableCellIndicator, TableCellType } from './TableCell'
 import { TableHeaderCell } from './TableHeaderCell'
 import { TableRow } from './TableRow'
+
+import './Table.css'
 
 /*
   <Table
@@ -26,6 +29,7 @@ export interface TableProperties {
   columns: TableColumn[]
   rows?: TableRow[]
   children?: ReactElement | ReactElement[]
+  onRowClick?: (id: string) => void
 }
 export type TableColumn = {
   key: string
@@ -41,6 +45,7 @@ export type TableRow = {
   activable?: boolean
   hoverable?: boolean
   data: TableRowData
+  onClick?: () => void
 }
 export type TableRowData = {
   id: string
@@ -61,8 +66,19 @@ export const Table = ({
   indicator,
   columns,
   rows,
+
+  onRowClick,
+
   children,
 }: TableProperties) => {
+
+  // Events //
+
+  const onRowClicked = (id: string) => {
+    if (onRowClick) {
+      onRowClick(id)
+    }
+  }
 
   // Rendering //
 
@@ -104,6 +120,7 @@ export const Table = ({
             key={row.data.id}
             activable={row.activable}
             hoverable={row.hoverable}
+            onClick={() => onRowClicked(row.data.id)}
           >
             <>
               {indicator
@@ -115,7 +132,7 @@ export const Table = ({
                 )
                 : null}
               {columns.map((column) => {
-                const rendered = column.render || ((data) => (<span>{column.formatter ? column.formatter(data) : data[column.key]}</span>))
+                const rendered = column.render || ((data) => (<span className='fd-table__cell__label'>{column.formatter ? column.formatter(data) : data[column.key]}</span>))
                 return (
                   <TableCell
                     key={column.key}

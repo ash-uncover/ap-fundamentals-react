@@ -1,0 +1,19 @@
+.fd-table .fd-table__row--activable:active:has(button:active),
+.fd-table .fd-table__row--activable:active:has(button:active) .fd-table__cell,
+.fd-table .fd-table__row--activable:active:has(button:active) .fd-table__cell .fd-table__cell__label {
+  background-color: var(--sapList_Background) !important;
+  color: var(--sapTextColor) !important;
+}
+.fd-table .fd-table__row--activable:active:has(button:active) .fd-table__cell {
+  border-bottom-color: var(--sapList_BorderColor);
+}
+.fd-table .fd-table__row--activable:active:has(button:active) .fd-table__cell a {
+  color: -webkit-link !important;
+}
+
+.fd-table .fd-table__row--hoverable.fd-table__row--activable:active:has(button:active),
+.fd-table .fd-table__row--hoverable.fd-table__row--activable:active:has(button:active) .fd-table__cell,
+.fd-table .fd-table__row--hoverable.fd-table__row--activable:active:has(button:active) .fd-table__cell .fd-table__cell__label {
+  background-color: var(--sapList_Hover_Background) !important;
+  color: var(--fdTable_Hover_Down_Color) !important;
+}
