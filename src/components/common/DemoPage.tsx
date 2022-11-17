@@ -129,3 +129,8 @@ export const DemoPage = ({
     </div>
   )
 }
+
+export const demoCallback = (message: string) => {
+  console.log(message)
+  alert(message)
+}

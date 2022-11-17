@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { AccentColors, InputStates, Select } from '../../lib'
-import { DemoPage } from '../common/DemoPage'
+import { demoCallback, DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Select',
@@ -34,7 +34,7 @@ const DEMO_DATA = {
             { text: 'List Item 3' },
             { text: 'List Item 4' }
           ]}
-          onItemSelected={(item) => alert(item.text)}
+          onItemSelected={(item) => demoCallback(item.text)}
         />
       </div>
     ),
@@ -70,7 +70,7 @@ const DEMO_DATA = {
             { text: 'List Item 3' },
             { text: 'List Item 4' }
           ]}
-          onItemSelected={(item) => alert(item.text)}
+          onItemSelected={(item) => demoCallback(item.text)}
         />
       </div>
     ),
@@ -112,7 +112,7 @@ const DEMO_DATA = {
               { text: 'List Item 3' },
               { text: 'List Item 4' }
             ]}
-            onItemSelected={(item) => alert(item.text)}
+            onItemSelected={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -127,7 +127,7 @@ const DEMO_DATA = {
             items={[
               { text: 'Error' },
             ]}
-            onItemSelected={(item) => alert(item.text)}
+            onItemSelected={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -145,7 +145,7 @@ const DEMO_DATA = {
               { text: 'List Item 3' },
               { text: 'List Item 4' }
             ]}
-            onItemSelected={(item) => alert(item.text)}
+            onItemSelected={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -160,7 +160,7 @@ const DEMO_DATA = {
             items={[
               { text: 'List Item 1' },
             ]}
-            onItemSelected={(item) => alert(item.text)}
+            onItemSelected={(item) => demoCallback(item.text)}
           />
         </div>
 
