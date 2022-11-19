@@ -7,6 +7,7 @@ import { FioriComponentProperties } from '../../components/FioriBase'
 import { CheckBox, CheckBoxInfo } from '../../components/form/CheckBox'
 import { FormLabel } from '../../components/form/FormLabel'
 import { Input, InputInfo } from '../../components/form/Input'
+import { Select, SelectInfo } from '../../components/select/Select'
 import { StepInput, StepInputInfo } from '../../components/form/StepInput'
 
 export interface FormItemInfo {
@@ -15,6 +16,7 @@ export interface FormItemInfo {
 
   checkbox?: CheckBoxInfo
   input?: InputInfo
+  select?: SelectInfo
   stepinput?: StepInputInfo
 
   horizontal?: boolean
@@ -36,6 +38,7 @@ export const FormItem = ({
 
   checkbox,
   input,
+  select,
   stepinput,
 }: FormItemProperties) => {
 
@@ -51,6 +54,9 @@ export const FormItem = ({
     }
     if (input) {
       return <Input {...input} id={idFormItem} />
+    }
+    if (select) {
+      return <Select {...select} id={idFormItem} />
     }
     if (stepinput) {
       return <StepInput {...stepinput} id={idFormItem} />
