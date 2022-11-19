@@ -1,71 +1,89 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-import { UUID } from '@uncover/js-utils'
+import { InputState } from '../../constants/InputState'
+import { ListTypes } from '../../constants/ListType'
 
-export interface SelectProperties {
-  children: any
+import { FioriComponentProperties } from '../../components/FioriBase'
+
+import { List } from '../../components/list/List'
+import { ListItemInfo } from '../../components/list/ListItem'
+import { Popover } from '../../components/popover/Popover'
+
+export interface SelectInfo {
+  compact?: boolean
+  items: ListItemInfo[]
+  placeholder: string
+  state?: InputState
+  stateMessage?: string
+  value?: string
+
+  onItemSelected?: (item: ListItemInfo) => void
+}
+export interface SelectProperties extends
+  FioriComponentProperties,
+  SelectInfo {
 }
 
 export const Select = ({
-  children
+  className,
+  style,
+
+  compact,
+  items,
+  placeholder,
+  state,
+  stateMessage,
+  value,
+
+  onItemSelected,
 }: SelectProperties) => {
-
-  // Hooks //
-
-  const [id, setId] = useState<string | undefined>()
-  const [opened, setOpened] = useState(false)
-
-  useEffect(() => {
-    setId(UUID.next())
-  }, [])
-
-  // Events //
-
-  const onToggleOpen = () => {
-    setOpened(!opened)
-  }
 
   // Rendering //
 
-  return (
-    <div className='fd-popover'>
-      <div className='fd-popover__control'>
-        <div className='fd-select'>
-          <button
-            id={id}
-            className='fd-select__control'
-            aria-expanded={!!opened}
-            aria-haspopup='listbox'
-            aria-labelledby='cozySelectLabel cozySelectValue'
-            tabIndex={0}
-            value='List Item 1'
-            onClick={onToggleOpen}
-          >
-            <span
-              is='cozySelectValue'
-              className='fd-select__text-content'
-            >
-              List Item 1
-            </span>
-            <span className='fd-button fd-button--transparent fd-select__button'>
-              <i className='sap-icon--slim-arrow-down'></i>
-            </span>
-          </button>
-        </div>
-      </div>
-      <div
-        className='fd-popover__body fd-popover__body--no-arrow fd-popover__body--dropdown'
-        aria-hidden={!opened}
-      >
-        <ul
-          aria-activedescendant='cozySelectCombobox-currentlyFocusedItem'
-          aria-labelledby={id}
-          className='fd-list fd-list--dropdown'
-          role='listbox'
+  const classes = ['fd-select']
+  if (compact) {
+    classes.push('fd-select--compact')
+  }
+  const classesControl = ['fd-select__control']
+  if (state) {
+    classesControl.push(`is-${state}`)
+  }
+
+  const renderSelectControl = () => {
+    return (
+      <div className={classes.join(' ')}>
+        <button
+          className={classesControl.join(' ')}
+          tabIndex={0}
+          value={value || placeholder}
         >
-          {children}
-        </ul>
+          <span className='fd-select__text-content'>
+            {value || placeholder}
+          </span>
+          <span className='fd-button fd-select__button fd-button--transparent'>
+            <i className='sap-icon--slim-arrow-down' />
+          </span>
+        </button>
       </div>
-    </div>
+    )
+  }
+
+  return (
+    <Popover
+      className={className}
+      style={style}
+      control={renderSelectControl()}
+      dropdown
+      noArrow
+    >
+      <List
+        compact={compact}
+        items={items}
+        state={state}
+        stateMessage={stateMessage}
+        type={ListTypes.DROPDOWN}
+        onItemSelected={onItemSelected}
+      />
+    </Popover>
   )
 }

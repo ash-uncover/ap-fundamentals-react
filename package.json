@@ -1,13 +1,13 @@
 {
   "name": "@uncover/fundamentals-react",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "React implementation of ui5 fundamentals",
   "license": "MIT",
   "homepage": "https://ash-uncover.github.io/ap-fundamentals-react",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ash-uncover/ap-react-fundamentals"
+    "url": "https://github.com/ash-uncover/ap-fundamentals-react"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

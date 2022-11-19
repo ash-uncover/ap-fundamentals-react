@@ -1,26 +1,38 @@
+import { FioriComponentProperties } from 'components/FioriBase'
 import React from 'react'
 
-export interface MenuItemProperties {
-  text: string
-  shortcut?: string
+export interface MenuItemInfo {
   active?: boolean
-  hover?: boolean
-  selected?: boolean
   disabled?: boolean
+  hover?: boolean
   iconBefore?: string
   iconAfter?: string
+  id?: string
+  selected?: boolean
+  shortcut?: string
+  text: string
+
+  onItemSelected?: () => void
+}
+export interface MenuItemProperties extends
+  FioriComponentProperties,
+  MenuItemInfo {
   onItemSelected: () => void
 }
 
 export const MenuItem = ({
-  text,
-  shortcut,
+  className,
+  style,
+
   active,
-  hover,
-  selected,
   disabled,
-  iconBefore,
+  hover,
   iconAfter,
+  iconBefore,
+  selected,
+  shortcut,
+  text,
+
   onItemSelected,
 }: MenuItemProperties) => {
 
@@ -38,6 +50,9 @@ export const MenuItem = ({
   // Rendering //
 
   const classes = ['fd-menu__item']
+  if (className) {
+    classes.push(className)
+  }
   const classesLink = ['fd-menu__link']
   if (active) {
     classesLink.push('is-active')
@@ -56,6 +71,7 @@ export const MenuItem = ({
     <li
       className={classes.join(' ')}
       role='presentation'
+      style={style}
     >
       <a
         className={classesLink.join(' ')}

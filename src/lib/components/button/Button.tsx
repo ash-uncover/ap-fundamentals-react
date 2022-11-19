@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 
 import { FioriComponentProperties } from '../FioriBase'
 
@@ -52,7 +52,8 @@ export const Button = ({
 
   // Events //
 
-  const onClicked = () => {
+  const onClicked = (event: MouseEvent) => {
+    event.stopPropagation()
     if (onClick) {
       onClick()
     }

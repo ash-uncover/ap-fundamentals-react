@@ -1,6 +1,14 @@
 import React from 'react'
 
-import { AccentColors, Avatar, Button, Popover, Sizes } from '../../lib'
+import {
+  AccentColors,
+  Avatar,
+  Button,
+  Menu,
+  Popover,
+  Sizes
+} from '../../lib'
+
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
@@ -14,7 +22,11 @@ const DEMO_DATA = {
   types: [{
     id: 'Popover',
     props: [
-      { id: 'icon', type: 'string', description: '(Optional) If provided, an icon will be displayed as the first element of the Info Label' },
+      {
+        id: 'icon',
+        type: 'string',
+        description: '(Optional) If provided, an icon will be displayed as the first element of the Info Label'
+      },
     ]
   }],
   examples: [{
@@ -24,19 +36,24 @@ const DEMO_DATA = {
       <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
         <div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>
           <Popover
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <button
+                className='fd-button'
+                role='button'
+              >
+                <i className='sap-icon--navigation-down-arrow'></i>
+              </button>
+            )}
           >
-            <button
-              className='fd-button'
-              role='button'
-            >
-              <i className='sap-icon--navigation-down-arrow'></i>
-            </button>
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
+            />
           </Popover>
           Left-aligned (default)
         </div>
@@ -44,115 +61,132 @@ const DEMO_DATA = {
           Right-aligned
           <Popover
             alignRight
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <button
+                className='fd-button'
+                role='button'
+              >
+                <i className='sap-icon--navigation-down-arrow'></i>
+              </button>
+            )}
           >
-            <button
-              className='fd-button'
-              role='button'
-            >
-              <i className='sap-icon--navigation-down-arrow'></i>
-            </button>
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
+            />
           </Popover>
         </div>
         <div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>
           <Popover
             noArrow
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <button
+                className='fd-button'
+                role='button'
+              >
+                <i className='sap-icon--navigation-down-arrow'></i>
+                Left-aligned (no arrow)
+              </button>
+            )}
           >
-            <button
-              className='fd-button'
-              role='button'
-            >
-              <i className='sap-icon--navigation-down-arrow'></i>
-              Left-aligned (no arrow)
-            </button>
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
+            />
           </Popover>
         </div>
         <div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>
           <Popover
             alignRight
             noArrow
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <button
+                className='fd-button'
+                role='button'
+              >
+                Right-aligned (no arrow)
+                <i className='sap-icon--navigation-down-arrow'></i>
+              </button>
+            )}
           >
-            <button
-              className='fd-button'
-              role='button'
-            >
-              Right-aligned (no arrow)
-              <i className='sap-icon--navigation-down-arrow'></i>
-            </button>
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
+            />
           </Popover>
         </div>
       </div>
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
-        <div>{`<div style={{ display: 'flex' }}>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      items={[`}</div>
-        <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
-        <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
-        <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
-        <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
-        <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    control={(`}</div>
         <div>{`      <button`}</div>
         <div>{`        className='fd-button'`}</div>
         <div>{`        role='button'`}</div>
         <div>{`      >`}</div>
         <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
         <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`    Left-aligned (default)`}</div>
-        <div>{`  </div>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    Right-aligned`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      alignRight`}</div>
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
         <div>{`      items={[`}</div>
         <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
         <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
         <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
         <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
         <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
+        <div>{`  Left-aligned (default)`}</div>
+        <div>{`</div>`}</div>
+        <br />
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  Right-aligned`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    alignRight`}</div>
+        <div>{`    control={(`}</div>
         <div>{`      <button`}</div>
         <div>{`        className='fd-button'`}</div>
         <div>{`        role='button'`}</div>
         <div>{`      >`}</div>
         <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
         <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      noArrow`}</div>
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
         <div>{`      items={[`}</div>
         <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
         <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
         <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
         <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
         <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
+        <div>{`</div>`}</div>
+        <br />
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    noArrow`}</div>
+        <div>{`    control={(`}</div>
         <div>{`      <button`}</div>
         <div>{`        className='fd-button'`}</div>
         <div>{`        role='button'`}</div>
@@ -160,20 +194,25 @@ const DEMO_DATA = {
         <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
         <div>{`        Left-aligned (no arrow)`}</div>
         <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      alignRight`}</div>
-        <div>{`      noArrow`}</div>
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
         <div>{`      items={[`}</div>
         <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
         <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
         <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
         <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
         <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
+        <div>{`</div>`}</div>
+        <br />
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    alignRight`}</div>
+        <div>{`    noArrow`}</div>
+        <div>{`    control={(`}</div>
         <div>{`      <button`}</div>
         <div>{`        className='fd-button'`}</div>
         <div>{`        role='button'`}</div>
@@ -181,11 +220,20 @@ const DEMO_DATA = {
         <div>{`        Right-aligned (no arrow)`}</div>
         <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
         <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
+        <div>{`      items={[`}</div>
+        <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
+        <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
+        <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
+        <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
+        <div>{`      ]}`}</div>
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
         <div>{`</div>`}</div>
-      </div>
+      </div >
     )
   }, {
     title: 'Control variants',
@@ -194,18 +242,23 @@ const DEMO_DATA = {
       <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
         <div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>
           <Popover
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <Avatar
+                ariaLabel='Popover avatar'
+                icon='settings'
+                size={Sizes.SMALL}
+                circle
+              />
+            )}
           >
-            <Avatar
-              ariaLabel='Popover avatar'
-              icon='settings'
-              size={Sizes.SMALL}
-              circle
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
             />
           </Popover>
         </div>
@@ -213,15 +266,20 @@ const DEMO_DATA = {
           <Popover
             alignRight
             noArrow
-            items={[
-              { id: 'item1', text: 'Option 1' },
-              { id: 'item2', text: 'Option 2' },
-              { id: 'item3', text: 'Option 3' },
-              { id: 'item4', text: 'Option 4' },
-            ]}
+            control={(
+              <Button
+                icon='cart'
+              />
+            )}
           >
-            <Button
-              icon='cart'
+            <Menu
+              noShadow
+              items={[
+                { id: 'item1', text: 'Option 1' },
+                { id: 'item2', text: 'Option 2' },
+                { id: 'item3', text: 'Option 3' },
+                { id: 'item4', text: 'Option 4' },
+              ]}
             />
           </Popover>
         </div>
@@ -229,88 +287,49 @@ const DEMO_DATA = {
     ),
     code: (
       <div style={{ whiteSpace: 'pre' }}>
-        <div>{`<div style={{ display: 'flex' }}>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    control={(`}</div>
+        <div>{`      <Avatar`}</div>
+        <div>{`        ariaLabel='Popover avatar'`}</div>
+        <div>{`        icon='settings'`}</div>
+        <div>{`        size={Sizes.SMALL}`}</div>
+        <div>{`        circle`}</div>
+        <div>{`      />`}</div>
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
         <div>{`      items={[`}</div>
         <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
         <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
         <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
         <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
         <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
-        <div>{`      <button`}</div>
-        <div>{`        className='fd-button'`}</div>
-        <div>{`        role='button'`}</div>
-        <div>{`      >`}</div>
-        <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
-        <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`    Left-aligned (default)`}</div>
-        <div>{`  </div>`}</div>
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
+        <div>{`</div>`}</div>
         <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    Right-aligned`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      alignRight`}</div>
+        <div>{`<div style={{ flexBasis: 0, flexGrow: 1, flexShrink: 0 }}>`}</div>
+        <div>{`  <Popover`}</div>
+        <div>{`    alignRight`}</div>
+        <div>{`    noArrow`}</div>
+        <div>{`    control={(`}</div>
+        <div>{`      <Button`}</div>
+        <div>{`        icon='cart'`}</div>
+        <div>{`      />`}</div>
+        <div>{`    )}`}</div>
+        <div>{`  >`}</div>
+        <div>{`    <Menu`}</div>
+        <div>{`      noShadow`}</div>
         <div>{`      items={[`}</div>
         <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
         <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
         <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
         <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
         <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
-        <div>{`      <button`}</div>
-        <div>{`        className='fd-button'`}</div>
-        <div>{`        role='button'`}</div>
-        <div>{`      >`}</div>
-        <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
-        <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      noArrow`}</div>
-        <div>{`      items={[`}</div>
-        <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
-        <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
-        <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
-        <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
-        <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
-        <div>{`      <button`}</div>
-        <div>{`        className='fd-button'`}</div>
-        <div>{`        role='button'`}</div>
-        <div>{`      >`}</div>
-        <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
-        <div>{`        Left-aligned (no arrow)`}</div>
-        <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
-        <div>{`  <div style={{ flexBasis: 0, flexGrow: 1 }}>`}</div>
-        <div>{`    <Popover`}</div>
-        <div>{`      alignRight`}</div>
-        <div>{`      noArrow`}</div>
-        <div>{`      items={[`}</div>
-        <div>{`        { id: 'item1', text: 'Option 1' },`}</div>
-        <div>{`        { id: 'item2', text: 'Option 2' },`}</div>
-        <div>{`        { id: 'item3', text: 'Option 3' },`}</div>
-        <div>{`        { id: 'item4', text: 'Option 4' },`}</div>
-        <div>{`      ]}`}</div>
-        <div>{`    >`}</div>
-        <div>{`      <button`}</div>
-        <div>{`        className='fd-button'`}</div>
-        <div>{`        role='button'`}</div>
-        <div>{`      >`}</div>
-        <div>{`        Right-aligned (no arrow)`}</div>
-        <div>{`        <i className='sap-icon--navigation-down-arrow'></i>`}</div>
-        <div>{`      </button>`}</div>
-        <div>{`    </Popover>`}</div>
-        <div>{`  </div>`}</div>
-        <br />
+        <div>{`    />`}</div>
+        <div>{`  </Popover>`}</div>
         <div>{`</div>`}</div>
       </div>
     )

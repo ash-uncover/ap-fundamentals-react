@@ -12,6 +12,7 @@ import { FormDemo } from '../components/demo/FormDemo'
 import { IconDemo } from '../components/demo/IconDemo'
 import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
 import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
+import { ListDemo } from '../components/demo/ListDemo'
 import { LinkDemo } from '../components/demo/LinkDemo'
 import { MenuDemo } from '../components/demo/MenuDemo'
 import { ObjectDemo } from '../components/demo/ObjectDemo'
@@ -86,6 +87,11 @@ export const COMPONENT = {
     id: 'infolabel',
     text: 'InfoLabel',
     demo: InfoLabelDemo
+  },
+  LIST: {
+    id: 'list',
+    text: 'List',
+    demo: ListDemo
   },
   LINK: {
     id: 'link',

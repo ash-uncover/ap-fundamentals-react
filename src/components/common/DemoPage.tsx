@@ -129,3 +129,10 @@ export const DemoPage = ({
     </div>
   )
 }
+
+export const demoCallback = (message: string) => {
+  /* tslint:disable */
+  console.log(message)
+  /* tslint:enable */
+  alert(message)
+}

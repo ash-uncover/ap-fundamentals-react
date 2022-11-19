@@ -1,30 +1,26 @@
+import { FioriComponentProperties } from 'components/FioriBase'
 import React from 'react'
-import { MenuItem } from './MenuItem'
+import { MenuItem, MenuItemInfo } from './MenuItem'
 
-export interface MenuProperties {
-  items: MenuItem[]
+export interface MenuInfo {
   compact?: boolean
+  items: MenuItemInfo[]
   noShadow?: boolean
-  onItemSelected?: (id: string) => void
-}
 
-export interface MenuItem {
-  id: string
-  text: string
-  shortcut?: string
-  active?: boolean
-  hover?: boolean
-  selected?: boolean
-  disabled?: boolean
-  iconBefore?: string
-  iconAfter?: string
-  onItemSelected?: () => void
+  onItemSelected?: (item: MenuItemInfo) => void
 }
+export interface MenuProperties extends
+  FioriComponentProperties,
+  MenuInfo { }
 
 export const Menu = ({
-  items,
+  className,
+  style,
+
   compact,
+  items,
   noShadow,
+
   onItemSelected,
 }: MenuProperties) => {
 
@@ -32,9 +28,9 @@ export const Menu = ({
 
   // Events //
 
-  const onItemClicked = (id: string) => {
+  const onItemClicked = (item: MenuItemInfo) => {
     if (onItemSelected) {
-      onItemSelected(id)
+      onItemSelected(item)
     }
     return false
   }
@@ -42,6 +38,9 @@ export const Menu = ({
   // Rendering //
 
   const classes = ['fd-menu']
+  if (className) {
+    classes.push(className)
+  }
   if (compact) {
     classes.push('fd-menu--compact')
   }
@@ -55,17 +54,18 @@ export const Menu = ({
       className={classes.join(' ')}
       aria-label='options'
       role='navigation'
+      style={style}
     >
       <ul
         className={classesList.join(' ')}
         role='menu'
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <MenuItem
               {...item}
-              key={item.id}
-              onItemSelected={() => item.onItemSelected ? item.onItemSelected() : onItemClicked(item.id)}
+              key={`menu-item-${index}`}
+              onItemSelected={() => item.onItemSelected ? item.onItemSelected() : onItemClicked(item)}
             />
           )
         })}

@@ -2,16 +2,19 @@ import React, { ReactElement, useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { FioriComponentProperties } from '../FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { Menu, type MenuItem } from '../menu/Menu'
-
-export interface PopoverProperties extends FioriComponentProperties {
+export interface PopoverInfo {
   alignRight?: boolean
-  items: MenuItem[]
+  compact?: boolean
+  control: ReactElement
+  dropdown?: boolean
   noArrow?: boolean
-
-  children: ReactElement
+}
+export interface PopoverProperties extends
+  FioriComponentProperties,
+  PopoverInfo {
+  children: ReactElement | ReactElement[]
 }
 
 export const Popover = ({
@@ -19,7 +22,9 @@ export const Popover = ({
   style,
 
   alignRight,
-  items,
+  compact,
+  control,
+  dropdown,
   noArrow,
 
   children,
@@ -74,13 +79,16 @@ export const Popover = ({
   if (noArrow) {
     classesBody.push('fd-popover__body--no-arrow')
   }
+  if (dropdown) {
+    classesBody.push('fd-popover__body--dropdown')
+  }
 
-  const renderChild = () => {
-    if (React.isValidElement(children)) {
+  const renderControl = () => {
+    if (React.isValidElement(control)) {
       const injection: any = {
         onClick: onTogglePopover
       }
-      if (typeof children.type === 'string') {
+      if (typeof control.type === 'string') {
         injection['aria-controls'] = id
         injection['aria-expanded'] = open
         injection['aria-haspopup'] = true
@@ -90,25 +98,22 @@ export const Popover = ({
         injection.ariaExpanded = open
         injection.ariaHaspopup = true
       }
-      return React.cloneElement(children, injection)
+      return React.cloneElement(control, injection)
     }
-    return children
+    return control
   }
 
   return (
     <div className={classes.join(' ')} style={style}>
       <div className='fd-popover__control'>
-        {renderChild()}
+        {renderControl()}
       </div>
       <div
         className={classesBody.join(' ')}
         aria-hidden={!open}
         id={id}
       >
-        <Menu
-          noShadow={true}
-          items={items}
-        />
+        {children}
       </div>
     </div>
   )

@@ -71,23 +71,21 @@ const DEMO_DATA = {
             accentColor: AccentColors.COLOR_9
           }}
           attributes={[
-            <PageHeaderAttribute
-              label='Marker 1'
-              semantic={Semantics.POSITIVE}
-              text='Positive Maker'
-              type='status'
-            />,
-            <PageHeaderAttribute
-              label='Marker 2'
-              semantic={Semantics.NEGATIVE}
-              text='-2345.78€'
-              type='status'
-            />,
-            <PageHeaderAttribute
-              label='My property'
-              text='Text Property are used for longer text such as description that can span a lot and require several lines to display.'
-              type='text'
-            />,
+            {
+              label: 'Marker 1',
+              semantic: Semantics.POSITIVE,
+              text: 'Positive Marker',
+              type: 'status',
+            }, {
+              label: 'Marker 2',
+              semantic: Semantics.NEGATIVE,
+              text: '-2345.78€',
+              type: 'status',
+            }, {
+              label: 'My property',
+              text: 'Text Property are used for longer text such as description that can span a lot and require several lines to display.',
+              type: 'text',
+            }
           ]}
         />
         <PageBody>

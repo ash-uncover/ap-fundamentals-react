@@ -2,7 +2,7 @@ import { StringUtils } from '@uncover/js-utils'
 import React from 'react'
 
 import { AccentColors, Avatar, Button, ButtonDesigns, Sizes, Table } from '../../lib'
-import { DemoPage } from '../common/DemoPage'
+import { demoCallback, DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Table',
@@ -21,6 +21,7 @@ const DEMO_DATA = {
         <Table
           borderedHorizontal={true}
           borderedVertical={true}
+          onRowClick={(id) => demoCallback(`row clicked ${id}`)}
           columns={[{
             key: 'avatar',
             name: 'User',
@@ -50,6 +51,7 @@ const DEMO_DATA = {
                 icon='overflow'
                 design={ButtonDesigns.TRANSPARENT}
                 compact
+                onClick={() => demoCallback('actions clicked')}
               />
             )
           }]}
