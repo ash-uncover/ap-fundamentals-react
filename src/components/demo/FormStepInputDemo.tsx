@@ -29,7 +29,7 @@ const DEMO_DATA = {
         <FormStepInput
           label='Default Step Input:'
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
       </div>
     ),
@@ -50,7 +50,7 @@ const DEMO_DATA = {
           compact
           label='Compact Step Input:'
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
       </div>
     ),
@@ -71,25 +71,25 @@ const DEMO_DATA = {
           label='Error Step Input:'
           state={InputStates.ERROR}
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
         <FormStepInput
           label='Succes Step Input:'
           state={InputStates.SUCCESS}
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
         <FormStepInput
           label='Warning Step Input:'
           state={InputStates.WARNING}
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
         <FormStepInput
           label='Information Step Input:'
           state={InputStates.INFORMATION}
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
       </div>
     ),
@@ -110,7 +110,7 @@ const DEMO_DATA = {
           label='Disabled Step Input:'
           disabled
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
       </div>
     ),
@@ -131,7 +131,7 @@ const DEMO_DATA = {
           label='Read-Only Step Input:'
           readOnly
           value={0}
-          onChange={() => { }}
+          onChange={(value) => { alert(`Step Input: ${value}`) }}
         />
       </div>
     ),

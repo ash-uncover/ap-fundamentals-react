@@ -44,39 +44,39 @@ const DEMO_DATA = {
         <FormCheckBox
           compact
           text='Apple'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           checked
           compact
           text='Banana'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           compact
           disabled
           text='Kiwi'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           checked
           compact
           disabled
           text='Lemon'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           compact
           indeterminate
           text='All Fruits'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           compact
           disabled
           indeterminate
           text='All Vegetables'
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
       </div>
     ),
@@ -97,7 +97,7 @@ const DEMO_DATA = {
           compact
           text='Required Checkbox'
           required
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
       </div>
     ),
@@ -117,109 +117,109 @@ const DEMO_DATA = {
         <FormCheckBox
           text='Error Checkbox'
           state={InputStates.ERROR}
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Error Checkbox Selected'
           state={InputStates.ERROR}
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Error Checkbox Indeterminate'
           state={InputStates.ERROR}
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <br/>
         <FormCheckBox
           text='Success Checkbox'
           state={InputStates.SUCCESS}
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Success Checkbox Selected'
           state={InputStates.SUCCESS}
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Success Checkbox Indeterminate'
           state={InputStates.SUCCESS}
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <br/>
         <FormCheckBox
           text='Warning Checkbox'
           state={InputStates.WARNING}
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Warning Checkbox Selected'
           state={InputStates.WARNING}
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Warning Checkbox Indeterminate'
           state={InputStates.WARNING}
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <br/>
         <FormCheckBox
           text='Information Checkbox'
           state={InputStates.INFORMATION}
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Information Checkbox Selected'
           state={InputStates.INFORMATION}
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Information Checkbox Indeterminate'
           state={InputStates.INFORMATION}
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <br/>
         <FormCheckBox
           text='Disabled Checkbox'
           disabled
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Disabled Checkbox Selected'
           disabled
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Disabled Checkbox Indeterminate'
           disabled
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <br/>
         <FormCheckBox
           text='Read-Only Checkbox'
           readOnly
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Read-Only Checkbox Selected'
           readOnly
           checked
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
         <FormCheckBox
           text='Read-Only Checkbox Indeterminate'
           readOnly
           indeterminate
-          onChange={(value: boolean) => { }}
+          onChange={(value) => { alert(`Checkbox: ${value}`) }}
         />
       </div>
     ),

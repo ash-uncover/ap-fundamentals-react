@@ -41,27 +41,27 @@ const DEMO_DATA = {
           label='Default Input:'
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           compact
           label='Compact Input:'
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Required Input:'
           placeholder='Field placeholder text'
           required={true}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Password Input:'
           type={InputTypes.PASSWORD}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
       </div>
     ),
@@ -83,7 +83,7 @@ const DEMO_DATA = {
           horizontal
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           compact
@@ -91,7 +91,7 @@ const DEMO_DATA = {
           label='Compact Input:'
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           horizontal
@@ -99,14 +99,14 @@ const DEMO_DATA = {
           placeholder='Field placeholder text'
           required={true}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           horizontal
           label='Password Input:'
           type={InputTypes.PASSWORD}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
       </div>
     ),
@@ -136,49 +136,49 @@ const DEMO_DATA = {
           label='Default Input:'
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Error Input:'
           placeholder='Field placeholder text'
           state={InputStates.ERROR}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Success Input:'
           placeholder='Field placeholder text'
           state={InputStates.SUCCESS}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Warning Input:'
           placeholder='Field placeholder text'
           state={InputStates.WARNING}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Information Input:'
           placeholder='Field placeholder text'
           state={InputStates.INFORMATION}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           disabled={true}
           label='Disabled Input:'
           placeholder='Field placeholder text'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Read-Only Input:'
           placeholder='Field placeholder text'
           readOnly={true}
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
       </div>
     ),
@@ -201,7 +201,7 @@ const DEMO_DATA = {
           state={InputStates.ERROR}
           stateMessage='Error message'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Success Input:'
@@ -209,7 +209,7 @@ const DEMO_DATA = {
           state={InputStates.SUCCESS}
           stateMessage='Success message'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Warning Input:'
@@ -217,7 +217,7 @@ const DEMO_DATA = {
           state={InputStates.WARNING}
           stateMessage='Warning message'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
         <FormInput
           label='Information Input:'
@@ -225,7 +225,7 @@ const DEMO_DATA = {
           state={InputStates.INFORMATION}
           stateMessage='Information message'
           value=''
-          onChange={() => { }}
+          onChange={(value) => { alert(`Input: ${value}`) }}
         />
       </div>
     ),

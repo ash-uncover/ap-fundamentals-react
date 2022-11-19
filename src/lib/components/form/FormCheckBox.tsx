@@ -5,12 +5,12 @@ import { FioriComponentProperties } from '../../components/FioriBase'
 import { CheckBoxInfo } from '../../components/form/CheckBox'
 import { FormItem } from '../../components/form/FormItem'
 
-export interface FormCheckBoxInfo {
-}
+// export interface FormCheckBoxInfo {
+// }
 
 export interface FormCheckBoxProperties extends
   FioriComponentProperties,
-  FormCheckBoxInfo,
+  // FormCheckBoxInfo,
   CheckBoxInfo {
 }
 

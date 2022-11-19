@@ -49,16 +49,16 @@ export const FormInput = ({
       horizontal={horizontal}
       required={required}
       input={{
-        ariaLabel: ariaLabel,
-        compact: compact,
-        disabled: disabled,
-        placeholder: placeholder,
-        readOnly: readOnly,
-        state: state,
-        stateMessage: stateMessage,
-        type: type,
-        value: value,
-        onChange: onChange
+        ariaLabel,
+        compact,
+        disabled,
+        placeholder,
+        readOnly,
+        state,
+        stateMessage,
+        type,
+        value,
+        onChange,
       }}
     />
   )
