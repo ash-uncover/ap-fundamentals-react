@@ -4,7 +4,6 @@ import {
   AccentColors,
   FormCheckBox,
   InputStates,
-  InputTypes,
 } from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
