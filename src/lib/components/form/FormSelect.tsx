@@ -20,7 +20,7 @@ export interface FormSelectInfo {
   stateMessage?: string
   value?: string
 
-  onItemSelected?: (item: ListItemInfo) => void
+  onChange: (item: ListItemInfo) => void
 }
 
 export interface FormSelectProperties extends
@@ -40,7 +40,7 @@ export const FormSelect = ({
   stateMessage,
   value,
 
-  onItemSelected,
+  onChange,
 }: FormSelectProperties) => {
 
   // Rendering //
@@ -57,7 +57,7 @@ export const FormSelect = ({
         state,
         stateMessage,
         value,
-        onItemSelected,
+        onChange,
       }}
     />
   )

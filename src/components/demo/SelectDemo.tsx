@@ -34,7 +34,7 @@ const DEMO_DATA = {
             { text: 'List Item 3' },
             { text: 'List Item 4' }
           ]}
-          onItemSelected={(item) => demoCallback(item.text)}
+          onChange={(item) => demoCallback(item.text)}
         />
       </div>
     ),
@@ -48,7 +48,7 @@ const DEMO_DATA = {
         <div>{`    { text: 'List Item 3' },`}</div>
         <div>{`    { text: 'List Item 4' }`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
       </div>
     )
@@ -70,7 +70,7 @@ const DEMO_DATA = {
             { text: 'List Item 3' },
             { text: 'List Item 4' }
           ]}
-          onItemSelected={(item) => demoCallback(item.text)}
+          onChange={(item) => demoCallback(item.text)}
         />
       </div>
     ),
@@ -85,7 +85,7 @@ const DEMO_DATA = {
         <div>{`    { text: 'List Item 3' },`}</div>
         <div>{`    { text: 'List Item 4' }`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
       </div>
     )
@@ -112,7 +112,7 @@ const DEMO_DATA = {
               { text: 'List Item 3' },
               { text: 'List Item 4' }
             ]}
-            onItemSelected={(item) => demoCallback(item.text)}
+            onChange={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -127,7 +127,7 @@ const DEMO_DATA = {
             items={[
               { text: 'Error' },
             ]}
-            onItemSelected={(item) => demoCallback(item.text)}
+            onChange={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -145,7 +145,7 @@ const DEMO_DATA = {
               { text: 'List Item 3' },
               { text: 'List Item 4' }
             ]}
-            onItemSelected={(item) => demoCallback(item.text)}
+            onChange={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -160,7 +160,7 @@ const DEMO_DATA = {
             items={[
               { text: 'List Item 1' },
             ]}
-            onItemSelected={(item) => demoCallback(item.text)}
+            onChange={(item) => demoCallback(item.text)}
           />
         </div>
 
@@ -179,7 +179,7 @@ const DEMO_DATA = {
         <div>{`    { text: 'List Item 3' },`}</div>
         <div>{`    { text: 'List Item 4' }`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
         <br/>
         <div>{`<Select`}</div>
@@ -190,7 +190,7 @@ const DEMO_DATA = {
         <div>{`  items={[`}</div>
         <div>{`    { text: 'Error' },`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
         <br/>
         <div>{`<Select`}</div>
@@ -204,7 +204,7 @@ const DEMO_DATA = {
         <div>{`    { text: 'List Item 3' },`}</div>
         <div>{`    { text: 'List Item 4' }`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
         <br/>
         <div>{`<Select`}</div>
@@ -215,7 +215,7 @@ const DEMO_DATA = {
         <div>{`  items={[`}</div>
         <div>{`    { text: 'List Item 1' },`}</div>
         <div>{`  ]}`}</div>
-        <div>{`  onItemSelected={(item) => alert(item.text)}`}</div>
+        <div>{`  onChange={(item) => alert(item.text)}`}</div>
         <div>{`/>`}</div>
       </div>
     )

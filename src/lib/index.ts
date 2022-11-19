@@ -43,6 +43,7 @@ export { DialogFooter } from './components/dialog/DialogFooter'
 // from
 export { FormCheckBox } from './components/form/FormCheckBox'
 export { FormInput } from './components/form/FormInput'
+export { FormSelect } from './components/form/FormSelect'
 export { FormStepInput } from './components/form/FormStepInput'
 // icon
 export { Icon } from './components/icon/Icon'
