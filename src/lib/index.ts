@@ -41,8 +41,8 @@ export { Dialog } from './components/dialog/Dialog'
 export { DialogHeader } from './components/dialog/DialogHeader'
 export { DialogFooter } from './components/dialog/DialogFooter'
 // from
+export { FormCheckBox } from './components/form/FormCheckBox'
 export { FormInput } from './components/form/FormInput'
-export { FormLabel } from './components/form/FormLabel'
 export { FormStepInput } from './components/form/FormStepInput'
 // icon
 export { Icon } from './components/icon/Icon'

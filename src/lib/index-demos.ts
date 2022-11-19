@@ -9,6 +9,7 @@ import { CalendarDemo } from '../components/demo/CalendarDemo'
 import { CardDemo } from '../components/demo/CardDemo'
 import { DialogDemo } from '../components/demo/DialogDemo'
 import { FormDemo } from '../components/demo/FormDemo'
+import { FormCheckBoxDemo } from '../components/demo/FormCheckBoxDemo'
 import { FormInputDemo } from '../components/demo/FormInputDemo'
 import { FormStepInputDemo } from '../components/demo/FormStepInputDemo'
 import { IconDemo } from '../components/demo/IconDemo'
@@ -74,6 +75,11 @@ export const COMPONENT = {
     id: 'form',
     text: 'Form',
     demo: FormDemo
+  },
+  FORM_CHECK_BOX: {
+    id: 'formcheckbox',
+    text: 'Form CheckBox',
+    demo: FormCheckBoxDemo
   },
   FORM_INPUT: {
     id: 'forminput',

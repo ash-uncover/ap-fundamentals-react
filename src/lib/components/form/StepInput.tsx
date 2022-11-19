@@ -1,11 +1,11 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
 
 import { ButtonDesigns } from '../../constants/ButtonDesign'
+import { InputState } from '../../constants/InputState'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 import { Button } from '../../components/button/Button'
-import { InputState } from 'constants/InputState'
 
 export interface StepInputInfo {
   compact?: boolean

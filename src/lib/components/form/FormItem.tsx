@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { FioriComponentProperties } from '../FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
+import { CheckBox, CheckBoxInfo } from '../../components/form/CheckBox'
 import { FormLabel } from '../../components/form/FormLabel'
 import { Input, InputInfo } from '../../components/form/Input'
 import { StepInput, StepInputInfo } from '../../components/form/StepInput'
@@ -12,6 +13,7 @@ export interface FormItemInfo {
   label: string
   required?: boolean
 
+  checkbox?: CheckBoxInfo
   input?: InputInfo
   stepinput?: StepInputInfo
 
@@ -32,6 +34,7 @@ export const FormItem = ({
   label,
   required,
 
+  checkbox,
   input,
   stepinput,
 }: FormItemProperties) => {
@@ -43,6 +46,9 @@ export const FormItem = ({
   // Rendering //
 
   const renderControl = () => {
+    if (checkbox) {
+      return <CheckBox {...checkbox} />
+    }
     if (input) {
       return <Input {...input} id={idFormItem} />
     }
@@ -65,11 +71,13 @@ export const FormItem = ({
       className={classes.join(' ')}
       style={style}
     >
-      <FormLabel
-        required={required}
-        text={label}
-        htmlFor={idFormItem}
-      />
+      {!checkbox ?
+        <FormLabel
+          required={required}
+          text={label}
+          htmlFor={idFormItem}
+        />
+        : null}
       {renderControl()}
     </div>
   )
