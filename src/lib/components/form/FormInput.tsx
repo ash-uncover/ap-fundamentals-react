@@ -1,44 +1,65 @@
 import React from 'react'
 
-import { UUID } from '@uncover/js-utils'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface FormInputProperties {
-  className?: string
-  label?: string
-  placeholder?: string
-  type?: string
+import { FormItem } from '../../components/form/FormItem'
+import { InputInfo } from '../../components/form/Input'
+
+export interface FormInputInfo {
+  label: string
+  required?: boolean
+
+  horizontal?: boolean
+}
+
+export interface FormInputProperties extends
+  FioriComponentProperties,
+  FormInputInfo,
+  InputInfo {
 }
 
 export const FormInput = ({
   className,
+  style,
+
+  ariaLabel,
+
+  compact,
+  disabled,
+  horizontal,
   label,
   placeholder,
-  type = 'text',
+  readOnly,
+  required,
+  state,
+  stateMessage,
+  type,
+  value,
+
+  onChange,
 }: FormInputProperties) => {
 
   // Rendering //
 
-  const id = UUID.next()
-
-  const classes = ['fd-form-item']
-  if (className) {
-    classes.push(className)
-  }
-
   return (
-    <div className={classes.join(' ')}>
-      <label
-        className='fd-form-label'
-        htmlFor={id}
-      >
-        {label}
-      </label>
-      <input
-        className='fd-input'
-        type={type}
-        id={id}
-        placeholder={placeholder}
-      />
-    </div>
+    <FormItem
+      className={className}
+      style={style}
+      label={label}
+      horizontal={horizontal}
+      required={required}
+      input={{
+        ariaLabel,
+        compact,
+        disabled,
+        placeholder,
+        readOnly,
+        state,
+        stateMessage,
+        type,
+        value,
+        onChange,
+      }}
+    />
   )
 }

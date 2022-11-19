@@ -51,7 +51,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' icon='washing-machine' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' icon='washing-machine' size={Sizes.SMALL} />`}</div>
@@ -79,7 +79,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' initials='WW' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' initials='WW' size={Sizes.SMALL} />`}</div>
@@ -111,7 +111,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle icon='money-bills' size={Sizes.SMALL} />`}</div>
@@ -148,7 +148,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.SMALL} />`}</div>
@@ -185,7 +185,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.PLACEHOLDER} icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.PLACEHOLDER} icon='money-bills' size={Sizes.SMALL} />`}</div>
@@ -222,7 +222,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.TILE} icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' circle design={AvatarDesigns.TILE} icon='money-bills' size={Sizes.SMALL} />`}</div>
@@ -259,7 +259,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' accentColor={AccentColors.COLOR_1} icon='money-bills' />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' accentColor={AccentColors.COLOR_2} icon='money-bills' />`}</div>
@@ -296,7 +296,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' accentColor={AccentColors.COLOR_1} design={AvatarDesigns.SHELL} icon='money-bills' />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' accentColor={AccentColors.COLOR_2} design={AvatarDesigns.SHELL} icon='money-bills' />`}</div>
@@ -426,7 +426,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' bordered design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' bordered design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.SMALL} />`}</div>
@@ -463,7 +463,7 @@ const DEMO_DATA = {
       </div>
     ),
     code: (
-      <div>
+      <div style={{ whiteSpace: 'pre' }}>
         <div>{`<div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center' }}>`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' bordered design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.X_SMALL} />`}</div>
         <div>{`  <Avatar ariaLabel='My Avatar' bordered design={AvatarDesigns.TRANSPARENT} icon='money-bills' size={Sizes.SMALL} />`}</div>

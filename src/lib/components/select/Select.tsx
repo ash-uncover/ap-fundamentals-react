@@ -17,7 +17,7 @@ export interface SelectInfo {
   stateMessage?: string
   value?: string
 
-  onItemSelected?: (item: ListItemInfo) => void
+  onChange: (item: ListItemInfo) => void
 }
 export interface SelectProperties extends
   FioriComponentProperties,
@@ -35,8 +35,14 @@ export const Select = ({
   stateMessage,
   value,
 
-  onItemSelected,
+  onChange,
 }: SelectProperties) => {
+
+  // Events //
+
+  const handleItemSelected = (event: ListItemInfo) => {
+    onChange(event)
+  }
 
   // Rendering //
 
@@ -82,7 +88,7 @@ export const Select = ({
         state={state}
         stateMessage={stateMessage}
         type={ListTypes.DROPDOWN}
-        onItemSelected={onItemSelected}
+        onItemSelected={handleItemSelected}
       />
     </Popover>
   )
