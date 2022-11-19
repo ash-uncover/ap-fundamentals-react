@@ -1,6 +1,6 @@
 {
   "name": "@uncover/fundamentals-react",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "React implementation of ui5 fundamentals",
   "license": "MIT",
