@@ -1,24 +1,24 @@
 import React from 'react'
 
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface FormLabelinfo {
+export interface CheckBoxInfo {
   text: string
   htmlFor: string
 }
 
-export interface FormLabelProperties extends
+export interface CheckBoxProperties extends
   FioriComponentProperties,
-  FormLabelinfo {
+  CheckBoxInfo {
 }
 
-export const FormLabel = ({
+export const CheckBox = ({
   className,
   style,
 
   htmlFor,
   text,
-}: FormLabelProperties) => {
+}: CheckBoxProperties) => {
 
   // Rendering //
 

@@ -7,7 +7,7 @@ import { FioriComponentProperties } from '../../components/FioriBase'
 
 import { Popover } from '../../components/popover/Popover'
 
-export interface Inputinfo {
+export interface InputInfo {
   ariaLabel?: string
 
   compact?: boolean
@@ -24,7 +24,7 @@ export interface Inputinfo {
 
 export interface InputProperties extends
   FioriComponentProperties,
-  Inputinfo {
+  InputInfo {
 }
 
 export const Input = ({

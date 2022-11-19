@@ -10,7 +10,7 @@ import { CardDemo } from '../components/demo/CardDemo'
 import { DialogDemo } from '../components/demo/DialogDemo'
 import { FormDemo } from '../components/demo/FormDemo'
 import { FormInputDemo } from '../components/demo/FormInputDemo'
-import { FormLabelDemo } from '../components/demo/FormLabelDemo'
+import { FormStepInputDemo } from '../components/demo/FormStepInputDemo'
 import { IconDemo } from '../components/demo/IconDemo'
 import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
 import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
@@ -80,10 +80,10 @@ export const COMPONENT = {
     text: 'Form Input',
     demo: FormInputDemo
   },
-  FORM_LABEL: {
-    id: 'formlabel',
-    text: 'Form Label',
-    demo: FormLabelDemo
+  FORM_STEP_INPUT: {
+    id: 'formstepinput',
+    text: 'Form Step Input',
+    demo: FormStepInputDemo
   },
   ICON: {
     id: 'icon',

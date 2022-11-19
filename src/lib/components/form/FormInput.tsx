@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
-
-import { UUID } from '@uncover/js-utils'
+import React from 'react'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
-import { FormLabel } from '../../components/form/FormLabel'
-import { Input, Inputinfo } from '../../components/form/Input'
+
+import { FormItem } from '../../components/form/FormItem'
+import { InputInfo } from '../../components/form/Input'
 
 export interface FormInputInfo {
   label: string
@@ -16,7 +15,7 @@ export interface FormInputInfo {
 export interface FormInputProperties extends
   FioriComponentProperties,
   FormInputInfo,
-  Inputinfo {
+  InputInfo {
 }
 
 export const FormInput = ({
@@ -40,43 +39,27 @@ export const FormInput = ({
   onChange,
 }: FormInputProperties) => {
 
-  // Hooks //
-
-  const [id] = useState(`form-input-${UUID.next()}`)
-
   // Rendering //
 
-  const classes = ['fd-form-item']
-  if (className) {
-    classes.push(className)
-  }
-  if (horizontal) {
-    classes.push('fd-form-item--horizontal')
-  }
-
   return (
-    <div
-      className={classes.join(' ')}
+    <FormItem
+      className={className}
       style={style}
-    >
-      <FormLabel
-        required={required}
-        text={label}
-        htmlFor={id}
-      />
-      <Input
-        id={id}
-        ariaLabel={ariaLabel}
-        compact={compact}
-        disabled={disabled}
-        placeholder={placeholder}
-        readOnly={readOnly}
-        state={state}
-        stateMessage={stateMessage}
-        type={type}
-        value={value}
-        onChange={onChange}
-      />
-    </div>
+      label={label}
+      horizontal={horizontal}
+      required={required}
+      input={{
+        ariaLabel: ariaLabel,
+        compact: compact,
+        disabled: disabled,
+        placeholder: placeholder,
+        readOnly: readOnly,
+        state: state,
+        stateMessage: stateMessage,
+        type: type,
+        value: value,
+        onChange: onChange
+      }}
+    />
   )
 }
