@@ -10,16 +10,17 @@ import { Input, InputInfo } from '../../components/form/Input'
 import { Select, SelectInfo } from '../../components/select/Select'
 import { StepInput, StepInputInfo } from '../../components/form/StepInput'
 
-export interface FormItemInfo {
+export interface FormItemLabelInfo {
   label: string
   required?: boolean
+  horizontal?: boolean
+}
 
+export interface FormItemInfo extends FormItemLabelInfo {
   checkbox?: CheckBoxInfo
   input?: InputInfo
   select?: SelectInfo
   stepinput?: StepInputInfo
-
-  horizontal?: boolean
 }
 
 export interface FormItemProperties extends

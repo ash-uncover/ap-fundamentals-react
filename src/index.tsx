@@ -3,12 +3,23 @@ import React from 'react'
 import {
   BrowserRouter as Router
 } from 'react-router-dom'
+import {
+  Provider
+} from 'react-redux'
 
 import { createRoot } from 'react-dom/client'
 
 // Import components
 import Root from './routes/__layout'
 
+import store from './store'
+
 const containerRoot = document.getElementById('reactroot')!
 const root = createRoot(containerRoot)
-root.render(<Router><Root /></Router>)
+root.render(
+  <Provider store={store}>
+    <Router>
+      <Root />
+    </Router>
+  </Provider>
+)

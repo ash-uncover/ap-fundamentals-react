@@ -4,28 +4,15 @@ import { InputState } from '../../constants/InputState'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { FormItem } from '../../components/form/FormItem'
+import { FormItem, FormItemLabelInfo } from '../../components/form/FormItem'
 import { ListItemInfo } from '../../components/list/ListItem'
 import { SelectInfo } from '../../components/select/Select'
 
-export interface FormSelectInfo {
-  label: string
-  required?: boolean
-
-  compact?: boolean
-  horizontal?: boolean
-  items: ListItemInfo[]
-  placeholder: string
-  state?: InputState
-  stateMessage?: string
-  value?: string
-
-  onChange: (item: ListItemInfo) => void
-}
+import './FormSelect.css'
 
 export interface FormSelectProperties extends
   FioriComponentProperties,
-  FormSelectInfo,
+  FormItemLabelInfo,
   SelectInfo {
 }
 
@@ -33,9 +20,13 @@ export const FormSelect = ({
   className,
   style,
 
+  alignRight,
   compact,
+  horizontal,
   items,
+  label,
   placeholder,
+  required,
   state,
   stateMessage,
   value,
@@ -45,12 +36,20 @@ export const FormSelect = ({
 
   // Rendering //
 
+  const classes = ['fd-form-select']
+  if (className) {
+    classes.push(className)
+  }
+
   return (
     <FormItem
-      label=''
-      className={className}
+      className={classes.join(' ')}
       style={style}
+      horizontal={horizontal}
+      label={label}
+      required={required}
       select={{
+        alignRight,
         compact,
         items,
         placeholder,

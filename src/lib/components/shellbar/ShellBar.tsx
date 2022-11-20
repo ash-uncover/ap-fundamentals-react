@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 
 import { Sizes } from '../../constants/Size'
 
@@ -9,11 +9,14 @@ import { Menu } from '../../components/menu/Menu'
 import { MenuItemInfo } from '../../components/menu/MenuItem'
 import { Popover } from '../../components/popover/Popover'
 
+import './ShellBar.css'
+
 export interface ShellBarInfo {
   logo: string
   logoAlt: string
   title: string
   subTitle?: string
+  actions?: ReactElement[]
   profile?: ShellBarProfileInfo
 }
 
@@ -33,6 +36,7 @@ export const ShellBar = ({
   logoAlt,
   title,
   subTitle,
+  actions,
   profile,
 }: ShellBarProperties) => {
 
@@ -58,8 +62,18 @@ export const ShellBar = ({
           : null}
       </div>
       <div className='fd-shellbar__group fd-shellbar__group--actions'>
-        <div className='fd-shellbar__action'>
-          {profile ?
+        {actions?.map((action, index) => {
+          return (
+            <div
+              key={`action-${index}`}
+              className='fd-shellbar__action fd-shellbar__action--desktop'
+            >
+              {action}
+            </div>
+          )
+        })}
+        {profile ?
+          <div className='fd-shellbar__action'>
             <Popover
               alignRight
               control={(
@@ -76,8 +90,8 @@ export const ShellBar = ({
                 noShadow={true}
               />
             </Popover>
-            : null}
-        </div>
+          </div>
+          : null}
       </div>
     </div>
   )
