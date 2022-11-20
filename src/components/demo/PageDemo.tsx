@@ -17,9 +17,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Page',
   labels: [
-    { text: 'version 0.0.7', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'version 0.0.7', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'in progress', accentColor: AccentColors.COLOR_5 },
+    { label: 'Theme', text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Page...',
   types: [{
@@ -67,6 +67,7 @@ const DEMO_DATA = {
             <Button compact icon='action' design={ButtonDesigns.TRANSPARENT} />
           ]}
           avatar={{
+            ariaLabel: '',
             initials: 'AV',
             accentColor: AccentColors.COLOR_9
           }}

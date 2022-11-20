@@ -2,17 +2,21 @@ import React, { useState } from 'react'
 
 import { UUID } from '@uncover/js-utils'
 
-import { PageHeaderAttributeType } from '../../constants/PageHeaderAttributeType'
+import { AccentColor } from '../../constants/AccentColor'
+import { PageHeaderAttributeType, PageHeaderAttributeTypes } from '../../constants/PageHeaderAttributeType'
 import { Semantic } from '../../constants/Semantic'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
 
+import { InfoLabel } from '../../components/infolabel/InfoLabel'
 import { ObjectStatus } from '../../components/object/ObjectStatus'
 import { ObjectText } from '../../components/object/ObjectText'
+
 
 import './PageHeaderAttribute.css'
 
 export interface PageHeaderAttributeInfo {
+  accentColor?: AccentColor
   label: string
   semantic?: Semantic
   text: string
@@ -28,6 +32,7 @@ export const PageHeaderAttribute = ({
   className,
   style,
 
+  accentColor,
   label,
   semantic,
   text,
@@ -40,16 +45,23 @@ export const PageHeaderAttribute = ({
 
   const renderControl = () => {
     switch (type) {
-      case 'text': return (
-        <ObjectText
+      case PageHeaderAttributeTypes.INFO_LABEL: return (
+        <InfoLabel
           className='ap-fd-page-header-attribute__control'
+          accentColor={accentColor}
           text={text}
         />
       )
-      case 'status': return (
+      case PageHeaderAttributeTypes.STATUS: return (
         <ObjectStatus
           className='ap-fd-page-header-attribute__control'
           semantic={semantic}
+          text={text}
+        />
+      )
+      case PageHeaderAttributeTypes.TEXT: return (
+        <ObjectText
+          className='ap-fd-page-header-attribute__control'
           text={text}
         />
       )

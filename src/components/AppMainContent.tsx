@@ -18,7 +18,6 @@ export const AppMainContent = ({
         height: '100%',
         overflow: 'auto',
         boxSizing: 'border-box',
-        padding: '1rem 4rem'
       }}
     >
       {children}

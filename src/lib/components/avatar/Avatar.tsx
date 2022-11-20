@@ -8,7 +8,7 @@ import { Size, Sizes } from '../../constants/Size'
 import { Icon } from '../icon/Icon'
 import { AvatarDesign } from 'constants/AvatarDesign'
 
-export interface AvatarProperties extends FioriComponentProperties {
+export interface AvatarInfo {
   ariaLabel: string
   ariaLabelZoom?: string
   ariaControls?: string
@@ -26,6 +26,9 @@ export interface AvatarProperties extends FioriComponentProperties {
 
   onClick?: () => void
 }
+export interface AvatarProperties extends
+  FioriComponentProperties,
+  AvatarInfo { }
 
 export const Avatar = ({
   className,

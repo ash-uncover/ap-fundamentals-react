@@ -1,5 +1,18 @@
 import React, { ReactElement } from 'react'
-import { AccentColor, InfoLabel, Table, Title, TitleLevels } from '../../lib'
+import {
+  AccentColor,
+  AccentColors,
+  Breadcrumb,
+  Page,
+  PageBody,
+  PageHeader,
+  PageHeaderAttributeTypes,
+  Panel,
+  Table,
+  Title,
+  TitleLevels
+} from '../../lib'
+
 import { CodePanel } from '../common/CodePanel'
 
 import './DemoPage.css'
@@ -12,6 +25,7 @@ export interface DemoPageProperties {
   examples: DemoPageExample[]
 }
 export interface DemoPageLabel {
+  label?: string
   text: string
   accentColor: AccentColor
 }
@@ -49,84 +63,100 @@ export const DemoPage = ({
           <p>{desc}</p>
         )
       }
-      return (
-        <div>{desc}</div>
-      )
+      return desc
     }
     return null
   }
 
   return (
-    <div className='demo-page'>
-      <Title
-        text={title}
-      />
-
-      <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap' }}>
-        {labels.map((label, index) => (
-          <InfoLabel
-            key={`label-${index}`}
-            {...label}
+    <Page className='demo-page'>
+      <PageHeader
+        avatar={{
+          ariaLabel: '',
+          icon: 'document-text',
+          accentColor: AccentColors.COLOR_9,
+        }}
+        breadcrumb={(
+          <Breadcrumb
+            ariaLabel='breadcrumb'
+            items={[
+              { text: 'Components' },
+              { text: title },
+            ]}
           />
-        ))}
-      </div>
-
-      <Title
-        className='demo-page-section-title'
-        level={TitleLevels.H2}
-        text='Properties'
+        )}
+        title={title}
+        attributes={labels.map((label) => {
+          return {
+            label: label.label || '',
+            accentColor: label.accentColor,
+            text: label.text,
+            type: PageHeaderAttributeTypes.INFO_LABEL,
+          }
+        })}
       />
-
-      {renderDescription(description)}
-
-      {types.map((type, index) => {
-        return (
-          <div key={`type-${index}`}>
-            <Title
-              className='demo-page-item-title'
-              level={TitleLevels.H3}
-              style={{
-                margin: '1rem 0'
-              }}
-              text={type.id}
-            />
-            <Table
-              columns={[
-                { key: 'id', name: 'Property', formatter: prop => <strong>{prop.id}</strong> },
-                { key: 'type', name: 'Type' },
-                { key: 'description', name: 'Description' },
-              ]}
-              compact
-              rows={type.props.map(prop => ({ data: prop }))}
-            />
+      <PageBody>
+        <Panel
+          title='Properties'
+          expanded
+        >
+          <div>
+            {renderDescription(description)}
           </div>
-        )
-      })}
+          <div>
+            {types.map((type, index) => {
+              return (
+                <div key={`type-${index}`}>
+                  <Title
+                    className='demo-page-item-title'
+                    level={TitleLevels.H3}
+                    style={{
+                      margin: '1rem 0'
+                    }}
+                    text={type.id}
+                  />
+                  <Table
+                    columns={[
+                      { key: 'id', name: 'Property', formatter: prop => <strong>{prop.id}</strong> },
+                      { key: 'type', name: 'Type' },
+                      { key: 'description', name: 'Description' },
+                    ]}
+                    compact
+                    rows={type.props.map(prop => ({ data: prop }))}
+                  />
+                </div>
+              )
+            })}
+          </div>
+        </Panel>
 
-      <Title
-        className='demo-page-section-title'
-        level={TitleLevels.H2}
-        text='Examples'
-      />
+        <Panel
+          title='Examples'
+          expanded
+        >
+          {examples.map((example, index) => (
+            <div key={`example-${index}`}>
+              <Title
+                className='demo-page-item-title'
+                level={TitleLevels.H3}
+                levelVisual={TitleLevels.H5}
+                text={example.title}
+              />
 
-      {examples.map((example, index) => (
-        <div key={`example-${index}`}>
-          <Title
-            className='demo-page-item-title'
-            level={TitleLevels.H3}
-            text={example.title}
-          />
+              {renderDescription(example.description)}
 
-          {renderDescription(example.description)}
+              <CodePanel
+                title=''
+                result={example.result}
+                code={example.code}
+              />
+            </div>
+          ))}
+        </Panel>
 
-          <CodePanel
-            title=''
-            result={example.result}
-            code={example.code}
-          />
-        </div>
-      ))}
-    </div>
+      </PageBody>
+
+    </Page>
   )
 }
 

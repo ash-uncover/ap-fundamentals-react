@@ -13,6 +13,7 @@ export { LinkType, LinkTypes } from './constants/LinkType'
 export { PageHeaderAttributeType, PageHeaderAttributeTypes } from './constants/PageHeaderAttributeType'
 export { Semantic, Semantics } from './constants/Semantic'
 export { Size, Sizes } from './constants/Size'
+export { ThemeInfo, Theme, Themes } from './constants/Theme'
 export { TitleLevel, TitleLevels } from './constants/TitleLevel'
 
 // avatar

@@ -10,6 +10,7 @@ import { ListItemInfo } from '../../components/list/ListItem'
 import { Popover } from '../../components/popover/Popover'
 
 export interface SelectInfo {
+  alignRight?: boolean
   compact?: boolean
   items: ListItemInfo[]
   placeholder: string
@@ -28,6 +29,7 @@ export const Select = ({
   className,
   style,
 
+  alignRight,
   compact,
   items,
   placeholder,
@@ -47,6 +49,9 @@ export const Select = ({
   // Rendering //
 
   const classes = ['fd-select']
+  if (className) {
+    classes.push(className)
+  }
   if (compact) {
     classes.push('fd-select--compact')
   }
@@ -76,9 +81,9 @@ export const Select = ({
 
   return (
     <Popover
-      className={className}
       style={style}
       control={renderSelectControl()}
+      alignRight={alignRight}
       dropdown
       noArrow
     >

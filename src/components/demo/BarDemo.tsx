@@ -7,9 +7,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Bar',
   labels: [
-    { text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: '', text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
+    { label: '', text: 'in progress', accentColor: AccentColors.COLOR_5 },
+    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The bar component is a container that holds titles, buttons and input controls. Its contents are distributed into three areas: left, middle and right. This component’s primary function is to display page headers and footers. It is mainly used to construct a Page, and acts as a building block for other components like Dialog, Popover etc.',
   types: [{

@@ -1,0 +1,3 @@
+.fd-shellbar {
+  --sapContent_LabelColor: var(--sapShell_TextColor);
+}

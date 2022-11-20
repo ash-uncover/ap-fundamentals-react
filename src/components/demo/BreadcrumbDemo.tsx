@@ -7,9 +7,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Breadcrumb',
   labels: [
-    { text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: '', text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
+    { label: '', text: 'in progress', accentColor: AccentColors.COLOR_5 },
+    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The breadcrumb component is a type of navigation that indicates the position of a page within the application’s page hierarchy. Users can navigate backward by selecting the previous pages in the navigation path.',
   types: [{

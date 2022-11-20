@@ -45,13 +45,13 @@ export const DialogHeader = ({
   }
 
   return (
-    <footer className={classes.join(' ')}>
+    <header className={classes.join(' ')}>
       <div className='fd-bar__left'>
         {left ? renderElements(left) : null}
       </div>
       <div className='fd-bar__right'>
         {renderElements(right)}
       </div>
-    </footer>
+    </header>
   )
 }
