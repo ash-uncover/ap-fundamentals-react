@@ -1,10 +1,16 @@
 .demo-page {
-  & .demo-page-section-title {
+  & .fd-panel + .fd-panel {
     margin-top: 2rem;
-    border-bottom: var(--sapList_BorderWidth) solid var(--sapList_BorderColor);
+  }
+  & .fd-panel__header {
+    padding: 0 2rem;
+  }
+  & .fd-panel__content {
+    padding: 0 2rem;
+    border-bottom: 0;
   }
   & .demo-page-item-title {
-    margin-top: 1rem;
+    margin-top : 1rem;
   }
 }
 

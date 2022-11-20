@@ -2,25 +2,37 @@ import React from 'react'
 
 import { AccentColor } from '../../constants/AccentColor'
 
-export interface InfoLabelProperties {
-  icon?: string,
-  text?: string,
-  display?: boolean
-  numeric?: boolean
+import { FioriComponentProperties } from '../../components/FioriBase'
+
+export interface InfoLabelInfo {
   accentColor?: AccentColor,
+  display?: boolean
+  icon?: string,
+  numeric?: boolean
+  text?: string,
+}
+export interface InfoLabelProperties extends
+  FioriComponentProperties,
+  InfoLabelInfo {
 }
 
 export const InfoLabel = ({
-  icon,
-  text,
-  display,
-  numeric,
+  className,
+  style,
+
   accentColor,
+  display,
+  icon,
+  numeric,
+  text,
 }: InfoLabelProperties) => {
 
   // Rendering //
 
   const classes = ['fd-info-label']
+  if (className) {
+    classes.push(className)
+  }
   if (accentColor) {
     classes.push(`fd-info-label--${accentColor}`)
   }
@@ -32,7 +44,10 @@ export const InfoLabel = ({
   }
 
   return (
-    <span className={classes.join(' ')}>
+    <span
+      className={classes.join(' ')}
+      style={style}
+    >
       {icon ?
         <i
           className={`fd-info-label__icon sap-icon--${icon}`}

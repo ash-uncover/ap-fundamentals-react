@@ -1,35 +1,27 @@
 import React, { ReactElement, useEffect, useState } from 'react'
 
-
-import { AccentColor } from '../../constants/AccentColor'
 import { BarTypes } from '../../constants/BarType'
 import { Sizes } from '../../constants/Size'
 import { TitleLevels } from '../../constants/TitleLevel'
 
 import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { Avatar } from '../../components/avatar/Avatar'
+import { Avatar, AvatarInfo } from '../../components/avatar/Avatar'
 import { Bar } from '../../components/bar/Bar'
 import { Button } from '../../components/button/Button'
+import { PageHeaderAttribute, PageHeaderAttributeInfo } from '../../components/page/PageHeaderAttribute'
 import { Title } from '../../components/title/Title'
-
-import { PageHeaderAttribute, PageHeaderAttributeInfo } from './PageHeaderAttribute'
 
 import './PageHeader.css'
 
 export interface PageHeaderProperties extends FioriComponentProperties {
   actions?: ReactElement | ReactElement[]
   attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
-  avatar?: PageHeaderAvatar
+  avatar?: AvatarInfo
   breadcrumb: ReactElement
   hideBoxShadow?: boolean
   subtitle?: string
   title: string
-}
-export interface PageHeaderAvatar {
-  accentColor: AccentColor
-  icon?: string
-  initials?: string
 }
 
 export const PageHeader = ({
@@ -48,7 +40,7 @@ export const PageHeader = ({
   // Hooks //
 
   const [showExpand, setShowExpand] = useState(false)
-  const [expanded, setExpanded] = useState(true)
+  const [expanded, setExpanded] = useState(Boolean(attributes && (!Array.isArray(attributes) || attributes.length)))
   const [pinned, setPinned] = useState(false)
 
   useEffect(() => {

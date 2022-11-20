@@ -12,9 +12,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Form Input',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: '', text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: '', text: 'on going', accentColor: AccentColors.COLOR_6 },
+    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
   ],
   description: (
     <>

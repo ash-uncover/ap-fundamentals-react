@@ -1,11 +1,8 @@
 import React from 'react'
 
-import { InputState } from '../../constants/InputState'
-
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 import { FormItem, FormItemLabelInfo } from '../../components/form/FormItem'
-import { ListItemInfo } from '../../components/list/ListItem'
 import { SelectInfo } from '../../components/select/Select'
 
 import './FormSelect.css'
