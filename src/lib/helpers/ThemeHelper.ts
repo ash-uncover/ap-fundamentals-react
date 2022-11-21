@@ -30,10 +30,12 @@ export const injectCss = (id: string, href: string) => {
 
 export const injectThemeCss = (theme: ThemeInfo) => {
   let root = ''
-  console.log(window.location)
+  if (window.location.href.indexOf('ap-fundamentals-react') !== -1) {
+    root = '/ap-fundamentals-react'
+  }
   return Promise.allSettled([
-    injectCss('theming-icons', `/fundamentals-icons-${theme.family}.css`),
-    injectCss('theming-base-content', `/theme/${theme.id}/css_variables.css`),
-    injectCss('theming', `/theme/${theme.id}/${theme.id}.css`),
+    injectCss('theming-icons', `${root}/fundamentals-icons-${theme.family}.css`),
+    injectCss('theming-base-content', `${root}/theme/${theme.id}/css_variables.css`),
+    injectCss('theming', `${root}/theme/${theme.id}/${theme.id}.css`),
   ])
 }
