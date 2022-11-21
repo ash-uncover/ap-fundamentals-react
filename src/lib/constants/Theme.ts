@@ -63,5 +63,3 @@ export const Theme: {
 }
 
 export const Themes = Object.values(Theme)
-
-export default Theme

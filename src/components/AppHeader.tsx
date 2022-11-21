@@ -1,16 +1,19 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Themes } from '../lib'
 import { FormSelect } from '../lib/components/form/FormSelect'
 
 import { ShellBar } from '../lib/components/shellbar/ShellBar'
 import { changeTheme } from '../services/theme.service'
+import AppSelectors from '../store/app/app.selectors'
 
 export const AppHeader = () => {
 
   // Hooks //
 
   const dispatch = useDispatch()
+
+  const theme = useSelector(AppSelectors.theme)
 
   // Events //
 
@@ -31,12 +34,14 @@ export const AppHeader = () => {
           label='Choose Theme'
           horizontal
           compact
-          placeholder='Select'
-          items={Themes.map((theme) => {
+          placeholder={theme.name}
+          items={Themes.map((t) => {
             return {
-              id: theme.id,
-              text: theme.name,
-              family: theme.family
+              id: t.id,
+              text: t.name,
+              name: t.name,
+              family: t.family,
+              selected: t === theme
             }
           })}
           onChange={handleThemeChanged}

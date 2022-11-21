@@ -4,7 +4,7 @@ import { ThemeInfo } from '../lib/constants/Theme'
 
 export const changeTheme = (dispatch: any, theme: ThemeInfo) => {
   dispatch(appSlice.actions.setBusy({ busy: true, busyMessage: 'Changing Theme' }))
-  dispatch(appSlice.actions.setTheme(theme.id))
+  dispatch(appSlice.actions.setTheme({ theme }))
   injectThemeCss(theme)
     .finally(() => {
       dispatch(appSlice.actions.setBusy({ busy: false }))

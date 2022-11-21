@@ -4,7 +4,7 @@ import {
   PayloadAction
 } from '@reduxjs/toolkit'
 
-import Theme from '../../lib/constants/Theme'
+import { Theme, ThemeInfo } from '../../lib/constants/Theme'
 
 import AppSliceState from '../../store/app/app.state'
 
@@ -13,13 +13,13 @@ import AppSliceState from '../../store/app/app.state'
 const initialState: AppSliceState = {
   busy: false,
   busyMessage: '',
-  theme: Theme.HORIZON.id,
+  theme: Theme.FIORI_3,
 }
 
 // REDUCERS //
 
-type PayloadBusy = {
-  busy: boolean,
+interface PayloadBusy {
+  busy: boolean
   busyMessage?: string
 }
 const setBusy: CaseReducer<AppSliceState, PayloadAction<PayloadBusy>> = (state, action) => {
@@ -31,8 +31,11 @@ const setBusy: CaseReducer<AppSliceState, PayloadAction<PayloadBusy>> = (state, 
   state.busyMessage = busy ? busyMessage || '' : ''
 }
 
-const setTheme: CaseReducer<AppSliceState, PayloadAction<string>> = (state, action) => {
-  state.theme = action.payload
+interface PayloadTheme {
+  theme: ThemeInfo
+}
+const setTheme: CaseReducer<AppSliceState, PayloadAction<PayloadTheme>> = (state, action) => {
+  state.theme = action.payload.theme
 }
 
 // SLICE //
