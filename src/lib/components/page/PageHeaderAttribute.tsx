@@ -1,17 +1,15 @@
 import React, { useState } from 'react'
-
+// Utils
 import { UUID } from '@uncover/js-utils'
-
+// Constants
 import { AccentColor } from '../../constants/AccentColor'
 import { PageHeaderAttributeType, PageHeaderAttributeTypes } from '../../constants/PageHeaderAttributeType'
 import { Semantic } from '../../constants/Semantic'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { InfoLabel } from '../../components/infolabel/InfoLabel'
 import { ObjectStatus } from '../../components/object/ObjectStatus'
 import { ObjectText } from '../../components/object/ObjectText'
-
 
 import './PageHeaderAttribute.css'
 
@@ -50,6 +48,9 @@ export const PageHeaderAttribute = ({
           className='ap-fd-page-header-attribute__control'
           accentColor={accentColor}
           text={text}
+          style={{
+            width: 'fit-content'
+          }}
         />
       )
       case PageHeaderAttributeTypes.STATUS: return (

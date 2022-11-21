@@ -1,10 +1,9 @@
 import React from 'react'
-
+// Constants
 import { InputState } from '../../constants/InputState'
 import { ListTypes } from '../../constants/ListType'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { List } from '../../components/list/List'
 import { ListItemInfo } from '../../components/list/ListItem'
 import { Popover } from '../../components/popover/Popover'
@@ -22,8 +21,7 @@ export interface SelectInfo {
 }
 export interface SelectProperties extends
   FioriComponentProperties,
-  SelectInfo {
-}
+  SelectInfo { }
 
 export const Select = ({
   className,

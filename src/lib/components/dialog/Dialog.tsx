@@ -1,9 +1,10 @@
 import React, { ReactElement, useEffect, useRef } from 'react'
-
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 import { DialogFooter } from '../../components/dialog/DialogFooter'
 import { DialogHeader } from '../../components/dialog/DialogHeader'
 
-export interface DialogProperties {
+export interface DialogInfo {
   resizable?: boolean,
   title?: string,
   header?: any,
@@ -11,7 +12,14 @@ export interface DialogProperties {
   children?: ReactElement | ReactElement[],
 }
 
+export interface DialogProperties extends
+  FioriComponentProperties,
+  DialogInfo { }
+
 export const Dialog = ({
+  className,
+  style,
+
   resizable,
   header,
   footer,
@@ -34,8 +42,16 @@ export const Dialog = ({
 
   // Rendering //
 
+  const classes = ['fd-dialog', 'fd-dialog--active']
+  if (className) {
+    classes.push(className)
+  }
+
   return (
-    <section className='fd-dialog-docs-static fd-dialog fd-dialog--active'>
+    <section
+      className={classes.join(' ')}
+      style={style}
+    >
 
       <div
         className='fd-dialog__content'

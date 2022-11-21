@@ -1,12 +1,16 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-export interface BreadcrumbItemProperties extends FioriComponentProperties {
+export interface BreadcrumbItemInfo {
   text: string
   current?: boolean
 
   onItemSelected: () => void
+}
+export interface BreadcrumbItemProperties extends
+  FioriComponentProperties,
+  BreadcrumbItemInfo {
 }
 
 export const BreadcrumbItem = ({

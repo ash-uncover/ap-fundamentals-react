@@ -1,12 +1,21 @@
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface DialogFooterProperties {
+export interface DialogFooterInfo {
   left?: ReactElement | ReactElement[]
   right?: ReactElement | ReactElement[]
   children?: ReactElement | ReactElement[]
 }
 
+export interface DialogFooterProperties extends
+  FioriComponentProperties,
+  DialogFooterInfo { }
+
 export const DialogFooter = ({
+  className,
+  style,
+
   left,
   right,
   children,
@@ -37,8 +46,16 @@ export const DialogFooter = ({
     )
   }
 
+  const classes = ['fd-dialog__footer fd-bar fd-bar--footer']
+  if (className) {
+    classes.push(className)
+  }
+
   return (
-    <footer className='fd-dialog__footer fd-bar fd-bar--footer'>
+    <footer
+      className={classes.join(' ')}
+      style={style}
+    >
       <div className='fd-bar__left'>
         {left ? renderElements(left) : null}
       </div>

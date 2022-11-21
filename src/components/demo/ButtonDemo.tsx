@@ -12,9 +12,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Button',
   labels: [
-    { label: '', text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { label: '', text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'In Progress', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The button component is used to trigger an action. All buttons are characterized by the fd-button class and an additional modifier class to specify each button type.',
   types: [{

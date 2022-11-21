@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from 'react'
-
-import { Button } from '../../components/button/Button'
-import { DISPLAY_MODE } from '../../components/calendar/Calendar'
-
+// Constants
 import { ButtonDesigns } from '../../constants/ButtonDesign'
+import { DISPLAY_MODE } from '../../components/calendar/Calendar'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { Button } from '../../components/button/Button'
 
 interface YearData {
   current: boolean
   year: number
 }
 
-export interface CalendarYearsProperties {
+export interface CalendarYearsInfo {
   date: Date
   onDisplayDateChange: (arg: Date) => void
   onDisplayModeChange: (arg: string) => void
 }
+
+export interface CalendarYearsProperties extends
+  FioriComponentProperties,
+  CalendarYearsInfo {
+
+}
+
 export const CalendarYears = ({
+  className,
+  style,
+
   date,
   onDisplayDateChange,
   onDisplayModeChange,
@@ -30,7 +41,7 @@ export const CalendarYears = ({
     let currentYear = Math.floor(date.getFullYear() / 10) * 10
     const yearsData = []
     for (let i = 0; i < 4; i++) {
-      const yearsRow:YearData[] = []
+      const yearsRow: YearData[] = []
       for (let j = 0; j < 5; j++) {
         yearsRow.push({
           current: currentYear === now.getFullYear(),
@@ -63,11 +74,17 @@ export const CalendarYears = ({
   // Rendering //
 
   const classes = ['fd-calendar']
+  if (className) {
+    classes.push(className)
+  }
 
   return (
     <section
       className={classes.join(' ')}
-      style={{ marginBottom: '1rem' }}
+      style={{
+        ...style,
+        marginBottom: '1rem'
+      }}
     >
       <header className='fd-calendar__header'>
         <div className='fd-calendar__navigation'>

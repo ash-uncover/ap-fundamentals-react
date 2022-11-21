@@ -1,8 +1,8 @@
 import React from 'react'
-
-import { FioriComponentProperties } from 'components/FioriBase'
-import { StepInputInfo } from './StepInput'
-import { FormItem } from './FormItem'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { StepInputInfo } from '../../components/form/StepInput'
+import { FormItem } from '../../components/form/FormItem'
 
 export interface FormStepInputInfo {
   label: string

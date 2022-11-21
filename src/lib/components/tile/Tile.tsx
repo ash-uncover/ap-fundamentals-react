@@ -1,28 +1,39 @@
 import React, { ReactElement } from 'react'
-
-import { InfoLabel } from '../../components/infolabel/InfoLabel'
+// Contants
 import { Size, Sizes } from '../../constants/Size'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { InfoLabel } from '../../components/infolabel/InfoLabel'
 
-export interface TileProperties {
-  className?: string
+export interface TileInfo {
   badge?: string
-  title: string
-  subTitle?: string
   footer?: string
   size?: Size
-  children?: ReactElement | ReactElement[]
+  subTitle?: string
+  title: string
+
   onClick?: () => void
+
+  children?: ReactElement | ReactElement[]
 }
+
+export interface TileProperties extends
+  FioriComponentProperties,
+  TileInfo { }
 
 export const Tile = ({
   className,
+  style,
+
   badge,
-  title,
-  subTitle,
   footer,
   size = Sizes.LARGE,
-  children,
+  subTitle,
+  title,
+
   onClick,
+
+  children,
 }: TileProperties) => {
 
   // Events //
@@ -49,6 +60,7 @@ export const Tile = ({
       role='button'
       tabIndex={0}
       onClick={onClicked}
+      style={style}
     >
       {badge ? <InfoLabel text={badge} /> : null}
       <div className='fd-tile__header'>

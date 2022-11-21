@@ -1,18 +1,25 @@
 import React, { useEffect, useState } from 'react'
-
+// Utils
 import { StringUtils } from '@uncover/js-utils'
-
+// Constants
+import { ButtonDesigns } from '../../constants/ButtonDesign'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 import { Button } from '../../components/button/Button'
 import { DISPLAY_MODE } from '../../components/calendar/Calendar'
-import { ButtonDesigns } from '../../constants/ButtonDesign'
 
-export interface CalendarDaysProperties {
+export interface CalendarDaysInfo {
   date: Date
   selectedDate?: Date
   compact?: boolean
   onDisplayDateChange: (arg: Date) => void
   onDisplayModeChange: (arg: string) => void
   onSelectedDateChange?: (arg: Date) => void
+}
+
+export interface CalendarDaysProperties extends
+  FioriComponentProperties,
+  CalendarDaysInfo {
 }
 
 interface WeekDayData {
@@ -25,6 +32,8 @@ interface WeekDayData {
 }
 
 export const CalendarDays = ({
+  className,
+  style,
   date,
   selectedDate,
   compact,
@@ -36,7 +45,7 @@ export const CalendarDays = ({
   // Hooks //
 
   const locale = 'en'
-  const intlLocale:any = new Intl.Locale(locale)
+  const intlLocale: any = new Intl.Locale(locale)
   const {
     firstDay,
     minimalDays,
@@ -68,7 +77,7 @@ export const CalendarDays = ({
       currentDate.setDate(currentDate.getDate() - 1)
     }
     for (let week = 0; week < 5; week++) {
-      const weekData:WeekDayData[] = []
+      const weekData: WeekDayData[] = []
       for (let day = 1; day < 8; day++) {
         const isNowYear = now.getFullYear() === currentDate.getFullYear()
         const isNowMonth = now.getMonth() === currentDate.getMonth()
@@ -117,6 +126,9 @@ export const CalendarDays = ({
   // Rendering //
 
   const classes = ['fd-calendar']
+  if (className) {
+    classes.push(className)
+  }
   if (compact) {
     classes.push('fd-calendar--compact')
   }
@@ -124,6 +136,7 @@ export const CalendarDays = ({
   return (
     <section
       className={classes.join(' ')}
+      style={style}
     >
       <header className='fd-calendar__header'>
         <div className='fd-calendar__navigation'>

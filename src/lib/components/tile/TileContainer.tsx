@@ -1,12 +1,19 @@
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
 
-export interface TileContainerProperties {
-  className?: string
+export interface TileContainerInfo {
   children?: string | ReactElement | ReactElement[]
 }
 
+export interface TileContainerProperties extends
+  FioriComponentProperties,
+  TileContainerInfo { }
+
 export const TileContainer = ({
   className,
+  style,
+
   children,
 }: TileContainerProperties) => {
 
@@ -21,6 +28,7 @@ export const TileContainer = ({
     <div
       className={classes.join(' ')}
       style={{
+        ...style,
         minHeight: 0,
         maxHeight: 'none',
         height: 'auto',

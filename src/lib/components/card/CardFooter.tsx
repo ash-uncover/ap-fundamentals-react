@@ -1,12 +1,20 @@
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
 
-export interface CardFooterProperties {
-  className?: string
+export interface CardFooterInfo {
   children?: ReactElement | ReactElement[]
+}
+
+export interface CardFooterProperties extends
+  FioriComponentProperties,
+  CardFooterInfo {
 }
 
 export const CardFooter = ({
   className,
+  style,
+
   children,
 }: CardFooterProperties) => {
 
@@ -20,6 +28,7 @@ export const CardFooter = ({
   return (
     <a
       className={classes.join(' ')}
+      style={style}
     >
       {children}
     </a>

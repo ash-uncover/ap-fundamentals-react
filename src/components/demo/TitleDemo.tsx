@@ -1,14 +1,19 @@
 import React from 'react'
 
-import { AccentColors, Title, TitleLevels } from '../../lib'
+import {
+  AccentColors,
+  Title,
+  TitleLevels
+} from '../../lib'
+
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Title',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'reviewed 0.0.7', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'Reviewed 0.0.7', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'A title component whose semantic level and visual appearance can be set separately, providing flexibility in design while adhering to accessibility best practices.',
   types: [{

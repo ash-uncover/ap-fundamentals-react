@@ -1,9 +1,8 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
 
-export interface IconProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface IconInfo {
   ariaLabel?: string
   ariaControls?: string
   ariaExpanded?: boolean
@@ -14,6 +13,10 @@ export interface IconProperties {
 
   onClick?: () => void
 }
+
+export interface IconProperties extends
+  FioriComponentProperties,
+  IconInfo { }
 
 export const Icon = ({
   className,
@@ -42,7 +45,7 @@ export const Icon = ({
 
   if (preferSpan) {
     return (
-    <span
+      <span
         className={classes.join(' ')}
         style={style}
         aria-label={ariaLabel}

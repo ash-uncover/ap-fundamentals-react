@@ -1,29 +1,37 @@
-import { LinkType } from 'constants/LinkType'
 import React from 'react'
+// Constants
+import { LinkDesign } from '../../constants/LinkDesign'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-
-export interface LinkProperties {
-  href:string
-  className?: string
+export interface LinkInfo {
   ariaLabel?: string
-  style?: LinkType
+  design?: LinkDesign
+  disabled?: boolean
+  href: string
   icon?: string
   iconAfter?: boolean
-  text: string | number
-  disabled?: boolean
   tabIndex?: number
+  text: string | number
 }
 
+export interface LinkProperties extends
+  FioriComponentProperties,
+  LinkInfo { }
+
 export const Link = ({
-  href,
   className,
-  ariaLabel,
   style,
+
+  ariaLabel,
+
+  design,
+  disabled,
+  href,
   icon,
   iconAfter,
-  text,
-  disabled,
   tabIndex,
+  text,
 }: LinkProperties) => {
 
   // Rendering //
@@ -32,9 +40,8 @@ export const Link = ({
   if (className) {
     classes.push(className)
   }
-
-  if (style) {
-    classes.push(`fd-link--${style}`)
+  if (design) {
+    classes.push(`fd-link--${design}`)
   }
 
   return (
@@ -44,18 +51,19 @@ export const Link = ({
       aria-label={ariaLabel}
       tabIndex={tabIndex ? tabIndex : 0}
       aria-disabled={disabled ? true : false}
+      style={style}
     >
       <span className="fd-link__content">
 
-      {icon && !iconAfter ?
-      <span className={`sap-icon--${icon}`}></span>
-      : null}
+        {icon && !iconAfter ?
+          <span className={`sap-icon--${icon}`}></span>
+          : null}
 
-      {text}
+        {text}
 
-      {icon && iconAfter ?
-      <span className={`sap-icon--${icon}`}></span>
-      : null}
+        {icon && iconAfter ?
+          <span className={`sap-icon--${icon}`}></span>
+          : null}
 
       </span>
 

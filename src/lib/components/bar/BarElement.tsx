@@ -2,8 +2,12 @@ import React, { ReactElement } from 'react'
 
 import { FioriComponentProperties } from '../FioriBase'
 
-export interface BarElementProperties extends FioriComponentProperties {
+export interface BarElementInfo {
   children: ReactElement
+}
+export interface BarElementProperties extends
+  FioriComponentProperties,
+  BarElementInfo {
 }
 
 export const BarElement = ({

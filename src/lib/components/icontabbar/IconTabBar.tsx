@@ -1,15 +1,13 @@
-import { FioriComponentProperties } from 'components/FioriBase'
-import { IconTabBarDesign } from 'constants/IconTabBarDesign'
 import React, { ReactElement } from 'react'
-
-import {
-  IconTabBarItem,
-  IconTabBarItemProperties
-} from '../../components/icontabbar/IconTabBarItem'
+// Constants
+import { IconTabBarDesign } from '../../constants/IconTabBarDesign'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { IconTabBarItem, IconTabBarItemProperties } from '../../components/icontabbar/IconTabBarItem'
 
 import './IconTabBar.css'
 
-export interface IconTabBarProperties extends FioriComponentProperties {
+export interface IconTabBarInfo {
   compact?: boolean
   design?: IconTabBarDesign
   process?: boolean
@@ -20,6 +18,10 @@ export interface IconTabBarProperties extends FioriComponentProperties {
 
   children?: ReactElement | ReactElement[]
 }
+export interface IconTabBarProperties extends
+  FioriComponentProperties,
+  IconTabBarInfo { }
+
 export const IconTabBar = ({
   className,
   style,

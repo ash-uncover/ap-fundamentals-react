@@ -1,8 +1,12 @@
 import React, { ReactElement } from 'react'
-
-import { TableCell, TableCellIndicator, TableCellType } from './TableCell'
-import { TableHeaderCell } from './TableHeaderCell'
-import { TableRow } from './TableRow'
+// Constants
+import { TableCellIndicator } from '../../constants/TableCellIndicator'
+import { TableCellType } from '../../constants/TableCellType'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { TableCell } from '../../components/table/TableCell'
+import { TableHeaderCell } from '../../components/table/TableHeaderCell'
+import { TableRow } from '../../components/table/TableRow'
 
 import './Table.css'
 
@@ -21,7 +25,8 @@ import './Table.css'
     ]}
   />
  */
-export interface TableProperties {
+
+export interface TableInfo {
   borderedHorizontal?: boolean
   borderedVertical?: boolean
   compact?: boolean
@@ -59,7 +64,14 @@ export const TableCellIndicators: { [key: string]: TableCellIndicator } = {
   INFORMATION: 'information'
 }
 
+export interface TableProperties extends
+  FioriComponentProperties,
+  TableInfo { }
+
 export const Table = ({
+  className,
+  style,
+
   borderedHorizontal,
   borderedVertical,
   compact,
@@ -83,6 +95,9 @@ export const Table = ({
   // Rendering //
 
   const classes = ['fd-table']
+  if (className) {
+    classes.push(className)
+  }
   if (!borderedVertical) {
     classes.push('fd-table--no-vertical-borders')
   }
@@ -94,7 +109,10 @@ export const Table = ({
   }
 
   return (
-    <table className={classes.join(' ')}>
+    <table
+      className={classes.join(' ')}
+      style={style}
+    >
       <thead className='fd-table__header'>
         <TableRow>
           <>

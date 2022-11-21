@@ -1,14 +1,18 @@
 import React from 'react'
 
-import { AccentColors, InfoLabel } from '../../lib'
+import {
+  AccentColors,
+  InfoLabel
+} from '../../lib'
+
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Info Label',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'reviewed 0.0.3', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Info Label is a small non-interactive numeric or text-based label. Its primary use is to add user-defined characteristic to an object. Use the Info Label base class with following modifiers:',
   types: [{

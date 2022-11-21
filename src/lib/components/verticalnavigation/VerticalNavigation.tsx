@@ -1,23 +1,22 @@
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
+import { VerticalNavigationItem, VerticalNavigationItemProperties} from '../../components/verticalnavigation/VerticalNavigationItem'
 
-import {
-  VerticalNavigationItem,
-  VerticalNavigationItemProperties
-} from './VerticalNavigationItem'
-
-export interface VerticalNavigationProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface VerticalNavigationInfo {
   condensed?: boolean
-  label: string
   items?: VerticalNavigationItemProperties[],
   itemsLabel: string
+  label: string
 
   onItemSelect?: (id: string) => void
 
   children?: ReactElement | ReactElement[]
 }
+
+export interface VerticalNavigationProperties extends
+  FioriComponentProperties,
+  VerticalNavigationInfo { }
 
 export const VerticalNavigation = ({
   className,

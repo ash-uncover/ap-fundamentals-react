@@ -1,21 +1,24 @@
 import React, { ReactElement } from 'react'
-
-import { FioriComponentProperties } from '../FioriBase'
-
-import { BarElement } from './BarElement'
-import { BarLeft } from './BarLeft'
-import { BarMiddle } from './BarMiddle'
-import { BarRight } from './BarRight'
-
+// Constants
 import { BarType } from '../../constants/BarType'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { BarElement } from '../../components/bar/BarElement'
+import { BarLeft } from '../../components/bar/BarLeft'
+import { BarMiddle } from '../../components/bar/BarMiddle'
+import { BarRight } from '../../components/bar/BarRight'
 
-export interface BarProperties extends FioriComponentProperties {
+export interface BarInfo {
   cozy?: boolean
   left?: ReactElement | ReactElement[]
   middle?: ReactElement | ReactElement[]
   responsivePaddings?: boolean
   right?: ReactElement | ReactElement[]
   type?: BarType
+}
+export interface BarProperties extends
+  FioriComponentProperties,
+  BarInfo {
 }
 
 export const Bar = ({

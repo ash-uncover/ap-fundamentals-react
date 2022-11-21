@@ -17,9 +17,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Page',
   labels: [
-    { label: 'Version', text: 'version 0.0.7', accentColor: AccentColors.COLOR_8 },
-    { label: 'Status', text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { label: 'Theme', text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'Version 0.0.7', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Page...',
   types: [{

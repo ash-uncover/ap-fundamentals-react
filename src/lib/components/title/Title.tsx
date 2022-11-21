@@ -1,14 +1,19 @@
 import React from 'react'
-
-import { FioriComponentProperties } from '../../components/FioriBase'
+// Constants
 import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface TitleProperties extends FioriComponentProperties {
+export interface TitleInfo {
   level?: TitleLevel
   levelVisual?: TitleLevel
   text: string
   wrap?: boolean
 }
+
+export interface TitleProperties extends
+  FioriComponentProperties,
+  TitleInfo { }
 
 export const Title = ({
   className,

@@ -1,11 +1,10 @@
 import React, { ReactElement, useEffect, useState } from 'react'
-
+// Constants
 import { BarTypes } from '../../constants/BarType'
 import { Sizes } from '../../constants/Size'
 import { TitleLevels } from '../../constants/TitleLevel'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { Avatar, AvatarInfo } from '../../components/avatar/Avatar'
 import { Bar } from '../../components/bar/Bar'
 import { Button } from '../../components/button/Button'
@@ -14,7 +13,7 @@ import { Title } from '../../components/title/Title'
 
 import './PageHeader.css'
 
-export interface PageHeaderProperties extends FioriComponentProperties {
+export interface PageHeaderInfo {
   actions?: ReactElement | ReactElement[]
   attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
   avatar?: AvatarInfo
@@ -23,6 +22,10 @@ export interface PageHeaderProperties extends FioriComponentProperties {
   subtitle?: string
   title: string
 }
+
+export interface PageHeaderProperties extends
+FioriComponentProperties,
+PageHeaderInfo {}
 
 export const PageHeader = ({
   className,

@@ -1,9 +1,8 @@
 import React, { ReactElement } from 'react'
-
+// Constants
 import { Sizes } from '../../constants/Size'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { Avatar } from '../../components/avatar/Avatar'
 import { Menu } from '../../components/menu/Menu'
 import { MenuItemInfo } from '../../components/menu/MenuItem'
@@ -30,8 +29,10 @@ export interface ShellBarProperties extends
   FioriComponentProperties,
   ShellBarInfo { }
 
-
 export const ShellBar = ({
+  className,
+  style,
+
   logo,
   logoAlt,
   title,
@@ -41,8 +42,17 @@ export const ShellBar = ({
 }: ShellBarProperties) => {
 
   // Rendering //
+
+  const classes = ['fd-shellbar']
+  if (className) {
+    classes.push(className)
+  }
+
   return (
-    <div className='fd-shellbar'>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       <div className='fd-shellbar__group fd-shellbar__group--product'>
         <span className='fd-shellbar__logo'>
           <img

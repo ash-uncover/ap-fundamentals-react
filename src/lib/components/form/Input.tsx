@@ -1,10 +1,9 @@
 import React, { FormEvent } from 'react'
-
+// Constants
 import { InputState } from '../../constants/InputState'
 import { InputType, InputTypes } from '../../constants/InputType'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { Popover } from '../../components/popover/Popover'
 
 export interface InputInfo {

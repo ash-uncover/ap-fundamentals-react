@@ -14,9 +14,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Popover',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The popover displays additional information for an object in a compact way without leaving the page. The component contains two essential elements: the control (trigger) and body (content). It can also be paired with a Menu, whereas the menu button would trigger a dropdown (body).',
   types: [{

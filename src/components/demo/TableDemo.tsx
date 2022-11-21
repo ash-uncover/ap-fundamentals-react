@@ -1,15 +1,24 @@
-import { StringUtils } from '@uncover/js-utils'
 import React from 'react'
 
-import { AccentColors, Avatar, Button, ButtonDesigns, Sizes, Table } from '../../lib'
+import { StringUtils } from '@uncover/js-utils'
+
+import {
+  AccentColors,
+  Avatar,
+  Button,
+  ButtonDesigns,
+  Sizes,
+  Table
+} from '../../lib'
+
 import { demoCallback, DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Table',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { labe: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { labe: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { labe: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'A table contains a set of line items and usually comprises rows (with each row showing one line item) and columns. Line items can contain data of any kind, but also interactive elements, for example, for editing the data, navigating, or triggering actions relating to the line item.',
   types: [],

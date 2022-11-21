@@ -1,9 +1,9 @@
 import React, { useEffect, useRef, useState, FormEvent } from 'react'
-
+// Utils
 import { UUID } from '@uncover/js-utils'
-
+// Contants
 import { InputState } from '../../constants/InputState'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface CheckBoxInfo {

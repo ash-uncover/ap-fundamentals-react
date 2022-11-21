@@ -1,14 +1,20 @@
 import React from 'react'
 
-import { AccentColors, Avatar, AvatarDesigns, Sizes } from '../../lib'
+import {
+  AccentColors,
+  Avatar,
+  AvatarDesigns,
+  Sizes
+} from '../../lib'
+
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Avatar',
   labels: [
-    { label: '', text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { label: '', text: 'on going', accentColor: AccentColors.COLOR_6 },
-    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'Reviewed 0.0.11', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The avatar component displays an image, icon or user initials, and is used for user profiles, placeholder images, icons or business-related images i.e. product photos.',
   types: [{

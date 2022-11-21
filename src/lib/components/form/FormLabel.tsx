@@ -1,6 +1,6 @@
 import React from 'react'
-
-import { FioriComponentProperties } from 'components/FioriBase'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface FormLabelinfo {
   htmlFor: string

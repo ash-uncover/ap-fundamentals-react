@@ -1,15 +1,18 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { BreadcrumbItem } from '../../components/breadcrumb/BreadcrumbItem'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-import { BreadcrumbItem } from './BreadcrumbItem'
-
-export interface BreadcrumbProperties extends FioriComponentProperties {
+export interface BreadcrumbInfo {
   ariaLabel: string
 
   items: BreadcrumbItem[]
 
   onItemSelected?: (id: string) => void
+}
+export interface BreadcrumbProperties extends
+  FioriComponentProperties,
+  BreadcrumbInfo {
 }
 
 interface BreadcrumbItem {
@@ -34,7 +37,7 @@ export const Breadcrumb = ({
   const onItemClicked = (item: BreadcrumbItem) => {
     if (item.onItemSelected) {
       item.onItemSelected()
-    } else if (onItemSelected)  {
+    } else if (onItemSelected) {
       onItemSelected(item.text)
     }
     return false

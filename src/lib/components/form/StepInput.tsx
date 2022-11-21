@@ -1,10 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-
+// Constants
 import { ButtonDesigns } from '../../constants/ButtonDesign'
 import { InputState } from '../../constants/InputState'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { Button } from '../../components/button/Button'
 
 export interface StepInputInfo {

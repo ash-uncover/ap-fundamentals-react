@@ -3,7 +3,6 @@ import React from 'react'
 import {
   AccentColors,
   ShellBar,
-  InputStates,
 } from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
@@ -11,9 +10,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Shell Bar',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: (
     <>

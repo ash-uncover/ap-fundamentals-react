@@ -1,16 +1,23 @@
 import React, { useEffect, useState } from 'react'
-
+// Utils
 import { StringUtils } from '@uncover/js-utils'
-
-import { Button } from '../../components/button/Button'
-import { DISPLAY_MODE } from '../../components/calendar/Calendar'
-
+// Constants
 import { ButtonDesigns } from '../../constants/ButtonDesign'
+import { DISPLAY_MODE } from '../../components/calendar/Calendar'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { Button } from '../../components/button/Button'
 
-export interface CalendarMonthsProperties {
+export interface CalendarMonthsInfo {
   date: Date
   onDisplayDateChange: (arg: Date) => void
   onDisplayModeChange: (arg: string) => void
+}
+
+export interface CalendarMonthsProperties extends
+  FioriComponentProperties,
+  CalendarMonthsInfo {
+
 }
 
 interface MonthData {
@@ -19,6 +26,9 @@ interface MonthData {
 }
 
 export const CalendarMonths = ({
+  className,
+  style,
+
   date,
   onDisplayDateChange,
   onDisplayModeChange,
@@ -33,7 +43,7 @@ export const CalendarMonths = ({
     const now = new Date()
     const monthsData = []
     for (let i = 0; i < 4; i++) {
-      const monthsRow:MonthData[] = []
+      const monthsRow: MonthData[] = []
       for (let j = 0; j < 3; j++) {
         const month = (4 * j) + i
         const isYear = date.getFullYear() === now.getFullYear()
@@ -79,17 +89,21 @@ export const CalendarMonths = ({
   }
 
   const classes = ['fd-calendar']
+  if (className) {
+    classes.push(className)
+  }
 
   return (
     <section
       className={classes.join(' ')}
+      style={style}
     >
 
       <header className='fd-calendar__header'>
         <div className='fd-calendar__navigation'>
           <div className='fd-calendar__action fd-calendar__action--arrow-left'>
             <Button
-             design={ButtonDesigns.TRANSPARENT}
+              design={ButtonDesigns.TRANSPARENT}
               icon='slim-arrow-left'
               onClick={onPrevious}
             />

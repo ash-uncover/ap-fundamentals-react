@@ -1,18 +1,17 @@
 import React, { KeyboardEvent, MouseEvent } from 'react'
-
+// Constants
+import { Semantic } from '../../constants/Semantic'
+import { IconTabBarDesign, IconTabBarDesigns } from '../../constants/IconTabBarDesign'
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { IconTabBarDesign, IconTabBarDesigns } from '../../constants/IconTabBarDesign'
-import { Semantic } from '../../constants/Semantic'
-
-export interface IconTabBarItemProperties extends FioriComponentProperties {
+export interface IconTabBarItemInfo {
   action?: string
   actionAriaLabel?: string
   badge?: boolean
   counter?: string
   design?: IconTabBarDesign
-  icon?: string,
-  id: string
+  icon?: string
   process?: boolean
   selected?: boolean
   semantic?: Semantic
@@ -21,8 +20,12 @@ export interface IconTabBarItemProperties extends FioriComponentProperties {
   onTabSelect?: (id: string) => void
   onActionSelect?: () => void
 }
+export interface IconTabBarItemProperties extends
+  FioriComponentProperties,
+  IconTabBarItemInfo { }
 
 export const IconTabBarItem = ({
+  id,
   className,
   style,
 
@@ -32,7 +35,6 @@ export const IconTabBarItem = ({
   counter,
   icon,
   design,
-  id,
   process,
   selected,
   semantic,
@@ -51,7 +53,7 @@ export const IconTabBarItem = ({
   }
 
   const onClick = () => {
-    if (onTabSelect) {
+    if (onTabSelect && id) {
       onTabSelect(id)
     }
   }
@@ -61,7 +63,7 @@ export const IconTabBarItem = ({
       case 'Enter':
       case 'Space': {
         event.stopPropagation()
-        if (onTabSelect) {
+        if (onTabSelect && id) {
           onTabSelect(id)
         }
       }

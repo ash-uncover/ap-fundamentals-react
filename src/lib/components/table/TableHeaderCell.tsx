@@ -1,19 +1,34 @@
 import React, { ReactElement } from 'react'
-import { TableCellType } from './TableCell'
+// Constants
+import { TableCellType } from '../../constants/TableCellType'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface TableHeaderCellProperties {
+export interface TableHeaderCellInfo {
   type?: TableCellType
+
   children?: ReactElement | ReactElement[]
 }
 
+export interface TableHeaderCellProperties extends
+  FioriComponentProperties,
+  TableHeaderCellInfo { }
+
 export const TableHeaderCell = ({
+  className,
+  style,
+
+  type,
+
   children,
-  type
 }: TableHeaderCellProperties) => {
 
   // Rendering //
 
   const classes = ['fd-table__cell']
+  if (className) {
+    classes.push(className)
+  }
   if (type) {
     classes.push(`fd-table__cell--${type}`)
   }
@@ -22,6 +37,7 @@ export const TableHeaderCell = ({
     <th
       className={classes.join(' ')}
       scope='col'
+      style={style}
     >
       {children}
     </th>
