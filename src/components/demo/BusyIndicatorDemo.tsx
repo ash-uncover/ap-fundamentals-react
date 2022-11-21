@@ -1,15 +1,19 @@
 import React from 'react'
 
-import { AccentColors, BusyIndicator, BusyIndicatorSizes } from 'lib'
+import {
+  AccentColors,
+  BusyIndicator,
+  BusyIndicatorSizes
+} from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Busy Indicator',
   labels: [
-    { label: '', text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
-    { label: '', text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { label: '', text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.6', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'In Progress', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: (
     <>

@@ -1,34 +1,47 @@
 import React, { ReactElement } from 'react'
-
+// Constants
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
+// Components
 import { ToolbarSpacer } from '../../components/toolbar/ToolbarSpacer'
 import { Title } from '../../components/title/Title'
 
-import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
-
 import './Toolbar.css'
-export interface ToolbarProperties {
-  title?: string
-  titleLevel?: TitleLevel
+export interface ToolbarInfo {
   active?: boolean
   clear?: boolean
-  transparent?: boolean
+  title?: string
+  titleLevel?: TitleLevel
   solid?: boolean
+  transparent?: boolean
+
   children?: ReactElement | ReactElement[]
 }
 
+export interface ToolbarProperties extends
+  FioriComponentProperties,
+  ToolbarInfo { }
+
 export const Toolbar = ({
-  title,
-  titleLevel = TitleLevels.H4,
+  className,
+  style,
+
   active,
   clear,
-  transparent,
+  title,
   solid,
+  titleLevel = TitleLevels.H4,
+  transparent,
+
   children,
 }: ToolbarProperties) => {
 
   // Rendering //
 
   const classes = ['fd-toolbar']
+  if (className) {
+    classes.push(className)
+  }
   if (active) {
     classes.push('fd-toolbar-active')
   }
@@ -48,6 +61,7 @@ export const Toolbar = ({
   return (
     <div
       className={classes.join(' ')}
+      style={style}
     >
       {title ?
         <Title

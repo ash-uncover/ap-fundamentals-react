@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
+// Utils
 import { UUID } from '@uncover/js-utils'
-
+// Constants
 import { InputState } from '../../constants/InputState'
 import { ListType } from '../../constants/ListType'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { ListItem, ListItemInfo } from '../../components/list/ListItem'
 
 export interface ListInfo {

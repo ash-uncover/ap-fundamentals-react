@@ -1,7 +1,8 @@
 import React from 'react'
-
-import { FioriComponentProperties } from '../../components/FioriBase'
+// Constants
 import { ListType, ListTypes } from '../../constants/ListType'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface ListItemInfo {
   iconLeft?: string

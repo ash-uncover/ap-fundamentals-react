@@ -1,15 +1,18 @@
 import React from 'react'
 
-import { AccentColors, VerticalNavigation, VerticalNavigationItem } from 'lib'
+import {
+  AccentColors,
+  VerticalNavigation,
+} from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Vertical Navigation',
   labels: [
-    { text: 'version 0.0.6', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.6', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: '',
   types: [{

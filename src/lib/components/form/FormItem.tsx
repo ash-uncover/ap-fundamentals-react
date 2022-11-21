@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
-
+// Utils
 import { UUID } from '@uncover/js-utils'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { CheckBox, CheckBoxInfo } from '../../components/form/CheckBox'
 import { FormLabel } from '../../components/form/FormLabel'
 import { Input, InputInfo } from '../../components/form/Input'

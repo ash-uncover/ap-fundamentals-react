@@ -1,7 +1,7 @@
 import React from 'react'
-
+// Constants
 import { AccentColor } from '../../constants/AccentColor'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface InfoLabelInfo {
@@ -13,8 +13,7 @@ export interface InfoLabelInfo {
 }
 export interface InfoLabelProperties extends
   FioriComponentProperties,
-  InfoLabelInfo {
-}
+  InfoLabelInfo {}
 
 export const InfoLabel = ({
   className,

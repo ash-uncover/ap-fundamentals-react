@@ -11,9 +11,9 @@ import { ListTypes } from '../../lib'
 const DEMO_DATA = {
   title: 'List',
   labels: [
-    { text: 'version 0.0.7', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'Version 0.0.7', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'In SAP Fiori, we distinguish between tables and lists. Both usually contain homogeneous data, but lists generally have rather basic data, while the data in tables tend to be more complex. Lists are mostly used in the master list for a master-detail scenario using the flexible column layout, as well as in Popovers or Dialogs.',
   types: [{

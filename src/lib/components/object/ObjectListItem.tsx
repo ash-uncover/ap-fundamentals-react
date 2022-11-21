@@ -1,13 +1,15 @@
 import React, { ReactElement } from 'react'
-
+// Constants
+import { Sizes } from '../../constants/Size'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 import { Avatar, AvatarProperties } from '../../components/avatar/Avatar'
-import { ObjectText } from './ObjectText'
+import { ObjectText } from '../../components/object/ObjectText'
 import { ObjectIdentifier } from '../../components/object/ObjectIdentifier'
 import { ObjectMarker } from '../../components/object/ObjectMarker'
 import { ObjectNumber } from '../../components/object/ObjectNumber'
 import { ObjectStatus } from '../../components/object/ObjectStatus'
 
-import { Sizes } from '../../constants/Size'
 
 /*
 <ObjectListItem
@@ -64,7 +66,7 @@ import { Sizes } from '../../constants/Size'
 />
 */
 
-export interface ObjectListItemProperties {
+export interface ObjectListItemInfo {
   intro?: string
   avatar?: AvatarProperties
   title?: string
@@ -72,6 +74,10 @@ export interface ObjectListItemProperties {
   attributes?: any[]
   children?: ReactElement | ReactElement[]
 }
+
+export interface ObjectListItemProperties extends
+  FioriComponentProperties,
+  ObjectListItemInfo { }
 export interface ObjectListItemHeaderProperties {
   avatar?: ReactElement
   left?: ReactElement | ReactElement[]
@@ -85,6 +91,9 @@ export interface ObjectListItemRowProperties {
 }
 
 export const ObjectListItem = ({
+  className,
+  style,
+
   intro,
   avatar,
   title,
@@ -95,11 +104,16 @@ export const ObjectListItem = ({
 
   // Rendering //
 
-  return (
+  const classes = ['fd-list__item', 'fd-object-list__item']
+  if (className) {
+    classes.push(className)
+  }
 
+  return (
     <li
-      className='fd-list__item fd-object-list__item'
+      className={classes.join(' ')}
       style={{
+        ...style,
         height: 'auto'
       }}
       role='listitem'

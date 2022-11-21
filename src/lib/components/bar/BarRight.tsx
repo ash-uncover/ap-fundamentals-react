@@ -1,9 +1,13 @@
 import React, { ReactElement } from 'react'
-
+// Components
 import { FioriComponentProperties } from '../FioriBase'
 
-export interface BarRightProperties extends FioriComponentProperties {
+export interface BarRightInfo {
   children: ReactElement | ReactElement[]
+}
+export interface BarRightProperties extends
+  FioriComponentProperties,
+  BarRightInfo {
 }
 
 export const BarRight = ({

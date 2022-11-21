@@ -1,26 +1,27 @@
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface DialogHeaderProperties {
+export interface DialogHeaderInfo {
   left?: ReactElement | ReactElement[]
   right?: ReactElement | ReactElement[],
   subheader?: boolean
 }
 
+export interface DialogHeaderProperties extends
+  FioriComponentProperties,
+  DialogHeaderInfo { }
+
 export const DialogHeader = ({
+  className,
+  style,
+
   left,
   right,
   subheader,
 }: DialogHeaderProperties) => {
 
   // Rendering //
-
-  const classes = ['fd-dialog__header fd-bar']
-
-  if (subheader) {
-    classes.push('fd-bar--header-with-subheader')
-  } else {
-    classes.push('fd-bar--header')
-  }
 
   const renderElements = (elements: ReactElement | ReactElement[] | null | undefined) => {
     if (elements) {
@@ -44,8 +45,21 @@ export const DialogHeader = ({
     )
   }
 
+  const classes = ['fd-dialog__header fd-bar']
+  if (className) {
+    classes.push(className)
+  }
+  if (subheader) {
+    classes.push('fd-bar--header-with-subheader')
+  } else {
+    classes.push('fd-bar--header')
+  }
+
   return (
-    <header className={classes.join(' ')}>
+    <header
+      className={classes.join(' ')}
+      style={style}
+    >
       <div className='fd-bar__left'>
         {left ? renderElements(left) : null}
       </div>

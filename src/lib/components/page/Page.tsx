@@ -1,14 +1,13 @@
 import React from 'react'
-
-import { FioriComponentProperties } from '../FioriBase'
-
-import { PageBodyProperties } from './PageBody'
-import { PageFooterProperties } from './PageFooter'
-import { PageHeaderProperties } from './PageHeader'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { PageBodyProperties } from '../../components/page/PageBody'
+import { PageFooterProperties } from '../../components/page/PageFooter'
+import { PageHeaderProperties } from '../../components/page/PageHeader'
 
 import './Page.css'
 
-export interface PageProperties extends FioriComponentProperties {
+export interface PageInfo {
   children: [
     React.ReactElement<PageHeaderProperties>,
     React.ReactElement<PageBodyProperties>,
@@ -18,6 +17,10 @@ export interface PageProperties extends FioriComponentProperties {
     React.ReactElement<PageBodyProperties>,
   ]
 }
+export interface PageProperties extends
+  FioriComponentProperties,
+  PageInfo { }
+
 export const Page = ({
   className,
   style,

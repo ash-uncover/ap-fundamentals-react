@@ -1,7 +1,6 @@
 import React from 'react'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { FormItem, FormItemLabelInfo } from '../../components/form/FormItem'
 import { SelectInfo } from '../../components/select/Select'
 

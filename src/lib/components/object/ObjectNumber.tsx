@@ -1,17 +1,19 @@
 import React from 'react'
-
+// Constants
 import { Semantic } from '../../constants/Semantic'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface ObjectNumberProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface ObjectNumberInfo {
   bold?: boolean
   large?: boolean
   semantic?: Semantic
   unit: string
   value: string
 }
+export interface ObjectNumberProperties extends
+  FioriComponentProperties,
+  ObjectNumberInfo { }
 
 export const ObjectNumber = ({
   className,

@@ -1,16 +1,25 @@
 import React, { KeyboardEvent } from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { Avatar, AvatarInfo } from '../../components/avatar/Avatar'
 
-import { Avatar, AvatarProperties } from '../../components/avatar/Avatar'
-
-export interface CardHeaderProperties {
-  avatar?: AvatarProperties
+export interface CardHeaderInfo {
+  avatar?: AvatarInfo
   title?: string
   titleCounter?: string
   subTitle?: string
   onClick?: () => void
 }
 
+export interface CardHeaderProperties extends
+FioriComponentProperties,
+CardHeaderInfo {
+}
+
 export const CardHeader = ({
+  className,
+  style,
+
   avatar,
   title,
   titleCounter,
@@ -44,6 +53,9 @@ export const CardHeader = ({
   // Rendering //
 
   const classes = ['fd-card__header']
+  if (className) {
+    classes.push(className)
+  }
 
   return (
     <a
@@ -51,6 +63,7 @@ export const CardHeader = ({
       tabIndex={0}
       onClick={onClicked}
       onKeyUp={onKeyUp}
+      style={style}
     >
       {avatar ? <Avatar {...avatar} /> : null}
       {title || titleCounter ?

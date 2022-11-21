@@ -1,12 +1,11 @@
 import React, { ReactElement, useState } from 'react'
-
+// Utils
 import { UUID } from '@uncover/js-utils'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface PopoverInfo {
   alignRight?: boolean
-  compact?: boolean
   control: ReactElement
   dropdown?: boolean
   noArrow?: boolean
@@ -22,7 +21,6 @@ export const Popover = ({
   style,
 
   alignRight,
-  compact,
   control,
   dropdown,
   noArrow,

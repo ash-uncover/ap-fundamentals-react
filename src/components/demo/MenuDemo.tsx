@@ -6,9 +6,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Menu',
   labels: [
-    { text: 'version 0.0.5', accentColor: AccentColors.COLOR_8 },
-    { text: 'reviewed 0.0.5', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'Version 0.0.5', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: (
     <>

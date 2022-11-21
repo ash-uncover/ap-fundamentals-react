@@ -1,14 +1,19 @@
 import React from 'react'
 
-import { AccentColors, InputStates, Select } from '../../lib'
+import {
+  AccentColors,
+  InputStates,
+  Select
+} from '../../lib'
+
 import { demoCallback, DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {
   title: 'Select',
   labels: [
-    { text: 'version 0.0.3', accentColor: AccentColors.COLOR_8 },
-    { text: 'on going', accentColor: AccentColors.COLOR_6 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Since', text: 'Version 0.0.3', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_6 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'The select component is commonly used to enable users to select an item from a predefined list. It should be used when there are less than 12 items to choose from.',
   types: [{

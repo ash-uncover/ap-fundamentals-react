@@ -1,14 +1,7 @@
-import React, {
-  KeyboardEvent,
-  MouseEvent,
-  useState
-} from 'react'
+import { FioriComponentProperties } from 'components/FioriBase'
+import React, { KeyboardEvent, MouseEvent, useState } from 'react'
 
-export interface VerticalNavigationItemProperties {
-  className?: string
-  style?: React.CSSProperties
-
-  id: string
+export interface VerticalNavigationItemInfo {
   condensed?: boolean
   expanded?: boolean
   icon?: string
@@ -20,6 +13,10 @@ export interface VerticalNavigationItemProperties {
 
   children?: any | any[]
 }
+
+export interface VerticalNavigationItemProperties extends
+  FioriComponentProperties,
+  VerticalNavigationItemInfo { }
 
 export const VerticalNavigationItem = ({
   className,
@@ -48,7 +45,7 @@ export const VerticalNavigationItem = ({
 
   const onClick = (event: MouseEvent) => {
     event.stopPropagation()
-    if (onItemSelect) {
+    if (onItemSelect && id) {
       onItemSelect(id)
     }
   }
@@ -58,7 +55,7 @@ export const VerticalNavigationItem = ({
       case 'Enter':
       case 'Space': {
         event.stopPropagation()
-        if (onItemSelect) {
+        if (onItemSelect && id) {
           onItemSelect(id)
         }
       }

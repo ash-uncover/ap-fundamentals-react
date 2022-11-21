@@ -1,10 +1,13 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-export interface ObjectTextProperties extends FioriComponentProperties {
+export interface ObjectTextInfo {
   text: string
 }
+export interface ObjectTextProperties extends
+  FioriComponentProperties,
+  ObjectTextInfo { }
 
 export const ObjectText = ({
   className,

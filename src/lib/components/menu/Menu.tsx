@@ -1,6 +1,7 @@
-import { FioriComponentProperties } from 'components/FioriBase'
 import React from 'react'
-import { MenuItem, MenuItemInfo } from './MenuItem'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { MenuItem, MenuItemInfo } from '../../components/menu/MenuItem'
 
 export interface MenuInfo {
   compact?: boolean

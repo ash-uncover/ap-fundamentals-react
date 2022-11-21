@@ -1,16 +1,20 @@
 import React from 'react'
-
-import { FioriComponentProperties } from '../FioriBase'
-
+// Constants
 import { BusyIndicatorSize } from '../../constants/BusyIndicatorSize'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface BusyIndicatorProperties extends FioriComponentProperties {
+export interface BusyIndicatorInfo {
   ariaLabel?: string
 
   contrast?: boolean
   label?: string
   size?: BusyIndicatorSize
   toast?: boolean
+}
+export interface BusyIndicatorProperties extends
+  FioriComponentProperties,
+  BusyIndicatorInfo {
 }
 
 export const BusyIndicator = ({

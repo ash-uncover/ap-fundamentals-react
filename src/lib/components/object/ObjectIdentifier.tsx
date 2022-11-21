@@ -1,14 +1,16 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
 
-export interface ObjectIdentifierProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface ObjectIdentifierInfo {
   bold?: boolean
   medium?: boolean
   text?: string
   title: string
 }
+export interface ObjectIdentifierProperties extends
+  FioriComponentProperties,
+  ObjectIdentifierInfo { }
 
 export const ObjectIdentifier = ({
   className,
@@ -23,11 +25,11 @@ export const ObjectIdentifier = ({
   // Rendering //
 
   const classes = ['fd-object-identifier']
-  if (medium) {
-    classes.push('fd-object-identifier--medium')
-  }
   if (className) {
     classes.push(className)
+  }
+  if (medium) {
+    classes.push('fd-object-identifier--medium')
   }
 
   const classesTitle = ['fd-object-identifier__title']

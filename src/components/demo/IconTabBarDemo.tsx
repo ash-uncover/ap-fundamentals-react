@@ -12,9 +12,9 @@ import { DemoPage } from '../common/DemoPage'
 const DEMO_DATA = {
   title: 'Icon Tab Bar',
   labels: [
-    { text: 'version 0.0.7', accentColor: AccentColors.COLOR_8 },
-    { text: 'in progress', accentColor: AccentColors.COLOR_5 },
-    { text: 'themable', accentColor: AccentColors.COLOR_3 }
+    { label: 'Version', text: 'Version 0.0.7', accentColor: AccentColors.COLOR_8 },
+    { label: 'Status', text: 'On Going', accentColor: AccentColors.COLOR_5 },
+    { label: 'Specification', text: 'Fiori 3', accentColor: AccentColors.COLOR_3 }
   ],
   description: 'Info Label is a small non-interactive numeric or text-based label. Its primary use is to add user-defined characteristic to an object.',
   types: [{

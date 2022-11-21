@@ -1,7 +1,8 @@
-import { FioriComponentProperties } from 'components/FioriBase'
 import React, { ReactElement } from 'react'
+// Components
+import { FioriComponentProperties } from 'components/FioriBase'
 
-export interface TableRowProperties extends FioriComponentProperties {
+export interface TableRowInfo {
   activable?: boolean
   hoverable?: boolean
 
@@ -9,6 +10,9 @@ export interface TableRowProperties extends FioriComponentProperties {
 
   children: ReactElement | ReactElement[]
 }
+export interface TableRowProperties extends
+  FioriComponentProperties,
+  TableRowInfo { }
 
 export const TableRow = ({
   className,
@@ -18,21 +22,21 @@ export const TableRow = ({
   hoverable,
 
   onClick,
-  
+
   children
 }: TableRowProperties) => {
 
   // Rendering //
 
   const classes = ['fd-table__row']
+  if (className) {
+    classes.push(className)
+  }
   if (activable) {
     classes.push(`fd-table__row--activable`)
   }
   if (hoverable) {
     classes.push(`fd-table__row--hoverable`)
-  }
-  if (className) {
-    classes.push(className)
   }
 
   return (

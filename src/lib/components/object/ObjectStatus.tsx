@@ -1,8 +1,8 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-export interface ObjectStatusProperties extends FioriComponentProperties {
+export interface ObjectStatusInfo {
   icon?: string
   iconOnly?: boolean
   inverted?: boolean
@@ -10,6 +10,9 @@ export interface ObjectStatusProperties extends FioriComponentProperties {
   semantic?: string
   text: string
 }
+export interface ObjectStatusProperties extends
+  FioriComponentProperties,
+  ObjectStatusInfo { }
 
 export const ObjectStatus = ({
   className,
@@ -26,6 +29,9 @@ export const ObjectStatus = ({
   // Rendering //
 
   const classes = ['fd-object-status']
+  if (className) {
+    classes.push(className)
+  }
   if (semantic) {
     classes.push(`fd-object-status--${semantic}`)
   }
@@ -34,9 +40,6 @@ export const ObjectStatus = ({
   }
   if (large) {
     classes.push('fd-object-status--large')
-  }
-  if (className) {
-    classes.push(className)
   }
 
   return (

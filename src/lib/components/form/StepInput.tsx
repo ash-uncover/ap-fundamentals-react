@@ -1,10 +1,9 @@
 import React, { ChangeEvent, useEffect, useState } from 'react'
-
+// Constants
 import { ButtonDesigns } from '../../constants/ButtonDesign'
 import { InputState } from '../../constants/InputState'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { Button } from '../../components/button/Button'
 
 export interface StepInputInfo {
@@ -46,7 +45,9 @@ export const StepInput = ({
   const [focused, setFocused] = useState(false)
 
   useEffect(() => {
-    updateValue(value)
+    if (value !== currentValue) {
+      updateValue(value)
+    }
   }, [value])
 
   const updateValue = (newValue: number) => {

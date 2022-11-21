@@ -1,7 +1,6 @@
 import React from 'react'
-
+// Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-
 import { CheckBoxInfo } from '../../components/form/CheckBox'
 import { FormItem } from '../../components/form/FormItem'
 

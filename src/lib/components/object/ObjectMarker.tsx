@@ -1,13 +1,15 @@
 import React from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface ObjectMarkerProperties {
-  className?: string
-  style?: React.CSSProperties
-
+export interface ObjectMarkerInfo {
   icon?: string
   iconOnly?: boolean
   text: string
 }
+export interface ObjectMarkerProperties extends
+  FioriComponentProperties,
+  ObjectMarkerInfo { }
 
 export const ObjectMarker = ({
   className,

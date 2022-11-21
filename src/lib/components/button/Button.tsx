@@ -1,11 +1,11 @@
 import React, { MouseEvent } from 'react'
-
-import { FioriComponentProperties } from '../FioriBase'
-
+// Constants
 import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-export interface ButtonProperties extends FioriComponentProperties {
+export interface ButtonInfo {
   ariaLabel?: string
   ariaControls?: string
   ariaExpanded?: boolean
@@ -24,6 +24,10 @@ export interface ButtonProperties extends FioriComponentProperties {
   type?: ButtonType
 
   onClick?: () => void
+}
+export interface ButtonProperties extends
+  FioriComponentProperties,
+  ButtonInfo {
 }
 
 export const Button = ({

@@ -1,12 +1,11 @@
 import React from 'react'
-
-import { FioriComponentProperties } from '../FioriBase'
-
+// Constants
 import { AccentColor } from '../../constants/AccentColor'
+import { AvatarDesign } from '../../constants/AvatarDesign'
 import { Size, Sizes } from '../../constants/Size'
-
-import { Icon } from '../icon/Icon'
-import { AvatarDesign } from 'constants/AvatarDesign'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
+import { Icon } from '../../components/icon/Icon'
 
 export interface AvatarInfo {
   ariaLabel: string

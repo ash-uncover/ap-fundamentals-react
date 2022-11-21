@@ -1,8 +1,8 @@
 import React, { ReactElement, useEffect, useState } from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
-import { FioriComponentProperties } from '../FioriBase'
-
-export interface PanelProperties extends FioriComponentProperties {
+export interface PanelInfo {
   compact?: boolean
   expanded?: boolean
   expandable?: boolean
@@ -10,8 +10,14 @@ export interface PanelProperties extends FioriComponentProperties {
   toolbar?: ReactElement
   children?: string | ReactElement | ReactElement[]
 }
+export interface PanelProperties extends
+  FioriComponentProperties,
+  PanelInfo { }
 
 export const Panel = ({
+  className,
+  style,
+
   compact,
   expanded,
   expandable,
@@ -37,6 +43,9 @@ export const Panel = ({
   // Rendering //
 
   const classes = ['fd-panel']
+  if (className) {
+    classes.push(className)
+  }
   if (compact) {
     classes.push('fd-panel--compact')
   }
@@ -45,7 +54,10 @@ export const Panel = ({
   }
 
   return (
-    <div className={classes.join(' ')}>
+    <div
+      className={classes.join(' ')}
+      style={style}
+    >
       <div className='fd-panel__header'>
         {expandable ?
           <div className='fd-panel__expand'>
