@@ -45,7 +45,9 @@ export const StepInput = ({
   const [focused, setFocused] = useState(false)
 
   useEffect(() => {
-    updateValue(value)
+    if (value !== currentValue) {
+      updateValue(value)
+    }
   }, [value])
 
   const updateValue = (newValue: number) => {
