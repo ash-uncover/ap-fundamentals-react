@@ -29,6 +29,8 @@ export const injectCss = (id: string, href: string) => {
 }
 
 export const injectThemeCss = (theme: ThemeInfo) => {
+  let root = ''
+  console.log(window.location)
   return Promise.allSettled([
     injectCss('theming-icons', `/fundamentals-icons-${theme.family}.css`),
     injectCss('theming-base-content', `/theme/${theme.id}/css_variables.css`),
