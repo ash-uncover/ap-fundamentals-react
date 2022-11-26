@@ -1,6 +1,8 @@
 import React from 'react'
+// Constants
+import { IconDesign, IconDesigns } from '../../constants/IconDesign'
 // Components
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface IconInfo {
   ariaLabel?: string
@@ -8,6 +10,7 @@ export interface IconInfo {
   ariaExpanded?: boolean
   ariaHaspopup?: boolean
 
+  color?: IconDesign
   icon: string
   preferSpan?: boolean
 
@@ -27,6 +30,7 @@ export const Icon = ({
   ariaExpanded,
   ariaHaspopup,
 
+  color,
   icon,
   preferSpan,
 
@@ -38,6 +42,12 @@ export const Icon = ({
   const classes = [`sap-icon--${icon}`]
   if (className) {
     classes.push(className)
+  }
+  if (color) {
+    classes.push(`sap-icon--color-${color}`)
+  }
+  if (color === IconDesigns.CONTRAST) {
+    classes.push(`sap-icon--background-${color}`)
   }
   if (preferSpan) {
     classes.push('sap-icon')

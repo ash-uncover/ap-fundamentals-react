@@ -33,6 +33,7 @@ export interface TableInfo {
   indicator?: boolean
   columns: TableColumn[]
   rows?: TableRow[]
+  showHeaders?: boolean
   children?: ReactElement | ReactElement[]
   onRowClick?: (id: string) => void
 }
@@ -78,6 +79,7 @@ export const Table = ({
   indicator,
   columns,
   rows,
+  showHeaders = true,
 
   onRowClick,
 
@@ -113,25 +115,27 @@ export const Table = ({
       className={classes.join(' ')}
       style={style}
     >
-      <thead className='fd-table__header'>
-        <TableRow>
-          <>
-            {indicator ?
-              <TableCell
-                type='status-indicator'
-              />
-              : null}
-            {columns.map(column => (
-              <TableHeaderCell
-                key={column.key}
-                type={column.type}
-              >
-                <span>{column.name}</span>
-              </TableHeaderCell>
-            ))}
-          </>
-        </TableRow>
-      </thead>
+      {showHeaders ?
+        <thead className='fd-table__header'>
+          <TableRow>
+            <>
+              {indicator ?
+                <TableCell
+                  type='status-indicator'
+                />
+                : null}
+              {columns.map(column => (
+                <TableHeaderCell
+                  key={column.key}
+                  type={column.type}
+                >
+                  <span>{column.name}</span>
+                </TableHeaderCell>
+              ))}
+            </>
+          </TableRow>
+        </thead>
+        : null}
       <tbody className='fd-table__body'>
         {rows?.map((row, index) => (
           <TableRow
