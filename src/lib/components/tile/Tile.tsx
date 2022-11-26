@@ -7,10 +7,11 @@ import { InfoLabel } from '../../components/infolabel/InfoLabel'
 
 export interface TileInfo {
   badge?: string
+  double?: boolean
   footer?: string
   size?: Size
   subTitle?: string
-  title: string
+  title?: string
 
   onClick?: () => void
 
@@ -26,6 +27,7 @@ export const Tile = ({
   style,
 
   badge,
+  double,
   footer,
   size = Sizes.LARGE,
   subTitle,
@@ -50,6 +52,9 @@ export const Tile = ({
   if (className) {
     classes.push(className)
   }
+  if (double) {
+    classes.push(`fd-tile--double`)
+  }
   if (size) {
     classes.push(`fd-tile--${size}`)
   }
@@ -62,11 +67,15 @@ export const Tile = ({
       onClick={onClicked}
       style={style}
     >
-      {badge ? <InfoLabel text={badge} /> : null}
+      {badge ?
+        <div className='fd-badge'>{badge}</div>
+        : null}
       <div className='fd-tile__header'>
-        <div className='fd-tile__title'>
-          {title}
-        </div>
+        {title ?
+          <div className='fd-tile__title'>
+            {title}
+          </div>
+          : null}
         {subTitle ?
           <div className='fd-tile__subtitle'>
             {subTitle}
