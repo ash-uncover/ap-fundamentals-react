@@ -45,8 +45,6 @@ export const Input = ({
   onChange,
 }: InputProperties) => {
 
-  // Hooks //
-
   // Events //
 
   const handleChange = (event: FormEvent<HTMLInputElement>) => {
@@ -83,23 +81,20 @@ export const Input = ({
     classes.push(`is-${state}`)
   }
 
-  if (stateMessage) {
-    const classesMessage = ['fd-form-message']
-    classesMessage.push(`fd-form-message--${state}`)
-    return (
-      <Popover
-        className='fd-popover--input-message-group'
-        control={renderInput()}
-        noArrow
+  const classesMessage = ['fd-form-message']
+  classesMessage.push(`fd-form-message--${state}`)
+  return (
+    <Popover
+      className='fd-popover--input-message-group'
+      control={renderInput()}
+      noArrow
+      preventOpen={!stateMessage}
+    >
+      <div
+        className={classesMessage.join(' ')}
       >
-        <div
-          className={classesMessage.join(' ')}
-        >
-          {stateMessage}
-        </div>
-      </Popover>
-    )
-  }
-
-  return renderInput()
+        {stateMessage}
+      </div>
+    </Popover>
+  )
 }

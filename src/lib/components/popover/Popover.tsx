@@ -9,6 +9,7 @@ export interface PopoverInfo {
   control: ReactElement
   dropdown?: boolean
   noArrow?: boolean
+  preventOpen?: boolean
 }
 export interface PopoverProperties extends
   FioriComponentProperties,
@@ -24,6 +25,7 @@ export const Popover = ({
   control,
   dropdown,
   noArrow,
+  preventOpen = false,
 
   children,
 }: PopoverProperties) => {
@@ -56,7 +58,7 @@ export const Popover = ({
   const onTogglePopover = () => {
     if (open) {
       closePopover()
-    } else {
+    } else if (!preventOpen) {
       openPopover()
     }
   }
