@@ -88,23 +88,20 @@ export const TextArea = ({
     classes.push(`is-${state}`)
   }
 
-  if (stateMessage) {
-    const classesMessage = ['fd-form-message']
-    classesMessage.push(`fd-form-message--${state}`)
-    return (
-      <Popover
-        className='fd-popover--input-message-group'
-        control={renderTextArea()}
-        noArrow
+  const classesMessage = ['fd-form-message']
+  classesMessage.push(`fd-form-message--${state}`)
+  return (
+    <Popover
+      className='fd-popover--input-message-group'
+      control={renderTextArea()}
+      noArrow
+      preventOpen={!stateMessage}
+    >
+      <div
+        className={classesMessage.join(' ')}
       >
-        <div
-          className={classesMessage.join(' ')}
-        >
-          {stateMessage}
-        </div>
-      </Popover>
-    )
-  }
-
-  return renderTextArea()
+        {stateMessage}
+      </div>
+    </Popover>
+  )
 }
