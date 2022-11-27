@@ -8,6 +8,7 @@ import { FormLabel } from '../../components/form/FormLabel'
 import { Input, InputInfo } from '../../components/form/Input'
 import { Select, SelectInfo } from '../../components/select/Select'
 import { StepInput, StepInputInfo } from '../../components/form/StepInput'
+import { TextArea, TextAreaInfo } from '../../components/form/TextArea'
 
 export interface FormItemLabelInfo {
   label: string
@@ -20,6 +21,7 @@ export interface FormItemInfo extends FormItemLabelInfo {
   input?: InputInfo
   select?: SelectInfo
   stepinput?: StepInputInfo
+  textarea?: TextAreaInfo
 }
 
 export interface FormItemProperties extends
@@ -40,6 +42,7 @@ export const FormItem = ({
   input,
   select,
   stepinput,
+  textarea,
 }: FormItemProperties) => {
 
   // Hooks //
@@ -60,6 +63,9 @@ export const FormItem = ({
     }
     if (stepinput) {
       return <StepInput {...stepinput} id={idFormItem} />
+    }
+    if (textarea) {
+      return <TextArea {...textarea} id={idFormItem} />
     }
     return null
   }

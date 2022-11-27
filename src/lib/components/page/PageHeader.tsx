@@ -18,9 +18,12 @@ export interface PageHeaderInfo {
   attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
   avatar?: AvatarInfo
   breadcrumb: ReactElement
+  expanded?: boolean
   hideBoxShadow?: boolean
   subtitle?: string
   title: string
+
+  onExpand?: (expand: boolean) => void
 }
 
 export interface PageHeaderProperties extends
@@ -35,30 +38,36 @@ export const PageHeader = ({
   attributes,
   avatar,
   breadcrumb,
+  expanded,
   hideBoxShadow,
   subtitle,
   title,
+
+  onExpand,
 }: PageHeaderProperties) => {
 
   // Hooks //
 
   const [showExpand, setShowExpand] = useState(false)
-  const [expanded, setExpanded] = useState(Boolean(attributes && (!Array.isArray(attributes) || attributes.length)))
+  const [isExpanded, setExpanded] = useState(computeExpanded(expanded, onExpand, attributes))
   const [pinned, setPinned] = useState(false)
 
   useEffect(() => {
-    const hasAttributes = Boolean(attributes && (!Array.isArray(attributes) || attributes.length))
-    setShowExpand(hasAttributes)
-    setExpanded(hasAttributes)
-  }, [attributes])
+    setShowExpand(computeExpandable(attributes))
+    setExpanded(computeExpanded(expanded, onExpand, attributes))
+  }, [expanded, attributes])
 
   // Events //
 
-  const onToggleExpanded = () => {
-    setExpanded(!expanded)
+  const handleToggleExpanded = () => {
+    if (onExpand) {
+      onExpand(!isExpanded)
+    } else {
+      setExpanded(!isExpanded)
+    }
   }
 
-  const onTogglePinned = () => {
+  const handleTogglePinned = () => {
     setPinned(!pinned)
   }
 
@@ -86,7 +95,7 @@ export const PageHeader = ({
   if (className) {
     classes.push(className)
   }
-  if (expanded) {
+  if (isExpanded) {
     classes.push('ap-fd-page-header--expanded')
   }
 
@@ -105,7 +114,7 @@ export const PageHeader = ({
               paddingTop: '0.3125rem',
               display: 'flex'
             }}>
-            {(!showExpand || !expanded) && avatar ?
+            {(!showExpand || !isExpanded) && avatar ?
               <Avatar
                 {...avatar}
                 className='ap-fd-page-header__controls__title__avatar'
@@ -138,7 +147,7 @@ export const PageHeader = ({
         </div>
       </div>
 
-      {showExpand && expanded ?
+      {showExpand && isExpanded ?
         <div
           className='ap-fd-page-header__content'
           style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem' }}
@@ -162,16 +171,30 @@ export const PageHeader = ({
         >
           <Button
             className='ap-fd-page-header__expander-button'
-            icon={expanded ? 'slim-arrow-up' : 'slim-arrow-down'}
-            onClick={onToggleExpanded}
+            icon={isExpanded ? 'slim-arrow-up' : 'slim-arrow-down'}
+            onClick={handleToggleExpanded}
           />
           <Button
             className='ap-fd-page-header__expander-button'
             icon={pinned ? 'pushpin-off' : 'pushpin-on'}
-            onClick={onTogglePinned}
+            onClick={handleTogglePinned}
           />
         </div>
         : null}
     </div>
   )
+}
+
+export const computeExpanded = (expanded?: boolean, onExpand?: (expand: boolean) => void, attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]) => {
+  if (typeof onExpand !== 'undefined') {
+    return Boolean(expanded)
+  }
+  if (typeof expanded === 'boolean') {
+    return expanded
+  }
+  return computeExpandable(attributes)
+}
+
+export const computeExpandable = (attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]) => {
+  return Boolean(attributes && (!Array.isArray(attributes) || attributes.length))
 }
