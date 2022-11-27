@@ -86,15 +86,16 @@ export const Button = ({
     <button
       className={classes.join(' ')}
       style={style}
-      aria-label={ariaLabel}
       aria-controls={ariaControls}
+      aria-disabled={disabled ? true : false}
       aria-expanded={ariaExpanded}
       aria-haspopup={ariaHaspopup}
-      onClick={onClicked}
-      tabIndex={tabIndex ? tabIndex : 0}
-      type={type}
-      aria-disabled={disabled ? true : false}
+      aria-label={ariaLabel}
       disabled={disabled}
+      tabIndex={tabIndex ? tabIndex : 0}
+      title={!text ? ariaLabel : ''}
+      type={type}
+      onClick={onClicked}
     >
       {icon && !iconAfter ?
         <i className={`sap-icon--${icon}`} role='presentation'></i>

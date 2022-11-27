@@ -47,6 +47,7 @@ export { FormCheckBox } from './components/form/FormCheckBox'
 export { FormInput } from './components/form/FormInput'
 export { FormSelect } from './components/form/FormSelect'
 export { FormStepInput } from './components/form/FormStepInput'
+export { FormTextArea } from './components/form/FormTextArea'
 // icon
 export { Icon } from './components/icon/Icon'
 // icontabbar

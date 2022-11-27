@@ -160,9 +160,12 @@ export const DemoPage = ({
   )
 }
 
+const doAlert = false
 export const demoCallback = (message: string) => {
   /* tslint:disable */
   console.log(message)
   /* tslint:enable */
-  alert(message)
+  if (doAlert) {
+    alert(message)
+  }
 }

@@ -12,6 +12,7 @@ import { FormDemo } from '../components/demo/FormDemo'
 import { FormCheckBoxDemo } from '../components/demo/FormCheckBoxDemo'
 import { FormInputDemo } from '../components/demo/FormInputDemo'
 import { FormStepInputDemo } from '../components/demo/FormStepInputDemo'
+import { FormTextAreaDemo } from '../components/demo/FormTextAreaDemo'
 import { IconDemo } from '../components/demo/IconDemo'
 import { IconTabBarDemo } from '../components/demo/IconTabBarDemo'
 import { InfoLabelDemo } from '../components/demo/InfoLabelDemo'
@@ -90,6 +91,11 @@ export const COMPONENT = {
     id: 'formstepinput',
     text: 'Form Step Input',
     demo: FormStepInputDemo
+  },
+  FORM_TEXT_AREA: {
+    id: 'formtextarea',
+    text: 'Form Text Area',
+    demo: FormTextAreaDemo
   },
   ICON: {
     id: 'icon',
