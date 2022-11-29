@@ -3,10 +3,12 @@ import React from 'react'
 import { ListType, ListTypes } from '../../constants/ListType'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
+import { Icon, IconProperties } from '../../components/icon/Icon'
+import { renderIcon } from 'lib/helpers/RenderHelper'
 
 export interface ListItemInfo {
-  iconLeft?: string
-  iconRight?: string
+  iconLeft?: string | IconProperties
+  iconRight?: string | IconProperties
   interactive?: boolean
   selected?: boolean
   text: string
@@ -69,21 +71,11 @@ export const ListItem = ({
   const renderContentBase = () => {
     return (
       <>
-        {iconLeft ?
-          <i
-            className={`fd-list__icon sap-icon--${iconLeft}`}
-            role='presentation'
-          />
-          : null}
+        {iconLeft ? renderIcon(iconLeft, 'fd-list__icon') : null}
         <span className='fd-list__title'>
           {text}
         </span>
-        {iconRight ?
-          <i
-            className={`fd-list__icon sap-icon--${iconRight}`}
-            role='presentation'
-          />
-          : null}
+        {iconRight ? renderIcon(iconRight, 'fd-list__icon') : null}
       </>
     )
   }
