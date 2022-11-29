@@ -14,9 +14,12 @@ jobs:
 
       - name: Setup nodejs
         uses: actions/setup-node@master
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -28,13 +31,13 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: install
+      - name: Install
         run: npm i
 
-      - name: build
+      - name: Build
         run: npm run build
 
-      - name: publish
-        uses: JS-DevTools/npm-publish@v1
-        with:
-          token: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
