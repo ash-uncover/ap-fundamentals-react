@@ -6,7 +6,7 @@ import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-import { Icon, IconInfo } from '../../components/icon/Icon'
+import { Icon, IconProperties } from '../../components/icon/Icon'
 
 export interface ButtonInfo {
   ariaLabel?: string
@@ -18,7 +18,7 @@ export interface ButtonInfo {
   compact?: boolean
   design?: ButtonDesign
   disabled?: boolean
-  icon?: string | IconInfo
+  icon?: string | IconProperties
   iconAfter?: boolean
   menu?: boolean
   selected?: boolean
