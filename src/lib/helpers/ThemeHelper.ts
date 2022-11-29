@@ -1,4 +1,4 @@
-import { ThemeInfo } from "constants/Theme"
+import { ThemeInfo } from 'constants/Theme'
 
 export const injectCss = (id: string, href: string) => {
   return new Promise<void>((resolve, reject) => {

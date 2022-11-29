@@ -10,6 +10,7 @@ export interface BreadcrumbInfo {
 
   onItemSelected?: (id: string) => void
 }
+
 export interface BreadcrumbProperties extends
   FioriComponentProperties,
   BreadcrumbInfo {
