@@ -17,7 +17,7 @@ jobs:
         uses: actions/setup-node@master
 
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         env:
           cache-name: cache-node-modules
         with:
@@ -29,11 +29,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
 
-      - name: install
+      - name: Install
         run: npm i
 
-      - name: lint
+      - name: Lint
         run: npm run lint
 
-      - name: build
+      - name: Build
         run: npm run build
