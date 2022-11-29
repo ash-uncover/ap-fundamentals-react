@@ -1,4 +1,6 @@
 import React, { MouseEvent } from 'react'
+// Libs
+import { renderIcon } from '../../helpers/RenderHelper'
 // Constants
 import { ButtonDesign } from '../../constants/ButtonDesign'
 import { ButtonType, ButtonTypes } from '../../constants/ButtonType'
@@ -22,6 +24,7 @@ export interface ButtonInfo {
   selected?: boolean
   tabIndex?: number
   text?: string | number
+  toggled?: boolean
   type?: ButtonType
 
   onClick?: () => void
@@ -50,6 +53,7 @@ export const Button = ({
   selected,
   tabIndex,
   text,
+  toggled,
   type = ButtonTypes.BUTTON,
 
   onClick,
@@ -82,6 +86,9 @@ export const Button = ({
   if (menu) {
     classes.push('fd-button--menu')
   }
+  if (toggled) {
+    classes.push('fd-button--toggled')
+  }
 
   return (
     <button
@@ -98,9 +105,7 @@ export const Button = ({
       type={type}
       onClick={onClicked}
     >
-      {icon && !iconAfter ?
-        <i className={`sap-icon--${icon}`} role='presentation'></i>
-        : null}
+      {icon && !iconAfter ? renderIcon(icon) : null}
 
       {text ?
         <span className='fd-button__text'>
@@ -108,13 +113,9 @@ export const Button = ({
         </span>
         : null}
 
-      {icon && iconAfter ?
-        <i className={`sap-icon--${icon}`} role='presentation'></i>
-        : null}
+      {icon &&  iconAfter ? renderIcon(icon) : null}
 
-      {menu ?
-        <i className={`sap-icon--slim-arrow-down`}></i>
-        : null}
+      {menu ? <Icon icon='slim-arrow-down' /> : null}
 
       {badge ?
         <span className='fd-button__badge'>
