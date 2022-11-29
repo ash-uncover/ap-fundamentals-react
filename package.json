@@ -19,16 +19,11 @@
     "build:babel": "babel src/lib --extensions .ts,.tsx --out-dir dist --copy-files",
     "build:docs": "webpack --config webpack.config.docs.js",
     "build:tsc": "tsc",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.tsx\" \"src/**/*.js\" \"src/**/*.jsx\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare": "npm run build",
-    "prepublishOnly": "npm run lint",
-    "preversion": "npm run lint",
     "start": "webpack serve --progress --mode development",
     "start:docs": "webpack serve --config webpack.config.docs.js --progress --mode development",
     "test": "jest --env=jsdom",
-    "test-coverage": "jest --env=jsdom --collectCoverage",
-    "version": "npm run format"
+    "test-coverage": "jest --env=jsdom --collectCoverage"
   },
   "peerDependencies": {
     "@sap-theming/theming-base-content": "^11.1.44",

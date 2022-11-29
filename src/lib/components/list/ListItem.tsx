@@ -1,10 +1,11 @@
 import React from 'react'
+// Libs
+import { renderIcon } from '../../helpers/RenderHelper'
 // Constants
 import { ListType, ListTypes } from '../../constants/ListType'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-import { Icon, IconProperties } from '../../components/icon/Icon'
-import { renderIcon } from 'lib/helpers/RenderHelper'
+import { IconProperties } from '../../components/icon/Icon'
 
 export interface ListItemInfo {
   iconLeft?: string | IconProperties
