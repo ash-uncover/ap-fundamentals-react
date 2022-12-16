@@ -19,7 +19,6 @@
     "build:babel": "babel src/lib --extensions .ts,.tsx --out-dir dist --copy-files",
     "build:docs": "webpack --config webpack.config.docs.js",
     "build:tsc": "tsc",
-    "lint": "tslint -p tsconfig.json",
     "start": "webpack serve --progress --mode development",
     "start:docs": "webpack serve --config webpack.config.docs.js --progress --mode development",
     "test": "jest --env=jsdom",
