@@ -1,12 +1,14 @@
-html, body, #reactroot {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden;
+html,
+body,
+#reactroot {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
 #reactroot {
-    display: flex;
-    flex-direction: column;
-    font-family: '72';
+  display: flex;
+  flex-direction: column;
+  font-family: '72';
 }

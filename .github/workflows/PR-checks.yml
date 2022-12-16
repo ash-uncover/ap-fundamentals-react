@@ -4,7 +4,6 @@ on:
   pull_request:
     branches:
       - main
-      - master
 
 jobs:
   lint-build-test:
@@ -31,9 +30,6 @@ jobs:
 
       - name: Install
         run: npm i
-
-      - name: Lint
-        run: npm run lint
 
       - name: Build
         run: npm run build
