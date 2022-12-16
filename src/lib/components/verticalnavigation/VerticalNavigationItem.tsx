@@ -9,7 +9,7 @@ export interface VerticalNavigationItemInfo {
   selected?: boolean
   text: string
 
-  onItemSelect?: (id: string) => void
+  onClick?: (id: string) => void
 
   children?: any | any[]
 }
@@ -30,7 +30,7 @@ export const VerticalNavigationItem = ({
   selected,
   text,
 
-  onItemSelect,
+  onClick,
 
   children,
 }: VerticalNavigationItemProperties) => {
@@ -43,20 +43,20 @@ export const VerticalNavigationItem = ({
 
   // Events //
 
-  const onClick = (event: MouseEvent) => {
-    event.stopPropagation()
-    if (onItemSelect && id) {
-      onItemSelect(id)
+  const handleClick = (event: MouseEvent) => {
+    if (onClick && id) {
+      event.stopPropagation()
+      onClick(id)
     }
   }
 
-  const onKeyUp = (event: KeyboardEvent) => {
+  const handleKeyUp = (event: KeyboardEvent) => {
     switch (event.code) {
       case 'Enter':
       case 'Space': {
-        event.stopPropagation()
-        if (onItemSelect && id) {
-          onItemSelect(id)
+        if (onClick && id) {
+          event.stopPropagation()
+          onClick(id)
         }
       }
       default: {
@@ -97,8 +97,8 @@ export const VerticalNavigationItem = ({
       className={classes.join(' ')}
       style={style}
       tabIndex={0}
-      onClick={onClick}
-      onKeyUp={onKeyUp}
+      onClick={handleClick}
+      onKeyUp={handleKeyUp}
     >
       {icon ?
         <i
@@ -131,7 +131,7 @@ export const VerticalNavigationItem = ({
                 items={item.items}
                 selected={item.selected}
                 text={item.text}
-                onItemSelect={onItemSelect}
+                onClick={onClick}
               />
             )
           })}

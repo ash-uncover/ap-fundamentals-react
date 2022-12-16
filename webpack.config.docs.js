@@ -29,6 +29,7 @@ module.exports = {
       patterns: [
         { from: path.resolve(__dirname, '_redirects'), to: '.' },
         { from: path.resolve(__dirname, 'public'), to: '.' },
+        { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fundamental-styles.css'), to: '.' },
       ],
     }),
     new HtmlWebpackPlugin({

@@ -4,8 +4,10 @@ const path = require('path')
 
 const DIR_DIST = path.resolve(__dirname, 'dist-dev')
 const DIR_SRC = path.resolve(__dirname, 'src')
+const DIR_PUBLIC = path.resolve(__dirname, 'public')
 const DIR_NODE_MODULES = path.resolve(__dirname, 'node_modules')
 
+const CopyPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -26,13 +28,18 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      title: 'Wait App',
+      title: 'React Fundamentals',
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fundamental-styles.css'), to: '.' },
+      ],
     }),
   ],
   devtool: 'source-map',
   devServer: {
     static: {
-      directory: path.join(__dirname, 'public'),
+      directory: DIR_PUBLIC,
     },
     compress: true,
     port: 3000,

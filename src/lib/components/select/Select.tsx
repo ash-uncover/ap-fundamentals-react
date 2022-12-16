@@ -2,6 +2,7 @@ import React from 'react'
 // Constants
 import { InputState } from '../../constants/InputState'
 import { ListTypes } from '../../constants/ListType'
+import { PopoverPlacements } from '../../constants/PopoverPlacement'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { List } from '../../components/list/List'
@@ -81,7 +82,7 @@ export const Select = ({
     <Popover
       style={style}
       control={renderSelectControl()}
-      alignRight={alignRight}
+      placement={alignRight ? PopoverPlacements.BOTTOM_END : undefined}
       dropdown
       noArrow
     >

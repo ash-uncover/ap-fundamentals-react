@@ -2,7 +2,9 @@ import React from 'react'
 
 import {
   AccentColors,
+  Popover,
   VerticalNavigation,
+  VerticalNavigationItem,
 } from 'lib'
 
 import { DemoPage } from '../common/DemoPage'
@@ -22,6 +24,42 @@ const DEMO_DATA = {
     ],
   }],
   examples: [{
+    title: 'Test',
+    description: 'TMP',
+    result: (
+      <VerticalNavigation
+        className='app-side-navigation'
+        condensed
+        label='Menu'
+        itemsLabel='Menu'
+      >
+        <VerticalNavigationItem
+          key='overview'
+          id='overview'
+          condensed
+          icon='menu2'
+          text={'Overview'}
+        />
+        <Popover
+          control={(
+            <VerticalNavigationItem
+              key='create'
+              id='create'
+              condensed
+              icon='add'
+              text={'Create'}
+            />
+          )}
+        >
+          <div>POPO</div>
+        </Popover>
+      </VerticalNavigation>
+    ),
+    code: (
+      <div style={{ whiteSpace: 'pre' }}>
+      </div>
+    )
+  }, {
     title: 'Default',
     description: 'The default vertical navigation is comprised of several navigation list items.',
     result: (

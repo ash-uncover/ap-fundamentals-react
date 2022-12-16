@@ -67,7 +67,7 @@ export const VerticalNavigation = ({
                 icon={item.icon}
                 text={item.text}
                 selected={item.selected}
-                onItemSelect={item.onItemSelect || onItemSelect}
+                onClick={item.onClick || onItemSelect}
               />
             )
           })}

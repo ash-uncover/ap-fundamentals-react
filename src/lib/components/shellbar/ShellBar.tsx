@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react'
 // Constants
+import { PopoverPlacements } from '../../constants/PopoverPlacement'
 import { Sizes } from '../../constants/Size'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
@@ -85,7 +86,7 @@ export const ShellBar = ({
         {profile ?
           <div className='fd-shellbar__action'>
             <Popover
-              alignRight
+              placement={PopoverPlacements.BOTTOM_END}
               control={(
                 <Avatar
                   ariaLabel={profile.name}

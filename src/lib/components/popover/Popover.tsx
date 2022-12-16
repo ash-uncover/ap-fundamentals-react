@@ -1,14 +1,13 @@
-import React, { ReactElement, useState } from 'react'
-// Utils
-import { UUID } from '@uncover/js-utils'
+import React, { ReactElement, useState, useId } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
+import { PopoverPlacement, PopoverPlacements } from '../../constants/PopoverPlacement'
 
 export interface PopoverInfo {
-  alignRight?: boolean
   control: ReactElement
   dropdown?: boolean
   noArrow?: boolean
+  placement?: PopoverPlacement
   preventOpen?: boolean
 }
 export interface PopoverProperties extends
@@ -21,10 +20,10 @@ export const Popover = ({
   className,
   style,
 
-  alignRight,
   control,
   dropdown,
   noArrow,
+  placement,
   preventOpen = false,
 
   children,
@@ -32,7 +31,7 @@ export const Popover = ({
 
   // Hooks //
 
-  const [id] = useState<string>(UUID.next())
+  const id = useId()
   const [open, setOpen] = useState<boolean>(false)
 
   // Events //
@@ -69,12 +68,21 @@ export const Popover = ({
   if (className) {
     classes.push(className)
   }
-  if (alignRight) {
-    classes.push('fd-popover--right')
-  }
+
   const classesBody = ['fd-popover__body']
-  if (alignRight) {
-    classesBody.push('fd-popover__body--right')
+  if (placement) {
+    if (placement.bodyPlacement) {
+      classesBody.push(`fd-popover__body--${placement.bodyPlacement}`)
+    }
+    if (placement.bodyPosition) {
+      classesBody.push(`fd-popover__body--${placement.bodyPosition}`)
+    }
+    if (placement.arrowPosition) {
+      classesBody.push(`fd-popover__body--${placement.arrowPosition}`)
+    }
+    if (placement.arrowPlacement) {
+      classesBody.push(`fd-popover__body--${placement.arrowPlacement}`)
+    }
   }
   if (noArrow) {
     classesBody.push('fd-popover__body--no-arrow')
