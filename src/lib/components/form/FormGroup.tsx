@@ -2,7 +2,7 @@ import React, { ReactElement, useState } from 'react'
 // Utils
 import { UUID } from '@uncover/js-utils'
 // Components
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface FormGroupInfo {
   compact?: boolean

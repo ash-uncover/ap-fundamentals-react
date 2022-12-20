@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 // Libs
 import { renderIcon } from '../../helpers/RenderHelper'
 // Constants
@@ -16,8 +16,11 @@ export interface ListItemInfo {
   type?: ListType
   unread?: boolean
 
+  children?: ReactNode
+
   onItemSelected?: () => void
 }
+
 export interface ListItemProperties extends
   FioriComponentProperties,
   ListItemInfo {
@@ -36,6 +39,8 @@ export const ListItem = ({
   text,
   type,
   unread,
+
+  children,
 
   onItemSelected,
 }: ListItemProperties) => {
@@ -70,6 +75,9 @@ export const ListItem = ({
   }
 
   const renderContentBase = () => {
+    if (children) {
+      return children
+    }
     return (
       <>
         {iconLeft ? renderIcon(iconLeft, 'fd-list__icon') : null}

@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { VerticalNavigation } from '../lib/components/verticalnavigation/VerticalNavigation'
-import { COMPONENTS } from '../lib/index-demos'
+import { COMPONENTS } from '../index-demos'
 
 export const AppSidePanel = () => {
 
@@ -26,9 +26,9 @@ export const AppSidePanel = () => {
       itemsLabel='Core Navigation'
       items={[
         {
+          icon: 'folder-blank',
           id: 'components',
           text: 'Components',
-          icon: 'folder-blank',
           expanded: true,
           items: COMPONENTS.map((compo) => {
             return {

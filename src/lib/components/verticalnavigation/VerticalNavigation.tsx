@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 // Components
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 import { VerticalNavigationItem, VerticalNavigationItemProperties} from '../../components/verticalnavigation/VerticalNavigationItem'
 
 export interface VerticalNavigationInfo {

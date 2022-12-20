@@ -1,4 +1,4 @@
-import { ThemeInfo } from 'constants/Theme'
+import { ThemeInfo } from '../constants/Theme'
 
 export const injectCss = (id: string, href: string) => {
   return new Promise<void>((resolve, reject) => {
@@ -34,8 +34,8 @@ export const injectThemeCss = (theme: ThemeInfo) => {
     root = '/ap-fundamentals-react'
   }
   return Promise.allSettled([
-    injectCss('theming-icons', `${root}/fundamentals-icons-${theme.family}.css`),
-    injectCss('theming-base-content', `${root}/theme/${theme.id}/css_variables.css`),
-    injectCss('theming', `${root}/theme/${theme.id}/${theme.id}.css`),
+    injectCss('theming-icons', `${root}/${theme.family}_fonts.css`),
+    injectCss('theming-base-content', `${root}/${theme.id}_variables.css`),
+    injectCss('theming', `${root}/${theme.id}.css`),
   ])
 }

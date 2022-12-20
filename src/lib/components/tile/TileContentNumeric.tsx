@@ -3,7 +3,7 @@ import React from 'react'
 import { Semantic } from '../../constants/Semantic'
 import { Size, Sizes } from '../../constants/Size'
 // Components
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface TileContentNumericInfo {
   value: string

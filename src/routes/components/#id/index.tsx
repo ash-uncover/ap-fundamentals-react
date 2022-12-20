@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 
-import { COMPONENTS } from '../../../lib/index-demos'
+import { COMPONENTS } from '../../../index-demos'
 
 export const RouteComponent = () => {
 

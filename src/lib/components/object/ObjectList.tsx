@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react'
 // Components
-import { FioriComponentProperties } from 'components/FioriBase'
+import { FioriComponentProperties } from '../../components/FioriBase'
 import { ObjectListItem, ObjectListItemProperties } from '../../components/object/ObjectListItem'
 
 export interface ObjectListInfo {

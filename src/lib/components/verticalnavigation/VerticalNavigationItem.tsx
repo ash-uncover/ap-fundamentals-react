@@ -1,5 +1,6 @@
-import { FioriComponentProperties } from 'components/FioriBase'
 import React, { KeyboardEvent, MouseEvent, useState } from 'react'
+// Components
+import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface VerticalNavigationItemInfo {
   condensed?: boolean

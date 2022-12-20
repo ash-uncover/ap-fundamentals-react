@@ -1,7 +1,10 @@
 import React, { ReactNode } from 'react'
 import { Icon, IconProperties } from "../components/icon/Icon"
 
-export const renderIcon = (iconInfo: string | IconProperties, className?: string): ReactNode => {
+export const renderIcon = (
+  iconInfo: string | IconProperties,
+  className?: string
+): ReactNode => {
   if (typeof iconInfo === 'string') {
     return (
       <Icon

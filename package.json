@@ -1,6 +1,6 @@
 {
   "name": "@uncover/fundamentals-react",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "author": "aSH <ash.uncover@gmail.com>",
   "description": "React implementation of ui5 fundamentals",
   "license": "MIT",
@@ -17,10 +17,9 @@
   "scripts": {
     "build": "npm run build:tsc && npm run build:babel",
     "build:babel": "babel src/lib --extensions .ts,.tsx --out-dir dist --copy-files",
-    "build:docs": "webpack --config webpack.config.docs.js",
-    "build:tsc": "tsc",
-    "start": "webpack serve --progress --mode development",
-    "start:docs": "webpack serve --config webpack.config.docs.js --progress --mode development",
+    "build:docs": "webpack --config webpack.config.docs.js --mode production",
+    "build:tsc": "tsc --project tsconfig.build.json",
+    "start": "webpack serve --config webpack.config.dev.js --progress --mode development",
     "test": "jest --env=jsdom",
     "test-coverage": "jest --env=jsdom --collectCoverage"
   },
