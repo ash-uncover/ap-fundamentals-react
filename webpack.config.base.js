@@ -7,13 +7,6 @@ const DIR_NODE_MODULES = path.resolve(__dirname, 'node_modules')
 
 const CopyPlugin = require('copy-webpack-plugin')
 
-const transformFonts = (buffer) => {
-  let data = buffer.toString()
-  data = data.split('@sap-theming/theming-base-content/content/Base/baseLib/baseTheme').join('')
-  data = data.split('@sap-theming/theming-base-content/content/Base/baseLib/sap_horizon').join('')
-  return data
-}
-
 module.exports = {
   entry: path.resolve(DIR_SRC, 'index.tsx'),
 
@@ -28,10 +21,6 @@ module.exports = {
         { from: path.resolve(__dirname, '_redirects'), to: '.' },
 
         { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fundamental-styles.css'), to: '.' },
-
-        { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fonts/sap_fonts.css'), to: '.', transform: transformFonts },
-        { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fonts/sap_fiori_3_fonts.css'), to: './sap_fiori_3_fonts.css', transform: transformFonts },
-        { from: path.resolve(DIR_NODE_MODULES, 'fundamental-styles/dist/fonts/sap_horizon_fonts.css'), to: './sap_horizon_fonts.css', transform: transformFonts },
 
         { from: path.resolve(DIR_NODE_MODULES, '@sap-theming/theming-base-content/content/Base/baseLib/baseTheme/fonts'), to: './fonts' },
 
