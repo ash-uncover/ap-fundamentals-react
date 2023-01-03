@@ -11,7 +11,7 @@ import {
   Sizes,
   Title,
   TitleLevels
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 
@@ -27,10 +27,10 @@ const DEMO_DATA = {
     id: 'Bar',
     props: [
       { id: 'cozy', type: 'boolean', description: '...' },
-      { id: 'left', type: 'ReactElement[]', description: 'The elements to display on the left' },
-      { id: 'middle', type: 'ReactElement[]', description: 'The elements to display on the middle' },
+      { id: 'left', type: 'ReactNode', description: 'The elements to display on the left' },
+      { id: 'middle', type: 'ReactNode', description: 'The elements to display on the middle' },
       { id: 'responsivePaddings', type: 'boolean', description: '...' },
-      { id: 'right', type: 'ReactElement[]', description: 'The elements to display on the right' },
+      { id: 'right', type: 'ReactNode', description: 'The elements to display on the right' },
       { id: 'type', type: 'BarType', description: '...' },
     ],
   }],

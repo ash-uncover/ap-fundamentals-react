@@ -5,7 +5,7 @@ import {
   Popover,
   VerticalNavigation,
   VerticalNavigationItem,
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

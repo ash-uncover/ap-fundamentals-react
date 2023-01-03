@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface TileContainerInfo {
-  children?: string | ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface TileContainerProperties extends

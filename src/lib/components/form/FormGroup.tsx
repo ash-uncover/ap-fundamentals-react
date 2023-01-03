@@ -1,4 +1,4 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 // Utils
 import { UUID } from '@uncover/js-utils'
 // Components
@@ -8,7 +8,7 @@ export interface FormGroupInfo {
   compact?: boolean
   header?: string
 
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 
 export interface FormGroupProperties extends

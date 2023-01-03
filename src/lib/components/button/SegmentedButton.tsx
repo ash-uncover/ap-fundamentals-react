@@ -1,12 +1,11 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Componennts
 import { FioriComponentProperties } from '../../components/FioriBase'
-import { ButtonProperties } from '../../components/button/Button'
 
 export interface SegmentedButtoInfo {
   ariaLabel?: string
 
-  children: ReactElement<ButtonProperties> | ReactElement<ButtonProperties>[]
+  children: ReactNode
 }
 export interface SegmentedButtonProperties extends
   FioriComponentProperties,

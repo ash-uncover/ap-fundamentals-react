@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../FioriBase'
 
 export interface BarRightInfo {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 export interface BarRightProperties extends
   FioriComponentProperties,

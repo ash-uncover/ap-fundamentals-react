@@ -4,7 +4,7 @@ import {
   AccentColors,
   Icon,
   IconDesigns,
-} from 'lib'
+} from '../../lib'
 
 import {
   DemoPage

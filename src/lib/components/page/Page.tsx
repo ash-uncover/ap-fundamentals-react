@@ -1,21 +1,11 @@
-import React from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
-import { PageBodyProperties } from '../../components/page/PageBody'
-import { PageFooterProperties } from '../../components/page/PageFooter'
-import { PageHeaderProperties } from '../../components/page/PageHeader'
 
 import './Page.css'
 
 export interface PageInfo {
-  children: [
-    React.ReactElement<PageHeaderProperties>,
-    React.ReactElement<PageBodyProperties>,
-    React.ReactElement<PageFooterProperties>
-  ] | [
-    React.ReactElement<PageHeaderProperties>,
-    React.ReactElement<PageBodyProperties>,
-  ]
+  children: ReactNode[]
 }
 export interface PageProperties extends
   FioriComponentProperties,

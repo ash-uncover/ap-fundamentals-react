@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { Sizes } from '../../constants/Size'
 // Components
@@ -72,22 +72,22 @@ export interface ObjectListItemInfo {
   title?: string
   info?: any
   attributes?: any[]
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface ObjectListItemProperties extends
   FioriComponentProperties,
   ObjectListItemInfo { }
 export interface ObjectListItemHeaderProperties {
-  avatar?: ReactElement
-  left?: ReactElement | ReactElement[]
-  right?: ReactElement | ReactElement[]
-  children?: ReactElement | ReactElement[]
+  avatar?: ReactNode
+  left?: ReactNode
+  right?: ReactNode
+  children?: ReactNode
 }
 export interface ObjectListItemRowProperties {
-  left?: ReactElement | ReactElement[]
-  right?: ReactElement | ReactElement[]
-  children?: ReactElement | ReactElement[]
+  left?: ReactNode
+  right?: ReactNode
+  children?: ReactNode
 }
 
 export const ObjectListItem = ({
@@ -193,7 +193,7 @@ const ObjectListItemHeader = ({
 }
 
 export interface ObjectListItemHeaderLeftProperties {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 const ObjectListItemHeaderLeft = ({
   children
@@ -206,7 +206,7 @@ const ObjectListItemHeaderLeft = ({
 }
 
 export interface ObjectListItemHeaderRightProperties {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 const ObjectListItemHeaderRight = ({
   children
@@ -241,7 +241,7 @@ const ObjectListItemRow = ({
 }
 
 export interface ObjectListItemRowLeftProperties {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 const ObjectListItemRowLeft = ({
   children
@@ -254,7 +254,7 @@ const ObjectListItemRowLeft = ({
 }
 
 export interface ObjectListItemRowRightProperties {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 const ObjectListItemRowRight = ({
   children

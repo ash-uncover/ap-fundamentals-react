@@ -5,7 +5,7 @@ import {
   IconTabBar,
   IconTabBarDesigns,
   Semantics
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

@@ -5,7 +5,7 @@ import {
   Avatar,
   Sizes,
   Tile,
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

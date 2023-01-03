@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
@@ -8,7 +8,7 @@ export interface TableRowInfo {
 
   onClick?: () => void
 
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 export interface TableRowProperties extends
   FioriComponentProperties,

@@ -3,7 +3,7 @@ import React from 'react'
 import {
   AccentColors,
   Breadcrumb
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

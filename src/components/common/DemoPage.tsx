@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 import {
   AccentColor,
   AccentColors,
@@ -41,10 +41,10 @@ export interface DemoPageProp {
 export interface DemoPageExample {
   title: string
   description?: DemoDescription
-  result: ReactElement
-  code: ReactElement | ReactElement[]
+  result: ReactNode
+  code: ReactNode
 }
-export type DemoDescription = ReactElement | ReactElement[] | string | undefined
+export type DemoDescription = ReactNode
 
 export const DemoPage = ({
   title,

@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
@@ -7,8 +7,8 @@ export interface PanelInfo {
   expanded?: boolean
   expandable?: boolean
   title: string
-  toolbar?: ReactElement
-  children?: string | ReactElement | ReactElement[]
+  toolbar?: ReactNode
+  children?: ReactNode
 }
 export interface PanelProperties extends
   FioriComponentProperties,

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { TableCellType } from '../../constants/TableCellType'
 // Components
@@ -7,7 +7,7 @@ import { FioriComponentProperties } from '../../components/FioriBase'
 export interface TableHeaderCellInfo {
   type?: TableCellType
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface TableHeaderCellProperties extends

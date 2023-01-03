@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Contants
 import { Size, Sizes } from '../../constants/Size'
 // Components
@@ -15,7 +15,7 @@ export interface TileInfo {
 
   onClick?: () => void
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface TileProperties extends

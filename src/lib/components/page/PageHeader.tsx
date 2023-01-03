@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from 'react'
+import React, { ReactNode, useEffect, useState } from 'react'
 // Constants
 import { BarTypes } from '../../constants/BarType'
 import { Sizes } from '../../constants/Size'
@@ -14,10 +14,10 @@ import { Title } from '../../components/title/Title'
 import './PageHeader.css'
 
 export interface PageHeaderInfo {
-  actions?: ReactElement | ReactElement[]
+  actions?: ReactNode
   attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
   avatar?: AvatarInfo
-  breadcrumb: ReactElement
+  breadcrumb: ReactNode
   expanded?: boolean
   hideBoxShadow?: boolean
   subtitle?: string

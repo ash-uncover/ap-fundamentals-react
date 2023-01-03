@@ -1,15 +1,15 @@
-import React, { ReactElement, useEffect, useRef } from 'react'
+import React, { ReactNode, useEffect, useRef } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { DialogFooter } from '../../components/dialog/DialogFooter'
 import { DialogHeader } from '../../components/dialog/DialogHeader'
 
 export interface DialogInfo {
-  resizable?: boolean,
-  title?: string,
-  header?: any,
-  footer?: any,
-  children?: ReactElement | ReactElement[],
+  resizable?: boolean
+  title?: string
+  header?: any
+  footer?: any
+  children?: ReactNode
 }
 
 export interface DialogProperties extends
