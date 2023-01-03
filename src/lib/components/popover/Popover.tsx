@@ -1,10 +1,10 @@
-import React, { ReactElement, useState, useId } from 'react'
+import React, { ReactNode, useState, useId } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { PopoverPlacement, PopoverPlacements } from '../../constants/PopoverPlacement'
 
 export interface PopoverInfo {
-  control: ReactElement
+  control: ReactNode
   dropdown?: boolean
   noArrow?: boolean
   placement?: PopoverPlacement
@@ -13,7 +13,7 @@ export interface PopoverInfo {
 export interface PopoverProperties extends
   FioriComponentProperties,
   PopoverInfo {
-  children: ReactElement | ReactElement[]
+  children: ReactNode
 }
 
 export const Popover = ({

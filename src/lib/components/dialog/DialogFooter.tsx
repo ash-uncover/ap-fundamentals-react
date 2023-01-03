@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 
 export interface DialogFooterInfo {
-  left?: ReactElement | ReactElement[]
-  right?: ReactElement | ReactElement[]
-  children?: ReactElement | ReactElement[]
+  left?: ReactNode
+  right?: ReactNode
+  children?: ReactNode
 }
 
 export interface DialogFooterProperties extends
@@ -23,7 +23,7 @@ export const DialogFooter = ({
 
   // Rendering //
 
-  const renderElements = (elements: ReactElement | ReactElement[] | null | undefined) => {
+  const renderElements = (elements: ReactNode) => {
     if (elements) {
       if (Array.isArray(elements)) {
         return (
@@ -38,7 +38,7 @@ export const DialogFooter = ({
     return null
   }
 
-  const renderElement = (element: ReactElement, key?: string) => {
+  const renderElement = (element: ReactNode, key?: string) => {
     return (
       <div key={key} className='fd-bar__element'>
         {element}

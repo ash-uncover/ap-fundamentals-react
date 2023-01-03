@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { TableCellIndicator } from '../../constants/TableCellIndicator'
 import { TableCellType } from '../../constants/TableCellType'
@@ -34,7 +34,7 @@ export interface TableInfo {
   columns: TableColumn[]
   rows?: TableRow[]
   showHeaders?: boolean
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
   onRowClick?: (id: string) => void
 }
 export type TableColumn = {
@@ -42,8 +42,8 @@ export type TableColumn = {
   name?: string
   type?: TableCellType
   indicator?: TableCellIndicator
-  render?: (value: any) => ReactElement
-  formatter?: (value: any) => string | ReactElement
+  render?: (value: any) => ReactNode
+  formatter?: (value: any) => ReactNode
 }
 export type TableRow = {
   className?: string

@@ -5,7 +5,7 @@ import {
   Button,
   ButtonDesigns,
   SegmentedButton
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

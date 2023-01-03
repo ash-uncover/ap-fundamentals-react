@@ -10,7 +10,7 @@ import {
   PageHeader,
   PageHeaderAttribute,
   Semantics
-} from 'lib'
+} from '../../lib'
 
 import { demoCallback, DemoPage } from '../common/DemoPage'
 

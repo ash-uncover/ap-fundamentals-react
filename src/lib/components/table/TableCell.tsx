@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { TableCellIndicator } from '../../constants/TableCellIndicator'
 import { TableCellType } from '../../constants/TableCellType'
@@ -11,7 +11,7 @@ export interface TableCellInfo {
   activable?: boolean
   hoverable?: boolean
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface TableCellProperties extends

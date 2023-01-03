@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { ObjectListItem, ObjectListItemProperties } from '../../components/object/ObjectListItem'
@@ -6,7 +6,7 @@ import { ObjectListItem, ObjectListItemProperties } from '../../components/objec
 export interface ObjectListInfo {
   ariaLabeledBy: string
   items?: ObjectListItemProperties[]
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
   bordered?: boolean
 }
 

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { CardHeader, CardHeaderProperties } from '../../components/card/CardHeader'
@@ -9,7 +9,8 @@ export interface CardInfo {
   badge?: InfoLabelProperties
   header: CardHeaderProperties
   footer?: CardFooterProperties
-  children?: ReactElement | ReactElement[],
+  children?: ReactNode
+
   onClick?: () => void
 }
 

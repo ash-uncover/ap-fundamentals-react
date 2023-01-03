@@ -1,6 +1,10 @@
 import React from 'react'
 
-import { AccentColors, Menu } from '../../lib'
+import {
+  AccentColors,
+  Menu
+} from '../../lib'
+
 import { DemoPage } from '../common/DemoPage'
 
 const DEMO_DATA = {

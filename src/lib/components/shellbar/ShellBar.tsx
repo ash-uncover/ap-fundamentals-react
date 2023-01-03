@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { PopoverPlacements } from '../../constants/PopoverPlacement'
 import { Sizes } from '../../constants/Size'
@@ -16,7 +16,7 @@ export interface ShellBarInfo {
   logoAlt: string
   title: string
   subTitle?: string
-  actions?: ReactElement[]
+  actions?: ReactNode
   profile?: ShellBarProfileInfo
 }
 
@@ -43,6 +43,26 @@ export const ShellBar = ({
 }: ShellBarProperties) => {
 
   // Rendering //
+
+  const renderActions = () => {
+    if (actions && Array.isArray(actions)) {
+      return actions?.map((action, index) => {
+        return (
+          <div
+            key={`action-${index}`}
+            className='fd-shellbar__action fd-shellbar__action--desktop'
+          >
+            {action}
+          </div>
+        )
+      })
+    }
+    return (
+      <div className='fd-shellbar__action fd-shellbar__action--desktop'>
+        {actions}
+      </div>
+    )
+  }
 
   const classes = ['fd-shellbar']
   if (className) {
@@ -73,16 +93,7 @@ export const ShellBar = ({
           : null}
       </div>
       <div className='fd-shellbar__group fd-shellbar__group--actions'>
-        {actions?.map((action, index) => {
-          return (
-            <div
-              key={`action-${index}`}
-              className='fd-shellbar__action fd-shellbar__action--desktop'
-            >
-              {action}
-            </div>
-          )
-        })}
+        {renderActions()}
         {profile ?
           <div className='fd-shellbar__action'>
             <Popover

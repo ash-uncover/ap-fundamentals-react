@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { BarType } from '../../constants/BarType'
 // Components
@@ -10,10 +10,10 @@ import { BarRight } from '../../components/bar/BarRight'
 
 export interface BarInfo {
   cozy?: boolean
-  left?: ReactElement | ReactElement[]
-  middle?: ReactElement | ReactElement[]
+  left?: ReactNode
+  middle?: ReactNode
   responsivePaddings?: boolean
-  right?: ReactElement | ReactElement[]
+  right?: ReactNode
   type?: BarType
 }
 export interface BarProperties extends
@@ -35,14 +35,14 @@ export const Bar = ({
 
   // Rendering //
 
-  const renderElements = (elements: ReactElement | ReactElement[]) => {
+  const renderElements = (elements: ReactNode) => {
     if (Array.isArray(elements)) {
       return elements.map((element, index) => renderElement(element, `element-${index}`))
     }
     return renderElement(elements)
   }
 
-  const renderElement = (element: ReactElement, key?: string) => {
+  const renderElement = (element: ReactNode, key?: string) => {
     return (
       <BarElement key={key}>
         {element}

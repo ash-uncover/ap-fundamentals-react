@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { TitleLevel, TitleLevels } from '../../constants/TitleLevel'
@@ -15,7 +15,7 @@ export interface ToolbarInfo {
   solid?: boolean
   transparent?: boolean
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface ToolbarProperties extends

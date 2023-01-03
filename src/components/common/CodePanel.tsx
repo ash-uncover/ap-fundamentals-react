@@ -1,11 +1,11 @@
-import React, { ReactElement, useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 
 import './CodePanel.css'
 
 export interface CodePanelProperties {
   title?: string
-  result?: ReactElement | ReactElement[]
-  code?: ReactElement | ReactElement[]
+  result?: ReactNode
+  code?: ReactNode
 }
 export const CodePanel = ({
   title,

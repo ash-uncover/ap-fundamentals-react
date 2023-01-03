@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Constants
 import { IconTabBarDesign } from '../../constants/IconTabBarDesign'
 // Components
@@ -16,7 +16,7 @@ export interface IconTabBarInfo {
 
   onTabSelect?: (id: string) => void
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 export interface IconTabBarProperties extends
   FioriComponentProperties,

@@ -2,7 +2,7 @@ import React from 'react'
 
 import {
   AccentColors,
-} from 'lib'
+} from '../../lib'
 
 import { DemoPage } from '../common/DemoPage'
 

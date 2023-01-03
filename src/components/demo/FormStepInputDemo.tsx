@@ -1,7 +1,11 @@
 import React from 'react'
 
-import { AccentColors, FormStepInput, InputStates } from '../../lib'
 import { DemoPage } from '../common/DemoPage'
+import {
+  AccentColors,
+  FormStepInput,
+  InputStates
+} from '../../lib'
 
 const DEMO_DATA = {
   title: 'Form Step Input',

@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react'
+import React, { ReactNode } from 'react'
 // Components
 import { FioriComponentProperties } from '../../components/FioriBase'
 import { VerticalNavigationItem, VerticalNavigationItemProperties} from '../../components/verticalnavigation/VerticalNavigationItem'
@@ -11,7 +11,7 @@ export interface VerticalNavigationInfo {
 
   onItemSelect?: (id: string) => void
 
-  children?: ReactElement | ReactElement[]
+  children?: ReactNode
 }
 
 export interface VerticalNavigationProperties extends
