@@ -94,7 +94,7 @@ export const ListItem = ({
     classes.push(className)
   }
   if (interactive) {
-    classes.push('fd-list__item--interractive')
+    classes.push('fd-list__item--interactive')
   }
   if (type === ListTypes.NAVIGATION) {
     classes.push('fd-list__item--link')

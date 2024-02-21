@@ -17,7 +17,7 @@ export interface PageHeaderInfo {
   actions?: ReactNode
   attributes?: PageHeaderAttributeInfo | PageHeaderAttributeInfo[]
   avatar?: AvatarInfo
-  breadcrumb: ReactNode
+  breadcrumb?: ReactNode
   expanded?: boolean
   hideBoxShadow?: boolean
   subtitle?: string
